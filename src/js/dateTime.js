@@ -1,3 +1,5 @@
+let timezoneOffset = new Date().getTimezoneOffset() * -60;
+
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const months = [
@@ -29,7 +31,8 @@ const suffix = todaysDate => {
   }
 };
 
-let currentDay = new Date();
+let currentDay = new Date(new Date().getTime() + timezoneOffset);
+console.log(currentDay);
 
 const setDisplayCalendar = () => {
   let todaysDate = [currentDay.getDate()];
@@ -42,15 +45,31 @@ const setDisplayCalendar = () => {
   document.getElementById('month').innerHTML = month;
 };
 
-const getTime = () => new Date().toLocaleTimeString();
+const currentCityTime = () => {
+  d = new Date();
+  localTime = d.getTime();
+  localOffset = d.getTimezoneOffset() * 60000;
+  utc = localTime + localOffset;
+  let cityTime = utc + 1000 * timezoneOffset;
+  return new Date(cityTime);
+};
+
+const getTime = () => {
+  return currentCityTime().toLocaleTimeString();
+};
 
 setDisplayCalendar();
 document.getElementById('date-time').innerHTML = getTime();
 
 setInterval(function () {
-    document.getElementById('date-time').innerHTML = getTime();
-    if (getTime() === '00:00:00') {
-        currentDay = new Date();
-        setDisplayCalendar();
-    }
+  document.getElementById('date-time').innerHTML = getTime();
+  if (getTime() === '00:00:00') {
+    setDisplayCalendar();
+  }
 }, 1000);
+
+export function setTimeZoneOffset(timezoneOff) {
+  timezoneOffset = timezoneOff;
+  currentDay = currentCityTime();
+  setDisplayCalendar();
+}
