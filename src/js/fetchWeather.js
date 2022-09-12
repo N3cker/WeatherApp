@@ -1,23 +1,22 @@
-// const inputVal = document.querySelector('#search-input');
 // const apiKey = '30726d0cea6dff3429ac7876b4e8bfdc';
-// const url = `http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=${apiKey}`;
 
-// // fetch(url)
-// //   .then(res => res.json())
-// //   .then(data => console.log(data));
+// export const fetchWeather = () => {
+//   return fetchWeather(
+//   `https://api.openweathermap.org/data/2.5/weather?q=Sydney&appid=${apiKey}`
+// )
+//   .then(res => res.json())
+//       .then(data => {
+//           console.log(data);
 
-// export const fetchWeather = inputValue => {
-//   return fetchWeather(url)
-//     .then (response => {
-//       if (!response.ok) {
-//         if (response.status === 404) {
-//           return [];
-//         }
-//         throw new Error(response.status);
+//           const sunrise = new Date((data.sys.sunrise + data.timezone) * 1000);
+//           const sunset = new Date((data.sys.sunset + data.timezone) * 1000);
+//           options = options = { hour: 'numeric', minute: 'numeric' };
+
+//           let displaySunrise = new Intl.DateTimeFormat('utc', options).format(
+//               new Date(sunrise.getTime() + sunrise.getTimezoneOffset() * 60000)
+//           );
+
+//           let displaySunset = new Intl.DateTimeFormat('utc', options).format(
+//               new Date(sunset.getTime() + sunset.getTimezoneOffset() * 60000)
+//           );
 //       }
-//       return response.json();
-//     })
-//     .catch(error => {
-//       console.error(error);
-//     });
-// };
