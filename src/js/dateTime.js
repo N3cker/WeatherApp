@@ -47,11 +47,10 @@
 // setDisplayCalendar();
 // document.getElementById('date-time').innerHTML = getTime();
 
-// setInterval(function () {
-//     document.getElementById('date-time').innerHTML = getTime();
-//     if (getTime() === '00:00:00') {
-//         currentDay = new Date();
-//         setDisplayCalendar();
-//         console.log("zmieniam Ci html");
-//     }
-// }, 1000);
+setInterval(function () {
+    document.getElementById('date-time').innerHTML = getTime();
+    if (getTime() === '00:00:00') {
+        currentDay = new Date();
+        setDisplayCalendar();
+    }
+}, 1000);
