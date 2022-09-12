@@ -1,0 +1,29 @@
+.default-bg-day,
+.default-bg-night {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+@media screen and (min-width: 1280px) {
+.default-bg-day {
+  background-image: url('../images/desktop/bg-day-desktop.jpg');
+}
+
+.default-bg-night {
+  background-image: url('../images/desktop/bg-night-desktop.jpg');
+}
+}
+
+@media screen and (max-width: 1280px) {
+  .default-bg-day {
+    background-image: url('../images/tablet_mobile/bg-day-tablet.jpg');
+    // background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .default-bg-night {
+    background-image: url('../images/tablet_mobile/bg-night-tablet.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

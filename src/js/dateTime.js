@@ -52,6 +52,5 @@ setInterval(function () {
     if (getTime() === '00:00:00') {
         currentDay = new Date();
         setDisplayCalendar();
-        console.log("zmieniam Ci html");
     }
 }, 1000);
