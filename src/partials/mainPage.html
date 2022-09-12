@@ -1,15 +1,84 @@
+<section class="search__section">
+  <form class="search__form" id="search__form">
+      <input type="text" name="searchQuery" autocomplete="on" placeholder="Enter the city" />
 
-<div class="container">
+      <div class="search__history">
+          <ul class="search__history-list">
+              <li class="search__history-list-item">
+                  <a href="#" class="search__city-name">city</a>
+                  <p class="modal__close-city">X</p>
+              </li>
+              <li class="search__list-item">
+                  <a href="#" class="search__city-name">city</a>
+                  <p class="modal__close-city">X</p>
+              </li>
+              <li class="search__list-item">
+                  <a href="#" class="search__city-name">city</a>
+                  <p class="modal__close-city">X</p>
+              </li>
+              <li class="search__list-item">
+                  <a href="#" class="search__city-name">city</a>
+                  <p class="modal__close-city">X</p>
+              </li>
+          </ul>
+          <button type="button" class="search__more-city">\/</button>
+      </div>
+</section>
 
-   <form class="search-form" id="search-form">
-      <input
-        type="text"
-        name="searchQuery"
-        autocomplete="off"
-        placeholder="Enter the city"
-      />
-      <!-- <button type="submit">&#x1F50E;&#xFE0E;</button> -->
-    </form>
+<section class="today-weather">
+  <div class="container">
+    <ul class="today">
+      <li class="today__icon">ikona</li>
+      <li class="today__cityName">Kyiv,UA</li>
+      <li class="today__temp">
+        <p class="today__temp--actuall">-3</p>
+        <p class="today__temp--min">min -2</p>
+        <p class="today__temp--max">max 1</p>
+      </li>
+    </ul>
+  </div>
+
+
+  <div>
+      <ul class="button-list">
+          <li class="button-list-item"><button class="today" type="button">TODAY</button></li>
+          <li class="button-list-item"><button class="5days" type="button">5 DAYS</button></li>
+      </ul>
+  </div>
+
+</section>
+
+<section class="today-clock">
+ <div class="container">
+  <ul class="today-info">
+    <li>
+      <p id="todayds-date">8</p>
+      <p id="suffix">th</p>
+      <p id="day">Sat</p>
+    </li>
+    <li>
+      <p id="month">February</p>
+      <p id="date-time">21:30:56</p>
+    </li>
+    <li>
+      <p class="rise__icon">ikona</p>
+      <p class="rise__time">07:04</p>
+      <p class="set__icon">ikona</p>
+      <p class="set__time">17:05</p>
+  </ul>
+ </div>
+</section>
+
+<section class="sentence">
+  <div>
+    <p class="sentence__full">Who cares about the
+      clouds when we're together? Just sing a song and bring the sunny weather.</p>
+    <p class="sentence__author">Dale Evans</p>
 
   </div>
+
+</section>
+
+
+
 
