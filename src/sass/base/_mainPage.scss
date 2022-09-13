@@ -1,38 +1,57 @@
 
 
-// .search-form {
+// .search__form {
 //   position: absolute;
-//   top: 30;
-//   left: 20;
-//   display: flex;
-//   align-items: center;
-//   justify-content: left;
-//   padding: 15px;
-
-
+//   width: 280px;
+//   height: 48px;
+//   background: #FFFFFF;
+//   border-radius: 30px;
+//   margin-top:30px;
+//   margin-left:20px;
 // }
 
 // input {
-//   position: absolute;
-//   width: 90px;
-//   height: 17px;
-//   left: 77px;
-//   top: 45px;
-//   width: 280px;
-//   height:48px;
-//   background-color: #fff;
-//   border-radius: 30px;
-//   font-family: $mainFont;
+//   // position: absolute;
+// pdding-top:15px;
+
+//   // top: 45px;
+
+//   font-family: 'Lato';
 //   font-style: normal;
 //   font-weight: 400;
 //   font-size: 14px;
 //   line-height: 17px;
-//   display: flex;
+//   /* identical to box height */
+
+//   display: inline-flex;
 //   align-items: center;
 //   letter-spacing: 0.04em;
 
+//   color: #000000;
+// }
 
+// .location {
+//   box-sizing: border-box;
 
+//   position: absolute;
+//   width: 18px;
+//   height: 18px;
+//   left: 42px;
+//   // top: 45px;
+
+//   border: 2px solid #AEB3B9;
+// }
+
+// .star {
+//   box-sizing: border-box;
+
+//   position: absolute;
+//   width: 22px;
+//   height: 22px;
+//   left: 258px;
+//   // top: 43px;
+
+//   border: 1px solid #7E8691;
 // }
 
 // @media screen and (min-width: 768px){
@@ -118,5 +137,31 @@
 // }
 
 
+// .today__icon {
+//   display: block;
+// }
+// .today_cityName {
+//   display:block;
+// }
+
+.today__temp {
+  display:flex;
+}
+
+.today__icon {
+  width: 30px;
+  height: 30px;
+}
+
+.container .today {
+ display:block;
+ width: 280px;
+  height: 190px;
+  left: 20px;
+  top: 166px;
+  background: #102136;
+  box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
+  border-radius: 34px;
+}
 
 
