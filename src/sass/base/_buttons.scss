@@ -1,0 +1,51 @@
+.today {
+    border-style: none;
+    cursor: pointer;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 12px;
+    gap: 10px;
+    position: absolute;
+    width: 126px;
+    height: 27px;
+    left: 25px;
+    top: 387px;
+    background: #FFFFFF;
+    border-radius: 20px;
+}
+
+.fivedays {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  color:$mainColor;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 12px;
+  gap: 10px;
+  position: absolute;
+  width: 126px;
+  height: 28px;
+  left: 169px;
+  top: 386px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+}
