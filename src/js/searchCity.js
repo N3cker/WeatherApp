@@ -1,3 +1,4 @@
+import { setCity } from './variables';
 const inputCity = document.querySelector('[name="searchQuery"]');
 const cityList = document.querySelector('.search__history-list');
 const searchBtn = document.querySelector('.search__more-city');
@@ -8,6 +9,7 @@ function addCityKey(e) {
     return;
   }
   let city = e.target.value.trim();
+    setCity(city);
   if (city.length < 1 || cities.includes(city)) {
     e.target.value = '';
     return;
@@ -28,7 +30,8 @@ function addCityKey(e) {
 
 function addCityMouse() {
   let city = inputCity.value.trim();
-
+  setCity(city);
+  
   if (city.length < 1 || cities.includes(city)) {
     inputCity.value = '';
     return;
