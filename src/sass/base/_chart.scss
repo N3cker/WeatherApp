@@ -1,0 +1,84 @@
+#canvas-wrapper {
+    width: 280px;
+    height: 516px;
+    margin: 30px 20px 24px 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 34px;
+}
+
+#myChart {
+    width: 510px;
+    height: 240px;
+}
+
+.show-hide {
+    position: relative;
+    display: flex;
+    text-align: center;
+    margin: auto;
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 400;
+    text-decoration: underline;
+    color: #FF6B09;
+    background: none;
+    border: none;
+}
+
+@media screen and (min-width: 768px) {
+    #canvas-wrapper {
+        width: 620px;
+        height: 462px;
+        margin: 25px 74px 103px 74px;
+        padding: 80px 80px 40px 80px;
+    }
+
+    #myChart {
+        width: 510px;
+        height: 240px;
+    }
+
+    .show-hide {
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 80px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #canvas-wrapper {
+        width: 1060px;
+        height: 540px;
+        margin: 15px 110px 101px 110px;
+        padding: 80px 80px 40px 80px;
+    }
+
+    #myChart {
+        width: 700px;
+        height: 330px;
+    }
+
+    .show-hide {
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 80px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
+}

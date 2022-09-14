@@ -6,3 +6,4 @@ import './js/additions.js';
 import './js/searchCity.js';
 import './js/variables.js';
 import './js/apiFiveDays';
+import './js/chart.js';
