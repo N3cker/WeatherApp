@@ -32,7 +32,6 @@ const suffix = todaysDate => {
 };
 
 let currentDay = new Date(new Date().getTime() + timezoneOffset);
-console.log(currentDay);
 
 const setDisplayCalendar = () => {
   let todaysDate = [currentDay.getDate()];
@@ -45,7 +44,7 @@ const setDisplayCalendar = () => {
   document.getElementById('month').innerHTML = month;
 };
 
-const currentCityTime = () => {
+export const currentCityTime = () => {
   d = new Date();
   localTime = d.getTime();
   localOffset = d.getTimezoneOffset() * 60000;

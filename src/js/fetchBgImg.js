@@ -1,15 +1,23 @@
-export const fetchBgImg = async inputValue => {
-  return await fetch(
-    `https://pixabay.com/api/?key=29588079-fbc492831fdad231bf7222b96&q=${inputValue}&orientation=horizontal&safesearch=true&image_type=photo&`
+import { getCity } from './variables';
+
+export const fetchBgImg = isDay => {
+  let suffix = '';
+  if (isDay) {
+    suffix = '';
+  } else {
+    suffix = 'night';
+  }
+  return fetch(
+    `https://pixabay.com/api/?key=29588079-fbc492831fdad231bf7222b96&q=${getCity()}+city+${suffix}&orientation=horizontal&safesearch=true&image_type=photo`
   )
-    .then(async response => {
-      if (!response.ok) {
-        if (response.status === 404) {
+    .then(res => {
+      if (!res.ok) {
+        if (res.status === 404) {
           return [];
         }
-        throw new Error(response.status);
+        throw new Error(res.status);
       }
-      return await response.json();
+      return res.json();
     })
     .catch(error => {
       console.error(error);
