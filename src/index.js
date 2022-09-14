@@ -5,3 +5,4 @@ import './js/dateTime.js';
 import './js/additions.js';
 import './js/searchCity.js';
 import './js/chart.js';
+import './js/apiFiveDays';
