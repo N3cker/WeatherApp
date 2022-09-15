@@ -9,7 +9,7 @@ function addCityKey(e) {
     return;
   }
   let city = e.target.value.trim();
-    setCity(city);
+  setCity(city);
   if (city.length < 1 || cities.includes(city)) {
     e.target.value = '';
     return;
@@ -18,7 +18,7 @@ function addCityKey(e) {
 
   const newCity = cities
     .map(
-      newCity => `<li class="search__history-list-item">
+      newCity => `<li class="search__history-list-item carousel-cell">
                     <a href="#" class="search__city-name">${newCity}</a>
                     <p class="modal__close-city">X</p>
                 </li>`
@@ -31,7 +31,7 @@ function addCityKey(e) {
 function addCityMouse() {
   let city = inputCity.value.trim();
   setCity(city);
-  
+
   if (city.length < 1 || cities.includes(city)) {
     inputCity.value = '';
     return;
