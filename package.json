@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "chart.js": "^3.9.1",
+    "flickity": "^3.0.0",
     "lodash": "^4.17.21",
     "lodash.debounce": "^4.0.8",
     "modern-normalize": "^1.1.0",
