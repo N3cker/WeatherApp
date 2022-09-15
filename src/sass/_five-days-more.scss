@@ -1,0 +1,106 @@
+@media screen and (min-width: 320px) and (max-width: 767px) {
+
+    .wheather__hour,
+    .wheather__barometer,
+    .wheather__humidity,
+    .wheather__wind{
+        position: absolute;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #FFFFFF;
+        opacity: 0.54;
+    }
+    .wheather__icon{
+        width: 35px;
+        height: 25px;
+    }
+
+    .wheather__temp{
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+        text-align: center;   
+        color: #FF6B09;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+        .wheather__hour,
+        .wheather__barometer,
+        .wheather__humidity,
+        .wheather__wind{
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #FFFFFF;
+            opacity: 0.54;
+        }
+
+        .wheather__icon{
+            width: 35px;
+            height: 25px;
+    }
+
+        .wheather__temp{
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+            display: flex;
+            align-items: center;
+            text-align: center;   
+            color: #FF6B09;
+        }
+}
+
+@media screen and (min-width: 1280px) {
+        .wheather__hour,
+        .wheather__barometer,
+        .wheather__humidity,
+        .wheather__wind{
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #FFFFFF;
+            opacity: 0.54;
+        }
+
+        .wheather__icon{
+            width: 35px;
+            height: 35px;
+    }
+
+        .wheather__temp{
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 25px;
+            line-height: 30px;
+            display: flex;
+            align-items: center;
+            text-align: center;   
+            color: #FF6B09;
+        }
+}
