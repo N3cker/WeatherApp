@@ -1,10 +1,13 @@
-import { setTimeZoneOffset } from '../js/dateTime';
+import { getCity } from './variables';
+import { setTimeZoneOffset, currentCityTime } from '../js/dateTime';
 import Notiflix from 'notiflix';
+import { fetchBgImg } from './fetchBgImg';
 
-const input = document.querySelector('input[name="searchQuery"]');
 const form = document.querySelector('.search__form');
 
 const apiKey = '30726d0cea6dff3429ac7876b4e8bfdc';
+let sunrise;
+let sunset;
 
 function setTimeElements(city) {
   fetch(
@@ -20,29 +23,50 @@ function setTimeElements(city) {
       }
       setDisplayedTimeElements(data);
       setTimeZoneOffset(data.timezone);
+      let isDay;
+
+      if (
+        getTimezonedSunrise().getTime() < currentCityTime().getTime() &&
+        currentCityTime().getTime() < getTimezonedSunset().getTime()
+      ) {
+        isDay = true;
+      } else {
+        isDay = false;
+      }
+      fetchBgImg(isDay).then(response => {
+        document.body.style.backgroundImage = `url(${response.hits[0].largeImageURL})`;
+      });
     });
 }
 
 form.addEventListener('submit', e => {
   e.preventDefault();
 
-  const trimmedValue = input.value.trim();
+  const trimmedValue = getCity().trim();
   setTimeElements(trimmedValue);
 });
 
 function setDisplayedTimeElements(data) {
-  const sunrise = new Date((data.sys.sunrise + data.timezone) * 1000);
-  const sunset = new Date((data.sys.sunset + data.timezone) * 1000);
+  sunrise = new Date((data.sys.sunrise + data.timezone) * 1000);
+  sunset = new Date((data.sys.sunset + data.timezone) * 1000);
   options = options = { hour: 'numeric', minute: 'numeric' };
 
   let displaySunrise = new Intl.DateTimeFormat('utc', options).format(
-    new Date(sunrise.getTime() + sunrise.getTimezoneOffset() * 60000)
+    getTimezonedSunrise()
   );
 
   let displaySunset = new Intl.DateTimeFormat('utc', options).format(
-    new Date(sunset.getTime() + sunset.getTimezoneOffset() * 60000)
+    getTimezonedSunset()
   );
 
   document.getElementById('sunrise').innerHTML = displaySunrise;
   document.getElementById('sunset').innerHTML = displaySunset;
+}
+
+function getTimezonedSunrise() {
+  return new Date(sunrise.getTime() + sunrise.getTimezoneOffset() * 60000);
+}
+
+function getTimezonedSunset() {
+  return new Date(sunset.getTime() + sunset.getTimezoneOffset() * 60000);
 }
