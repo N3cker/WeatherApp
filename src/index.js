@@ -8,3 +8,4 @@ import './js/todayTemperatures.js';
 import './js/variables.js';
 import './js/apiFiveDays';
 import './js/chart.js';
+import './js/randomQuote.js';
