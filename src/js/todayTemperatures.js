@@ -24,7 +24,7 @@ async function getWeatherData(city) {
     const temperatures = {
         "temperature_now": temperatureCelsius,
         "temperature_min": temperatureMinCelsius,
-        "temperature_max": temperatureMaxCelsius 
+        "temperature_max": temperatureMaxCelsius
     }
 
     return temperatures;
@@ -32,12 +32,13 @@ async function getWeatherData(city) {
 
 async function printTemperatures() {
     const temperatureActual = document.querySelector('.today__temp--actuall');
-    const temperatureMin = document.querySelector('.temp--min');
-    const temperatureMax = document.querySelector('.temp--max');
+    const temperatureMin = document.querySelector('.today__temp--minNum');
+    const temperatureMax = document.querySelector('.today__temp--maxNum');
+
     const inputValue = input.value;
     const temperatures = await getWeatherData(inputValue);
 
-    // console.log(temperatures);
+    console.log(temperatures);
 
     temperatureActual.innerHTML = temperatures.temperature_now;
     temperatureMin.innerHTML = temperatures.temperature_min;
