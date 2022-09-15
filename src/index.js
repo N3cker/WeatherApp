@@ -4,6 +4,7 @@ import './js/background.js';
 import './js/dateTime.js';
 import './js/additions.js';
 import './js/searchCity.js';
+import './js/todayTemperatures.js';
 import './js/variables.js';
 import './js/apiFiveDays';
 import './js/chart.js';
