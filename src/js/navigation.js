@@ -11,7 +11,7 @@ const fiveDaysWeather = document.querySelector('.five-days-wheather');
 const weatherMore = document.querySelector('.wheather__more');
 const chart = document.querySelector('#canvas-wrapper');
 
-btnToday.addEventListener('click', () => {
+const showTodayElements = () => {
   sectionTodayWeather.style.display = '';
   sectionTodayClock.style.display = '';
   sectionSentence.style.display = '';
@@ -21,6 +21,11 @@ btnToday.addEventListener('click', () => {
   fiveDaysWeather.style.display = 'none';
   weatherMore.style.display = 'none';
   chart.style.display = 'none';
+};
+showTodayElements();
+
+btnToday.addEventListener('click', () => {
+  showTodayElements();
 });
 
 btn5days.addEventListener('click', () => {
@@ -36,16 +41,7 @@ btn5days.addEventListener('click', () => {
 });
 
 btnToday2.addEventListener('click', () => {
-  sectionTodayWeather.style.display = '';
-  sectionTodayClock.style.display = '';
-  sectionSentence.style.display = '';
-  btnToday.style.display = '';
-  btn5days.style.display = '';
-
-  fiveDaysWeather.style.display = 'none';
-  weatherMore.style.display = 'none';
-
-  chart.style.display = 'none';
+  showTodayElements();
 });
 
 btn5days2.addEventListener('click', () => {
