@@ -1,570 +1,626 @@
 @media screen and (min-width: 320px) and (max-width: 767px) {
-  .search__form {
-    position: absolute;
-    width: 280px;
-    height: 48px;
-    left: 20px;
-    top: 30px;
-    background: #ffffff;
-    border-radius: 30px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.04em;
-    cursor: pointer;
-    color: #000000;
-  }
-  .search__city-btn {
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    transform: rotate(90deg);
-    cursor: pointer;
-  }
 
-  .today-btn,
-  .five-days-btn {
-    height: 27px;
-    width: 126px;
-    top: 187px;
-    border-radius: 20px;
-    padding: 0px 12px 0px 12px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    position: absolute;
-    cursor: pointer;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 17px;
-    align-items: center;
-    text-align: center;
-    text-transform: uppercase;
-    color: #000000;
-  }
+    .five-days-wheather{
+        padding: 30px 25px 0px 25px;
+    }
 
-  .today-btn {
-    background: rgba(255, 255, 255, 0.5);
-  }
+    .button-list{
+        width: 270px;
+        height: 28px;
+        padding-top: 65px;
+        padding-bottom: 60px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
 
-  .five-days-btn {
-    background: #ffffff;
-  }
+    .button-list-item{
+        display: flex;
+    }
 
-  .city-name {
-    height: 26px;
-    width: 101px;
-    left: 110px;
-    top: 274px;
-    border-radius: nullpx;
-    position: absolute;
-    width: 101px;
-    height: 26px;
-    left: 110px;
-    top: 274px;
+    .today-btn,
+    .five-days-btn {
+        height: 27px;
+        width: 126px;
+        top: 187px;
+        border-radius: 20px;
+        padding: 0px 12px 0px 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+    }
 
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #ffffff;
-  }
+    .today-btn {
+        background: rgba(255, 255, 255, 0.5);
+        border-color: rgba(255, 255, 255, 0.5);
+    }
 
-  .wheather-container {
-    position: absolute;
-    width: 280px;
-    height: 273px;
-    left: 20px;
-    top: 244px;
-    background: rgba(16, 33, 54, 0.8);
-    box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
-    border-radius: 34px;
-    box-shadow: 0px 5px 33px 0px #10213699;
-  }
+    .five-days-btn {
+        background: #FFFFFF;
+        border-color: #FFFFFF;
+    }
+    .city-name{
+        display: none;
+    }
 
-  .day-of-the-week {
-    position: absolute;
-    width: 41px;
-    height: 14px;
-    top: 320px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #ffffff;
-    opacity: 0.55;
-  }
-  .day-of-the-month {
-    position: absolute;
-    width: 52px;
-    height: 19px;
-    top: 347px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #ffffff;
-  }
+    .city-name,
+    .city-name-mobile {
+        margin: auto;
+        padding-top: 30px;
+        padding-bottom: 20px;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        z-index: 1;
+        align-items: center;
+        text-align: center;
+        color: #FFFFFF;
+    }
 
-  .min-temp,
-  .max-temp,
-  .more-info {
-    position: absolute;
-    width: 26px;
-    height: 20px;
+    .wheather-container {
+        width: 280px;
+        height: 273px;
+        margin: auto;
+        background: rgba(16, 33, 54, 0.8);
+        box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
+        border-radius: 34px;
+    }
 
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #767d85;
-  }
+    .wheather-list{
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+    }
 
-  .more-info {
-    text-decoration-line: underline;
-    font-size: 17px;
-    cursor: pointer;
-  }
+    .wheather-list-item{
+        justify-content: space-around;
+    }
 
-  .min-temperature,
-  .max-temperature {
-    position: absolute;
-    width: 26px;
-    height: 20px;
+    .wheather-list-item2{
+        display: none;
+    }
+    .day-of-the-week {
+        margin: auto;
+        padding-bottom: 10px;
+        justify-content: center;
+        text-align: center;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        text-align: center;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+        opacity: 0.55;
+        display: flex;
+    }
 
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    display: flex;
-    align-items: center;
-    text-align: center;
+    .day-of-the-month {
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        padding-bottom: 5px;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+    }
 
-    color: #ff6b09;
-  }
-  .show-chart {
-    position: absolute;
-    width: 72px;
-    height: 18px;
+    .wheather-icon{
+        height: 25px;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        padding-bottom: 5px;
+    }
 
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    display: flex;
-    align-items: center;
-    text-decoration-line: underline;
-    cursor: pointer;
-    color: #ff6b09;
-  }
+    .min-temp,
+    .max-temp,
+    .more-info {
+        justify-content: center;
+        margin: auto;
+        padding-bottom: 5px;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        text-align: center;
+        color: #767D85;
+    }
 
-  .chart-btn {
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    cursor: pointer;
-    transform: rotate(90deg);
-  }
+    .more-info {
+        text-decoration-line: underline;
+        font-size: 14px;
+        cursor: pointer;
+        display: flex;
+    }
 
-  .arrow-back,
-  .arrow-next {
-    position: absolute;
-    width: 4px;
-    height: 8px;
-    cursor: pointer;
-    border: 1.5px solid #ffffff;
-  }
+    .min-temp,
+    .max-temp{
+        display: inline-flex;
+        width: 30px;
+        padding-left: 30px;
+    }
 
-  .arrow-back {
-    opacity: 0.5;
-  }
+    .min-temperature,
+    .max-temperature {
+        display: inline-flex;
+        width: 30px;
+        margin: auto;
+        padding-bottom: 5px;
+        padding-left: 22px;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        color: #FF6B09;
+    }
 
-  .arrow-next {
-    transform: rotate(180deg);
-  }
+    .show-chart {
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration-line: underline;
+        cursor: pointer;
+        color: #FF6B09;
+        margin: auto;
+        padding-top: 20px;
+    }
+
+    .chart-btn {
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+    }
+
+    .arrow-back,
+    .arrow-next {
+        position: absolute;
+        width: 4px;
+        height: 8px;
+        cursor: pointer;
+        border: 1.5px solid #FFFFFF;
+    }
+
+    .arrow-back {
+        opacity: 0.5;
+    }
+
+    .arrow-next {
+        transform: rotate(180deg);
+    }
+
 }
+
+
 @media screen and (min-width: 768px) and (max-width: 1279px) {
-  .search__form {
-    position: absolute;
-    width: 500px;
-    height: 48px;
-    background: #ffffff;
-    border-radius: 30px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.04em;
-    cursor: pointer;
-    color: #000000;
-  }
 
-  .search__city-btn {
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    transform: rotate(90deg);
-    cursor: pointer;
-  }
-  .today-btn,
-  .five-days-btn {
-    height: 27px;
-    width: 126px;
-    border-radius: 20px;
-    padding: 0px 12px 0px 12px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    position: absolute;
-    cursor: pointer;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 17px;
-    align-items: center;
-    text-align: center;
-    text-transform: uppercase;
-    color: #000000;
-  }
+    .five-days-wheather{
+        padding: 60px 74px 53px 74px;
+    }
 
-  .today-btn {
-    background: rgba(255, 255, 255, 0.5);
-  }
+    .button-list{
+        width: 270px;
+        height: 28px;
+        padding-top: 377px;
+        padding-bottom: 25px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
 
-  .five-days-btn {
-    background: #ffffff;
-  }
+    .button-list-item{
+        display: flex;
+    }
+     .today-btn,
+    .five-days-btn {
+        height: 27px;
+        width: 126px;
+        top: 187px;
+        border-radius: 20px;
+        padding: 0px 12px 0px 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+    }
 
-  .city-name {
-    position: absolute;
-    width: 290px;
-    height: 40px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 34px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #ffffff;
-  }
+    .today-btn {
+        background: rgba(255, 255, 255, 0.5);
+        border-color: rgba(255, 255, 255, 0.5);
+    }
 
-  .wheather-container {
-    position: absolute;
-    width: 620px;
-    height: 270px;
-    background: rgba(16, 33, 54, 0.8);
-    box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
-    border-radius: 34px;
-  }
+    .five-days-btn {
+        background: #FFFFFF;
+        border-color: #FFFFFF;
+    }
+    .city-name-mobile{
+        display: none;
+    }
 
-  .day-of-the-week {
-    position: absolute;
-    width: 54px;
-    height: 17px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #ffffff;
-    opacity: 0.55;
-  }
+    .city-name,
+    .city-name-mobile {
+        margin: auto;
+        padding-top: 30px;
+        padding-bottom: 20px;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 34px;
+        z-index: 1;
+        align-items: center;
+        text-align: center;
+        color: #FFFFFF;
+    }
 
-  .day-of-the-month {
-    position: absolute;
-    width: 59px;
-    height: 22px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #ffffff;
-  }
+    .wheather-container {
+        margin: auto;
+        width: 620px;
+        height: 270px;
+        background: rgba(16, 33, 54, 0.8);
+        box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
+        border-radius: 34px;
+    }
+    .wheather-list {
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+        padding-top: 40px;
+    }
 
-  .min-temp,
-  .max-temp,
-  .more-info {
-    position: absolute;
-    width: 50px;
-    height: 20px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #767d85;
-  }
+    .wheather-list-item,
+    .wheather-list-item2  {
+        justify-content: space-around;
+    }
 
-  .more-info {
-    text-decoration-line: underline;
-    font-size: 17px;
-    cursor: pointer;
-  }
+    .day-of-the-week {
+        margin: auto;
+        padding-bottom: 10px;
+        justify-content: center;
+        text-align: center;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        text-align: center;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+        opacity: 0.55;
+        display: flex;
+    }
 
-  .min-temperature,
-  .max-temperature {
-    position: absolute;
-    width: 50px;
-    height: 30px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #ff6b09;
-  }
+    .day-of-the-month {
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        padding-bottom: 10px;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+    }
 
-  .show-chart {
-    position: absolute;
-    width: 72px;
-    height: 18px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    display: flex;
-    align-items: center;
-    text-decoration-line: underline;
-    cursor: pointer;
-    color: #ff6b09;
-  }
+    .wheather-icon {
+        height: 25px;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        padding-bottom: 10px;
+    }
 
-  .chart-btn {
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    cursor: pointer;
-    transform: rotate(90deg);
-  }
+    .min-temp,
+    .max-temp,
+    .more-info {
+        justify-content: center;
+        margin: auto;
+        padding-bottom: 16px;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        text-align: center;
+        color: #767D85;
+    }
 
-  .arrow-back,
-  .arrow-next {
-    display: none;
-  }
+    .more-info {
+        text-decoration-line: underline;
+        font-size: 14px;
+        cursor: pointer;
+        display: flex;
+    }
+
+    .min-temp,
+    .max-temp {
+        display: inline-flex;
+        width: 50px;
+        padding-left: 19px;
+    }
+
+    .min-temperature,
+    .max-temperature {
+        display: inline-flex;
+        width: 50px;
+        margin: auto;
+        padding-bottom: 20px;
+        padding-left: 19px;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        color: #FF6B09;
+    }
+
+    .show-chart {
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 17px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration-line: underline;
+        cursor: pointer;
+        color: #FF6B09;
+        margin: auto;
+        padding-top: 30px;
+    }
+
+    .chart-btn {
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+        transform: rotate(90deg);
+    }
+
+    .arrow-back,
+    .arrow-next {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 1280px) {
-  .search__form {
-    position: absolute;
-    width: 520px;
-    height: 48px;
-    background: #ffffff;
-    border-radius: 30px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.04em;
-    color: #000000;
-  }
 
-  .search__city-btn {
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    transform: rotate(90deg);
-    cursor: pointer;
-  }
+.five-days-wheather {
+        padding: 79px 110px 72px 110px;
+    }
 
-  .today-btn,
-  .five-days-btn {
-    height: 27px;
-    width: 126px;
-    border-radius: 20px;
-    padding: 0px 12px 0px 12px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    position: absolute;
-    cursor: pointer;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 17px;
-    align-items: center;
-    text-align: center;
-    text-transform: uppercase;
-    color: #000000;
-  }
-  .today-btn {
-    background: rgba(255, 255, 255, 0.5);
-  }
+    .button-list {
+        width: 270px;
+        height: 28px;
+        padding-top: 476px;
+        padding-bottom: 28px;
+        padding-left: 500px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
 
-  .five-days-btn {
-    background: #ffffff;
-  }
+    .button-list-item {
+        display: flex;
+        margin-left: 18px;
+    }
 
-  .city-name {
-    position: absolute;
-    width: 290px;
-    height: 40px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 34px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #ffffff;
-  }
+    .today-btn,
+    .five-days-btn {
+        height: 27px;
+        width: 126px;
+        top: 187px;
+        border-radius: 20px;
+        padding: 0px 12px 0px 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+    }
 
-  .wheather-container {
-    position: absolute;
-    width: 1060px;
-    height: 308px;
-    background: rgba(16, 33, 54, 0.8);
-    box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
-    border-radius: 34px;
-  }
+    .today-btn {
+        background: rgba(255, 255, 255, 0.5);
+        border-color: rgba(255, 255, 255, 0.5);
+    }
 
-  .day-of-the-week {
-    position: absolute;
-    width: 62px;
-    height: 22px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #ffffff;
-    opacity: 0.55;
-  }
+    .five-days-btn {
+        background: #FFFFFF;
+        border-color: #FFFFFF;
+    }
+    .city-name{
+        display: flex;
+        margin: auto;
+    }
+    .city-name-mobile {
+        display: none;
+    }
 
-  .day-of-the-month {
-    position: absolute;
-    width: 81px;
-    height: 30px;
+    .city-name,
+    .city-name-mobile {
+        margin: auto;
+        padding-top: 30px;
+        padding-bottom: 20px;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 34px;
+        z-index: 1;
+        align-items: center;
+        text-align: center;
+        color: #FFFFFF;
+    }
 
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 30px;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #ffffff;
-  }
+    .wheather-container {
+        margin: auto;
+        width: 1060px;
+        height: 308px;
+        background: rgba(16, 33, 54, 0.8);
+        box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
+        border-radius: 34px;
+    }
 
-  .min-temp,
-  .max-temp,
-  .more-info {
-    position: absolute;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #767d85;
-  }
+    .wheather-list {
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+        padding-top: 40px;
+    }
 
-  .more-info {
-    text-decoration-line: underline;
-    font-size: 17px;
-    cursor: pointer;
-  }
+    .wheather-list-item,
+    .wheather-list-item2 {
+        justify-content: space-around;
+    }
 
-  .min-temperature,
-  .max-temperature {
-    position: absolute;
-    width: 50px;
-    height: 30px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
-    line-height: 30px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #ff6b09;
-  }
+    .day-of-the-week {
+        margin: auto;
+        padding-bottom: 10px;
+        justify-content: center;
+        text-align: center;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        text-align: center;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+        opacity: 0.55;
+        display: flex;
+    }
 
-  .show-chart {
-    position: absolute;
-    width: 72px;
-    height: 18px;
+    .day-of-the-month {
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        padding-bottom: 20px;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        letter-spacing: 0.04em;
+        color: #FFFFFF;
+    }
 
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    display: flex;
-    align-items: center;
-    text-decoration-line: underline;
-    cursor: pointer;
-    color: #ff6b09;
-  }
+    .wheather-icon {
+        height: 25px;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        padding-bottom: 30px;
+    }
 
-  .chart-btn {
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    cursor: pointer;
-    transform: rotate(90deg);
-  }
+    .min-temp,
+    .max-temp,
+    .more-info {
+        justify-content: center;
+        margin: auto;
+        padding-bottom: 16px;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        text-align: center;
+        color: #767D85;
+    }
 
-  .arrow-back,
-  .arrow-next {
-    display: none;
-  }
+    .more-info {
+        text-decoration-line: underline;
+        font-size: 14px;
+        cursor: pointer;
+        display: flex;
+    }
+
+    .min-temp,
+    .max-temp {
+        display: inline-flex;
+        width: 90px;
+        padding-left: 19px;
+    }
+
+    .min-temperature,
+    .max-temperature {
+        display: inline-flex;
+        width: 90px;
+        margin: auto;
+        padding-bottom: 20px;
+        padding-left: 15px;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        color: #FF6B09;
+    }
+
+    .show-chart {
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration-line: underline;
+        cursor: pointer;
+        color: #FF6B09;
+        margin: auto;
+        padding-top: 30px;
+    }
+
+    .arrow-back,
+    .arrow-next {
+        display: none;
+    }
 }
