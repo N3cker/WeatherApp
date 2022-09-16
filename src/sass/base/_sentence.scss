@@ -1,0 +1,115 @@
+.sentence-text p {
+  position: absolute;
+  width: 280px;
+  height: 50px;
+  left: 20px;
+  top: 677.59px;
+
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: right;
+  letter-spacing: 0.04em;
+
+  color: #FFFFFF;
+}
+
+.sentence-text span {
+  position: absolute;
+  width: 94px;
+  height: 16px;
+  left: 206px;
+  top: 742.59px;
+
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  letter-spacing: 0.04em;
+
+  color: #FFFFFF;
+  text-transform: capitalize;
+}
+
+@media screen and (min-width: 768px){
+  .sentence-text p {
+    position: absolute;
+    width: 379px;
+    height: 80px;
+    left: 234px;
+    top: 1007px;
+
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: right;
+    letter-spacing: 0.04em;
+
+    color: #FFFFFF; }
+
+  .sentence-text span {
+    position: absolute;
+    width: 94px;
+    height: 22px;
+    left: 519px;
+    top: 1107px;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: right;
+    letter-spacing: 0.04em;
+
+    color: #FFFFFF;
+  }
+
+}
+@media screen and (min-width: 1280px) {
+  .sentence-text p {
+    position: absolute;
+    width: 340px;
+    height: 80px;
+    left: 830px;
+    top: 702px;
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: right;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+  }
+
+  .sentence-text span {
+    position: absolute;
+    width: 94px;
+    height: 22px;
+    left: 1076px;
+    top: 812px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+  }
+ }
