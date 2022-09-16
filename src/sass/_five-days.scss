@@ -1,32 +1,21 @@
 @media screen and (min-width: 320px) and (max-width: 767px) {
 
-    .search__form {
-        position: absolute;
-        width: 280px;
-        height: 48px;
-        left: 20px;
-        top: 30px;
-        background: #FFFFFF;
-        border-radius: 30px;
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 17px;
-
-        display: flex;
-        align-items: center;
-        letter-spacing: 0.04em;
-        cursor: pointer;
-        color: #000000;
+    .five-days-wheather{
+        padding: 30px 25px 0px 25px;
     }
 
-    .search__city-btn {
-        position: absolute;
-        width: 28px;
+    .button-list{
+        width: 270px;
         height: 28px;
-        transform: rotate(90deg);
-        cursor: pointer;
+        padding-top: 65px;
+        padding-bottom: 60px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .button-list-item{
+        display: flex;
     }
 
     .today-btn,
@@ -41,14 +30,12 @@
         justify-content: center;
         align-items: center;
         gap: 10px;
-        position: absolute;
         cursor: pointer;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 700;
         font-size: 14px;
         line-height: 17px;
-        align-items: center;
         text-align: center;
         text-transform: uppercase;
         color: #000000;
@@ -56,129 +43,139 @@
 
     .today-btn {
         background: rgba(255, 255, 255, 0.5);
+        border-color: rgba(255, 255, 255, 0.5);
     }
 
     .five-days-btn {
         background: #FFFFFF;
+        border-color: #FFFFFF;
+    }
+    .city-name{
+        display: none;
     }
 
-    .city-name {
-        height: 26px;
-        width: 101px;
-        left: 110px;
-        top: 274px;
-        border-radius: nullpx;
-        position: absolute;
-        width: 101px;
-        height: 26px;
-        left: 110px;
-        top: 274px;
-
+    .city-name,
+    .city-name-mobile {
+        margin: auto;
+        padding-top: 30px;
+        padding-bottom: 20px;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 700;
         font-size: 18px;
         line-height: 22px;
-        display: flex;
+        z-index: 1;
         align-items: center;
         text-align: center;
         color: #FFFFFF;
     }
 
     .wheather-container {
-        position: absolute;
         width: 280px;
         height: 273px;
-        left: 20px;
-        top: 244px;
+        margin: auto;
         background: rgba(16, 33, 54, 0.8);
         box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
         border-radius: 34px;
-        box-shadow: 0px 5px 33px 0px #10213699;
     }
 
-    .day-of-the-week {
-        position: absolute;
-        width: 41px;
-        height: 14px;
-        top: 320px;
+    .wheather-list{
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+    }
 
+    .wheather-list-item{
+        justify-content: space-around;
+    }
+
+    .wheather-list-item2{
+        display: none;
+    }
+    .day-of-the-week {
+        margin: auto;
+        padding-bottom: 10px;
+        justify-content: center;
+        text-align: center;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
-        line-height: 14px;
         text-align: center;
         letter-spacing: 0.04em;
-
         color: #FFFFFF;
-
         opacity: 0.55;
+        display: flex;
     }
 
     .day-of-the-month {
-        position: absolute;
-        width: 52px;
-        height: 19px;
-        top: 347px;
-
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        padding-bottom: 5px;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
-        line-height: 19px;
-        text-align: center;
         letter-spacing: 0.04em;
         color: #FFFFFF;
+    }
+
+    .wheather-icon{
+        height: 25px;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        padding-bottom: 5px;
     }
 
     .min-temp,
     .max-temp,
     .more-info {
-        position: absolute;
-        width: 26px;
-        height: 20px;
-
+        justify-content: center;
+        margin: auto;
+        padding-bottom: 5px;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
-        line-height: 14px;
-        display: flex;
-        align-items: center;
         text-align: center;
         color: #767D85;
     }
 
     .more-info {
         text-decoration-line: underline;
-        font-size: 17px;
+        font-size: 14px;
         cursor: pointer;
+        display: flex;
+    }
+
+    .min-temp,
+    .max-temp{
+        display: inline-flex;
+        width: 30px;
+        padding-left: 30px;
     }
 
     .min-temperature,
     .max-temperature {
-        position: absolute;
-        width: 26px;
-        height: 20px;
-
+        display: inline-flex;
+        width: 30px;
+        margin: auto;
+        padding-bottom: 5px;
+        padding-left: 22px;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
-        line-height: 17px;
-        display: flex;
+        display: inline-flex;
         align-items: center;
         text-align: center;
-
+        justify-content: center;
         color: #FF6B09;
     }
 
     .show-chart {
-        position: absolute;
-        width: 72px;
-        height: 18px;
-
         font-family: 'Lato';
         font-style: normal;
         font-weight: 400;
@@ -186,17 +183,18 @@
         line-height: 17px;
         display: flex;
         align-items: center;
+        justify-content: center;
         text-decoration-line: underline;
         cursor: pointer;
         color: #FF6B09;
+        margin: auto;
+        padding-top: 20px;
     }
 
     .chart-btn {
-        position: absolute;
         width: 28px;
         height: 28px;
         cursor: pointer;
-        transform: rotate(90deg);
     }
 
     .arrow-back,
@@ -221,36 +219,28 @@
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
 
-    .search__form {
-        position: absolute;
-        width: 500px;
-        height: 48px;
-        background: #FFFFFF;
-        border-radius: 30px;
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 22px;
-        display: flex;
-        align-items: center;
-        letter-spacing: 0.04em;
-        cursor: pointer;
-        color: #000000;
+    .five-days-wheather{
+        padding: 60px 74px 53px 74px;
     }
 
-    .search__city-btn {
-        position: absolute;
-        width: 28px;
+    .button-list{
+        width: 270px;
         height: 28px;
-        transform: rotate(90deg);
-        cursor: pointer;
+        padding-top: 377px;
+        padding-bottom: 25px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
     }
 
-    .today-btn,
+    .button-list-item{
+        display: flex;
+    }
+     .today-btn,
     .five-days-btn {
         height: 27px;
         width: 126px;
+        top: 187px;
         border-radius: 20px;
         padding: 0px 12px 0px 12px;
         display: flex;
@@ -258,14 +248,12 @@
         justify-content: center;
         align-items: center;
         gap: 10px;
-        position: absolute;
         cursor: pointer;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 700;
         font-size: 14px;
         line-height: 17px;
-        align-items: center;
         text-align: center;
         text-transform: uppercase;
         color: #000000;
@@ -273,119 +261,150 @@
 
     .today-btn {
         background: rgba(255, 255, 255, 0.5);
+        border-color: rgba(255, 255, 255, 0.5);
     }
 
     .five-days-btn {
         background: #FFFFFF;
+        border-color: #FFFFFF;
+    }
+    .city-name-mobile{
+        display: none;
     }
 
-    .city-name {
-        position: absolute;
-        width: 290px;
-        height: 40px;
+    .city-name,
+    .city-name-mobile {
+        margin: auto;
+        padding-top: 30px;
+        padding-bottom: 20px;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 700;
         font-size: 28px;
         line-height: 34px;
-        display: flex;
+        z-index: 1;
         align-items: center;
         text-align: center;
-        letter-spacing: 0.04em;
         color: #FFFFFF;
     }
 
     .wheather-container {
-        position: absolute;
+        margin: auto;
         width: 620px;
         height: 270px;
         background: rgba(16, 33, 54, 0.8);
         box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
         border-radius: 34px;
     }
+    .wheather-list {
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+        padding-top: 40px;
+    }
+
+    .wheather-list-item,
+    .wheather-list-item2  {
+        justify-content: space-around;
+    }
 
     .day-of-the-week {
-        position: absolute;
-        width: 54px;
-        height: 17px;
+        margin: auto;
+        padding-bottom: 10px;
+        justify-content: center;
+        text-align: center;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
-        line-height: 17px;
         text-align: center;
         letter-spacing: 0.04em;
         color: #FFFFFF;
         opacity: 0.55;
+        display: flex;
     }
 
     .day-of-the-month {
-        position: absolute;
-        width: 59px;
-        height: 22px;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        padding-bottom: 10px;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
-        line-height: 22px;
-        text-align: center;
         letter-spacing: 0.04em;
         color: #FFFFFF;
+    }
+
+    .wheather-icon {
+        height: 25px;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        padding-bottom: 10px;
     }
 
     .min-temp,
     .max-temp,
     .more-info {
-        position: absolute;
-        width: 50px;
-        height: 20px;
+        justify-content: center;
+        margin: auto;
+        padding-bottom: 16px;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 400;
-        font-size: 12px;
-        line-height: 14px;
-        display: flex;
-        align-items: center;
+        font-size: 14px;
         text-align: center;
         color: #767D85;
     }
 
     .more-info {
         text-decoration-line: underline;
-        font-size: 17px;
+        font-size: 14px;
         cursor: pointer;
+        display: flex;
+    }
+
+    .min-temp,
+    .max-temp {
+        display: inline-flex;
+        width: 50px;
+        padding-left: 19px;
     }
 
     .min-temperature,
     .max-temperature {
-        position: absolute;
+        display: inline-flex;
         width: 50px;
-        height: 30px;
+        margin: auto;
+        padding-bottom: 20px;
+        padding-left: 19px;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
-        line-height: 22px;
-        display: flex;
+        display: inline-flex;
         align-items: center;
         text-align: center;
+        justify-content: center;
         color: #FF6B09;
     }
 
     .show-chart {
-        position: absolute;
-        width: 72px;
-        height: 18px;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 400;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 17px;
         display: flex;
         align-items: center;
+        justify-content: center;
         text-decoration-line: underline;
         cursor: pointer;
         color: #FF6B09;
+        margin: auto;
+        padding-top: 30px;
     }
 
     .chart-btn {
@@ -404,36 +423,31 @@
 
 @media screen and (min-width: 1280px) {
 
-    .search__form {
-        position: absolute;
-        width: 520px;
-        height: 48px;
-        background: #FFFFFF;
-        border-radius: 30px;
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 22px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        letter-spacing: 0.04em;
-        color: #000000;
+.five-days-wheather {
+        padding: 79px 110px 72px 110px;
     }
 
-    .search__city-btn {
-        position: absolute;
-        width: 28px;
+    .button-list {
+        width: 270px;
         height: 28px;
-        transform: rotate(90deg);
-        cursor: pointer;
+        padding-top: 476px;
+        padding-bottom: 28px;
+        padding-left: 500px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .button-list-item {
+        display: flex;
+        margin-left: 18px;
     }
 
     .today-btn,
     .five-days-btn {
         height: 27px;
         width: 126px;
+        top: 187px;
         border-radius: 20px;
         padding: 0px 12px 0px 12px;
         display: flex;
@@ -441,14 +455,12 @@
         justify-content: center;
         align-items: center;
         gap: 10px;
-        position: absolute;
         cursor: pointer;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 700;
         font-size: 14px;
         line-height: 17px;
-        align-items: center;
         text-align: center;
         text-transform: uppercase;
         color: #000000;
@@ -456,30 +468,39 @@
 
     .today-btn {
         background: rgba(255, 255, 255, 0.5);
+        border-color: rgba(255, 255, 255, 0.5);
     }
 
     .five-days-btn {
         background: #FFFFFF;
+        border-color: #FFFFFF;
+    }
+    .city-name{
+        display: flex;
+        margin: auto;
+    }
+    .city-name-mobile {
+        display: none;
     }
 
-    .city-name {
-        position: absolute;
-        width: 290px;
-        height: 40px;
+    .city-name,
+    .city-name-mobile {
+        margin: auto;
+        padding-top: 30px;
+        padding-bottom: 20px;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 700;
         font-size: 28px;
         line-height: 34px;
-        display: flex;
+        z-index: 1;
         align-items: center;
         text-align: center;
-        letter-spacing: 0.04em;
         color: #FFFFFF;
     }
 
     .wheather-container {
-        position: absolute;
+        margin: auto;
         width: 1060px;
         height: 308px;
         background: rgba(16, 33, 54, 0.8);
@@ -487,78 +508,102 @@
         border-radius: 34px;
     }
 
+    .wheather-list {
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+        padding-top: 40px;
+    }
+
+    .wheather-list-item,
+    .wheather-list-item2 {
+        justify-content: space-around;
+    }
+
     .day-of-the-week {
-        position: absolute;
-        width: 62px;
-        height: 22px;
+        margin: auto;
+        padding-bottom: 10px;
+        justify-content: center;
+        text-align: center;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
-        line-height: 22px;
         text-align: center;
         letter-spacing: 0.04em;
         color: #FFFFFF;
         opacity: 0.55;
+        display: flex;
     }
 
     .day-of-the-month {
-        position: absolute;
-        width: 81px;
-        height: 30px;
-
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        padding-bottom: 20px;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 400;
         font-size: 25px;
-        line-height: 30px;
-        text-align: center;
         letter-spacing: 0.04em;
         color: #FFFFFF;
+    }
+
+    .wheather-icon {
+        height: 25px;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        padding-bottom: 30px;
     }
 
     .min-temp,
     .max-temp,
     .more-info {
-        position: absolute;
+        justify-content: center;
+        margin: auto;
+        padding-bottom: 16px;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
-        line-height: 22px;
-        display: flex;
-        align-items: center;
         text-align: center;
         color: #767D85;
     }
 
     .more-info {
         text-decoration-line: underline;
-        font-size: 17px;
+        font-size: 14px;
         cursor: pointer;
+        display: flex;
+    }
+
+    .min-temp,
+    .max-temp {
+        display: inline-flex;
+        width: 90px;
+        padding-left: 19px;
     }
 
     .min-temperature,
     .max-temperature {
-        position: absolute;
-        width: 50px;
-        height: 30px;
+        display: inline-flex;
+        width: 90px;
+        margin: auto;
+        padding-bottom: 20px;
+        padding-left: 15px;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 400;
         font-size: 25px;
-        line-height: 30px;
-        display: flex;
+        display: inline-flex;
         align-items: center;
         text-align: center;
+        justify-content: center;
         color: #FF6B09;
     }
 
     .show-chart {
-        position: absolute;
-        width: 72px;
-        height: 18px;
-
         font-family: 'Lato';
         font-style: normal;
         font-weight: 400;
@@ -566,17 +611,12 @@
         line-height: 17px;
         display: flex;
         align-items: center;
+        justify-content: center;
         text-decoration-line: underline;
         cursor: pointer;
         color: #FF6B09;
-    }
-
-    .chart-btn {
-        position: absolute;
-        width: 28px;
-        height: 28px;
-        cursor: pointer;
-        transform: rotate(90deg);
+        margin: auto;
+        padding-top: 30px;
     }
 
     .arrow-back,
