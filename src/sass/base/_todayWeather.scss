@@ -1,151 +1,4 @@
 
-
-// .search__form {
-//   position: absolute;
-//   width: 280px;
-//   height: 48px;
-//   background: #FFFFFF;
-//   border-radius: 30px;
-//   margin-top:30px;
-//   margin-left:20px;
-// }
-
-// input {
-//   // position: absolute;
-// pdding-top:15px;
-
-//   // top: 45px;
-
-//   font-family: 'Lato';
-//   font-style: normal;
-//   font-weight: 400;
-//   font-size: 14px;
-//   line-height: 17px;
-//   /* identical to box height */
-
-//   display: inline-flex;
-//   align-items: center;
-//   letter-spacing: 0.04em;
-
-//   color: #000000;
-// }
-
-// .location {
-//   box-sizing: border-box;
-
-//   position: absolute;
-//   width: 18px;
-//   height: 18px;
-//   left: 42px;
-//   // top: 45px;
-
-//   border: 2px solid #AEB3B9;
-// }
-
-// .star {
-//   box-sizing: border-box;
-
-//   position: absolute;
-//   width: 22px;
-//   height: 22px;
-//   left: 258px;
-//   // top: 43px;
-
-//   border: 1px solid #7E8691;
-// }
-
-// @media screen and (min-width: 768px){
-
-//   .search-form {
-//     position: absolute;
-// width: 500px;
-// height: 48px;
-// left: 134px;
-// top: 60px;
-
-
-//   }
-
-//   input {
-//     position: absolute;
-// width: 116px;
-// height: 22px;
-// left: 188px;
-// top: 73px;
-
-// font-family: 'Lato';
-// font-style: normal;
-// font-weight: 400;
-// font-size: 18px;
-// line-height: 22px;
-// /* identical to box height */
-
-// display: flex;
-// align-items: center;
-// letter-spacing: 0.04em;
-
-// color: #000000;
-
-
-//   }
-
-
-// }
-
-// @media screen and (min-width: 1280px) {
-
-//   .search-form {
-//     position: absolute;
-
-//     left: 380px;
-//     top: 79px;
-
-
-
-
-
-//   }
-
-//   input {
-//     position: absolute;
-//     width: 116px;
-//     height: 22px;
-//     left: 434px;
-//     top: 92px;
-
-//     font-family: 'Lato';
-//     font-style: normal;
-//     font-weight: 400;
-//     font-size: 18px;
-//     line-height: 22px;
-//     /* identical to box height */
-
-//     display: flex;
-//     align-items: center;
-//     letter-spacing: 0.04em;
-
-
-//     background-color: #FFFFFF;
-//     border-radius: 30px;
-//     border-color: none;
-//     width: 520px;
-//     height: 48px;
-
-
-//   }
-
-// }
-
-
-// .today__icon {
-//   display: block;
-// }
-// .today_cityName {
-//   display:block;
-// }
-
-
-
 .container .today {
   display:block;
   width: 280px;
@@ -245,7 +98,8 @@ span {
   margin-top:20px;
 }
 
-@media screen and (min-width: 768px){
+
+@media screen and (min-width: 768px) {
   .container .today {
     display:block;
     background: #102136;
@@ -319,17 +173,16 @@ span {
 
 @media screen and (min-width: 1280px) {
 
+
   .container .today {
     display:block;
-    background: #102136;
-    box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
-    border-radius: 34px;
-    padding: 29px 190px 36px 190px;
-    width: 500px;
+    box-shadow: 0px 8px 43px rgba(16, 33, 54, 0.6);
+    border-radius: 34px 0px 0px 34px;
+    padding: 29px 186px 36px 144px;
+    width: 450px;
     height: 300px;
-    left: 134px;
-    top: 258px;
-
+    left: 830px;
+    top: 259px;
   }
 
   .today__cityName {
