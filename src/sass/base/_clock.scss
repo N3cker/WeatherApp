@@ -1,8 +1,6 @@
 .container .today-info {
-
   width: 280px;
   height: 190px;
-  left: 20px;
   top: 444px;
   background: rgba(16, 33, 54, 0.8);
   border-radius: 34px;
@@ -10,10 +8,7 @@
 }
 
 .current-date {
-  width: 280px;
-
-    // left: 20px;
-    // top: 474px;
+    width: 280px;
     font-family: 'Lato';
     font-style: normal;
     font-weight: 300;
@@ -26,7 +21,6 @@
     color: #FFFFFF;
     padding-top:30px;
     justify-content: center;
-
     }
 #todays-date {
   display: flex;
@@ -132,7 +126,6 @@
   .container .today-info {
     width: 500px;
     height: 278px;
-    left: 134px;
     top: 666px;
   }
 
@@ -179,7 +172,6 @@
     display: flex;
     letter-spacing: 0.04em;
     color: #FFFFFF;
-
   }
 
   .line {
@@ -196,7 +188,6 @@
     font-size: 18px;
     line-height: 22px;
   }
-
 
   .current-set {
     display: flex;
@@ -239,7 +230,7 @@
   .container .today-info {
     width: 630px;
     height: 278px;
-    left: 0px;
+    left:0px;
     top: 672px;
     background: rgba(16, 33, 54, 0.6);
     border-radius: 0px 34px 0px 0px;
