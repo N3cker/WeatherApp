@@ -5,25 +5,26 @@
       <svg class="star"><use href="./images/sprite.svg#icon-Star-1"></use></svg> -->
 
       <div class="search__history">
-          <ul class="search__history-list carousel" data-flickity='{ "freeScroll": true }'>
-              <li class="search__history-list-item carousel-cell">
+          <ul class="search__history-list">
+              <li class="search__history-list-item">
                   <a href="#" class="search__city-name">city</a>
-                  <p class="modal__close-city">X</p>
+                  <p class="modal__close-city" onclick="removeCity(this,'${newCity}')">X</p>
               </li>
-              <li class="search__history-list-item carousel-cell">
+              <li class="search__history-list-item">
                   <a href="#" class="search__city-name">city</a>
-                  <p class="modal__close-city">X</p>
+                  <p class="modal__close-city" onclick="removeCity(this,'${newCity}')">X</p>
               </li>
-              <li class="search__history-list-item carousel-cell">
+              <li class="search__history-list-item">
                   <a href="#" class="search__city-name">city</a>
-                  <p class="modal__close-city">X</p>
+                  <p class="modal__close-city" onclick="removeCity(this,'${newCity}')">X</p>
               </li>
-              <li class="search__history-list-item carousel-cell">
+              <li class="search__history-list-item">
                   <a href="#" class="search__city-name">city</a>
-                  <p class="modal__close-city">X</p>
+                  <p class="modal__close-city" onclick="removeCity(this,'${newCity}')">X</p>
               </li>
           </ul>
-          <button type="button" class="search__more-city">\/</button>
+          <button type="button" class="prev hidden-btn"><</button>
+          <button type="button" class="next">></button>
       </div>
 </section>
 
