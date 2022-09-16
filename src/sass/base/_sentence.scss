@@ -1,10 +1,8 @@
 .sentence-text p {
-  position: absolute;
+  position:absolute;
   width: 280px;
   height: 50px;
-  left: 20px;
   top: 677.59px;
-
   font-family: 'Lato';
   font-style: italic;
   font-weight: 400;
@@ -12,8 +10,8 @@
   line-height: 17px;
   text-align: right;
   letter-spacing: 0.04em;
-
   color: #FFFFFF;
+  left: 20px;
 }
 
 .sentence-text span {
@@ -22,7 +20,6 @@
   height: 16px;
   left: 206px;
   top: 742.59px;
-
   font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
@@ -32,7 +29,6 @@
   align-items: center;
   text-align: right;
   letter-spacing: 0.04em;
-
   color: #FFFFFF;
   text-transform: capitalize;
 }
@@ -44,7 +40,6 @@
     height: 80px;
     left: 234px;
     top: 1007px;
-
     font-family: 'Lato';
     font-style: italic;
     font-weight: 400;
@@ -52,8 +47,8 @@
     line-height: 26px;
     text-align: right;
     letter-spacing: 0.04em;
-
-    color: #FFFFFF; }
+    color: #FFFFFF;
+}
 
   .sentence-text span {
     position: absolute;
@@ -61,19 +56,15 @@
     height: 22px;
     left: 519px;
     top: 1107px;
-
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-    /* identical to box height */
-
     display: flex;
     align-items: center;
     text-align: right;
     letter-spacing: 0.04em;
-
     color: #FFFFFF;
   }
 
