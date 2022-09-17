@@ -2,6 +2,9 @@
 
     .five-days-wheather{
         padding: 30px 25px 0px 25px;
+        background-image: url(../images/MM/Rectangle66.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .button-list{
@@ -177,15 +180,16 @@
 
     .arrow-back,
     .arrow-next {
-        margin: auto;
-        width: 4px;
-        height: 8px;
+        width: 25px;
+        height: 25px;
         cursor: pointer;
         border: 1.5px solid #FFFFFF;
+        border-radius: 50%;
     }
 
     .arrow-back {
         opacity: 0.5;
+        margin: 10px 195px 0px 15px;
     }
 }
 
@@ -194,6 +198,9 @@
 
     .five-days-wheather{
         padding: 60px 74px 53px 74px;
+        background-image: url(../images/MM/Rectangle66.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .button-list{
@@ -374,6 +381,9 @@
 
 .five-days-wheather {
         padding: 79px 110px 72px 110px;
+        background-image: url(../images/MM/Rectangle66.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .button-list {
@@ -425,8 +435,10 @@
         border-color: #FFFFFF;
     }
     .city-name{
-        display: flex;
+        display: inline-flex;
         margin: auto;
+        padding-left: 475px;
+
     }
     .city-name-mobile {
         display: none;
@@ -435,7 +447,6 @@
     .city-name,
     .city-name-mobile {
         margin: auto;
-        padding-top: 30px;
         padding-bottom: 20px;
         font-family: 'Lato';
         font-style: normal;
