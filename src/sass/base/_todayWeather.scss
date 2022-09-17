@@ -3,7 +3,6 @@
   display:block;
   width: 280px;
   height: 190px;
-  left: 20px;
   top: 166px;
   background: #102136;
   box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
@@ -42,7 +41,7 @@
 
 
 .today__temp--actuall {
-
+  font-family: $mainFont;
   font-style: normal;
   font-weight: 300;
   font-size: 45px;
@@ -108,7 +107,6 @@ span {
     padding: 29px 190px 36px 190px;
     width: 500px;
     height: 300px;
-    left: 134px;
     top: 258px;
 
   }
@@ -165,7 +163,9 @@ span {
   }
 
   .line{
-    margin-top:20px;
+    margin-top:23px;
+    border: 1px solid #FFFFFF;
+
   }
 
 }
@@ -181,8 +181,13 @@ span {
     padding: 29px 186px 36px 144px;
     width: 450px;
     height: 300px;
-    left: 830px;
     top: 259px;
+
+  }
+
+  .right {
+    position:absolute;
+    right:250;
   }
 
   .today__cityName {
