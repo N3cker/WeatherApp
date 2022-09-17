@@ -175,31 +175,9 @@
         color: #FF6B09;
     }
 
-    .show-chart {
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 17px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration-line: underline;
-        cursor: pointer;
-        color: #FF6B09;
-        margin: auto;
-        padding-top: 20px;
-    }
-
-    .chart-btn {
-        width: 28px;
-        height: 28px;
-        cursor: pointer;
-    }
-
     .arrow-back,
     .arrow-next {
-        position: absolute;
+        margin: auto;
         width: 4px;
         height: 8px;
         cursor: pointer;
@@ -209,11 +187,6 @@
     .arrow-back {
         opacity: 0.5;
     }
-
-    .arrow-next {
-        transform: rotate(180deg);
-    }
-
 }
 
 
@@ -389,30 +362,6 @@
         text-align: center;
         justify-content: center;
         color: #FF6B09;
-    }
-
-    .show-chart {
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 17px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration-line: underline;
-        cursor: pointer;
-        color: #FF6B09;
-        margin: auto;
-        padding-top: 30px;
-    }
-
-    .chart-btn {
-        position: absolute;
-        width: 28px;
-        height: 28px;
-        cursor: pointer;
-        transform: rotate(90deg);
     }
 
     .arrow-back,
@@ -601,22 +550,6 @@
         text-align: center;
         justify-content: center;
         color: #FF6B09;
-    }
-
-    .show-chart {
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 17px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration-line: underline;
-        cursor: pointer;
-        color: #FF6B09;
-        margin: auto;
-        padding-top: 30px;
     }
 
     .arrow-back,
