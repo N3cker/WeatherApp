@@ -177,15 +177,16 @@
 
     .arrow-back,
     .arrow-next {
-        margin: auto;
-        width: 4px;
-        height: 8px;
+        width: 25px;
+        height: 25px;
         cursor: pointer;
         border: 1.5px solid #FFFFFF;
+        border-radius: 50%;
     }
 
     .arrow-back {
         opacity: 0.5;
+        margin: 10px 195px 0px 15px;
     }
 }
 
