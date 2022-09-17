@@ -1,27 +1,49 @@
 <section class="search__section">
-    <form class="search__form" id="search__form">
-        <input type="text" name="searchQuery" autocomplete="on" placeholder="Enter the city" />
+  <form class="search__form" id="search__form">
+      <input type="text" name="searchQuery" autocomplete="on" placeholder="Enter the city" />
+      <!-- <svg class="location"><use href="./images/sprite.svg#icon-icon-location"></use></svg>
+      <svg class="star"><use href="./images/sprite.svg#icon-Star-1"></use></svg> -->
 
-        <div class="search__history">
-            <ul class="search__history-list">
-                <li class="search__history-list-item">
-                    <a href="#" class="search__city-name">city</a>
-                    <p class="modal__close-city">X</p>
-                </li>
-                <li class="search__list-item">
-                    <a href="#" class="search__city-name">city</a>
-                    <p class="modal__close-city">X</p>
-                </li>
-                <li class="search__list-item">
-                    <a href="#" class="search__city-name">city</a>
-                    <p class="modal__close-city">X</p>
-                </li>
-                <li class="search__list-item">
-                    <a href="#" class="search__city-name">city</a>
-                    <p class="modal__close-city">X</p>
-                </li>
-            </ul>
-            <img class="search__city-btn" 
-            src="./images/MM/arrowleft.png">
-        </div>
+      <div class="search__history">
+          <ul class="search__history-list">
+              <li class="search__history-list-item">
+                  <a href="#" class="search__city-name">Madrid</a>
+                  <p class="modal__close-city">X</p>
+              </li>
+              <li class="search__history-list-item">
+                  <a href="#" class="search__city-name">Lisbon</a>
+                  <p class="modal__close-city">X</p>
+              </li>
+              <li class="search__history-list-item">
+                  <a href="#" class="search__city-name">Warsaw</a>
+                  <p class="modal__close-city">X</p>
+              </li>
+              <li class="search__history-list-item">
+                  <a href="#" class="search__city-name">Berlin</a>
+                  <p class="modal__close-city">X</p>
+              </li>
+              <li class="search__history-list-item">
+                  <a href="#" class="search__city-name">Paris</a>
+                  <p class="modal__close-city">X</p>
+              </li>
+              <li class="search__history-list-item">
+                  <a href="#" class="search__city-name">Rome</a>
+                  <p class="modal__close-city">X</p>
+              </li>
+              <li class="search__history-list-item">
+                  <a href="#" class="search__city-name">Miami</a>
+                  <p class="modal__close-city">X</p>
+              </li>
+              <li class="search__history-list-item">
+                  <a href="#" class="search__city-name">London</a>
+                  <p class="modal__close-city">X</p>
+              </li>
+              <!-- <li class="search__history-list-item">
+                  <a href="#" class="search__city-name">London</a>
+                  <p class="modal__close-city" onclick="removeCity(this,'${newCity}')">X</p>
+              </li> -->
+          </ul>
+          <button type="button" class="prev hidden-btn"><</button>
+          <button type="button" class="next">></button>
+      </div>
 </section>
