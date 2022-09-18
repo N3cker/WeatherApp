@@ -30,22 +30,37 @@ async function set5daysPage() {
   await getData(); //przygotowanie danych do chartow
 }
 
-form.addEventListener('submit', e => { //search
+form.addEventListener('submit', e => {
+  //search
   e.preventDefault();
   let city = inputCity.value.trim();
   setTodayPage(city);
 });
 
-btnToday.addEventListener('click', () => { //refresh today
+btnToday.addEventListener('click', () => {
+  //refresh today
   setTodayPage(getCity());
 });
-btnTodayFrom5days.addEventListener('click', () => { 
+btnTodayFrom5days.addEventListener('click', () => {
   setTodayPage(getCity());
 });
 
 btn5days.addEventListener('click', () => {
   set5daysPage();
 });
-btn5daysFrom5days.addEventListener('click', () => { //refresh 5 days
+btn5daysFrom5days.addEventListener('click', () => {
+  //refresh 5 days
   set5daysPage();
 });
+
+document
+  .querySelector('.search__history-list')
+  .addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+      e.preventDefault();
+      const cityName = e.target.textContent;
+      setTodayPage(cityName);
+      setCity(cityName);
+      // console.log(e.target.textContent);
+    }
+  });
