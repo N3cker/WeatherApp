@@ -1,11 +1,11 @@
 import { forEach } from 'lodash';
-import { setCity } from './variables';
+import { getCity } from './variables';
 const inputCity = document.querySelector('[name="searchQuery"');
 const cityList = document.querySelector('.search__history-list');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
-
 let cities = [];
+
 // let cities = [
 //   'Madrid',
 //   'Lisbon',
@@ -18,14 +18,11 @@ let cities = [];
 // ];
 let index = 0;
 
-function addCityKey(e) {
-  if (e.key !== 'Enter') {
-    return;
-  }
-  let city = e.target.value.trim();
-  setCity(city);
+export function addCityKey() {
+  let city = getCity();
+
   if (city.length < 1 || cities.includes(city)) {
-    e.target.value = '';
+    inputCity.value = '';
     return;
   }
   cities.push(city);
@@ -39,7 +36,7 @@ function addCityKey(e) {
     )
     .join('');
   cityList.innerHTML = newCity;
-  e.target.value = '';
+  inputCity.value = '';
 }
 
 function carouselUp() {
