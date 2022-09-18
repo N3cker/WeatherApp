@@ -23,9 +23,9 @@ async function showChart() {
   };
 };
 
-export async function getData() {
+export async function getData(city) {
   const API_KEY = '4da793d645cc6cbfba468135199f7159';
-  const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=Szczecin&appid=${API_KEY}&units=metric`);
+  const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`);
   const data = await response.json();
   const { list } = data;
   const temperature = list.map(temp => { return temp.main.temp });
@@ -57,8 +57,8 @@ let myChart = null;
 
 async function loadChart() {
   const ctx = document.querySelector('#myChart');
-  const dataTemps = await getData()
-    .catch(error => { console.error(error); console.log('error, error, error!!!'); });
+  const dataTemps = await getData(getCity())
+    .catch(error => { console.error(error); console.log('error occurred, please try again later!'); });
   const data = {
     labels: dataTemps.day,
     datasets: [{
@@ -105,14 +105,14 @@ async function loadChart() {
         scales: {
           x: {
             ticks: {
-              color: '#FFF',
+              color: 'rgba(255, 255, 255, 0.4)',
               padding: 20
             },
             grid: {
               drawTicks: false,
               drawBorder: false,
-              borderColor: '#FFF',
-              color: '#FFF'
+              borderColor: 'rgba(255, 255, 255, 0.4)',
+              color: 'rgba(255, 255, 255, 0.4)'
             }
           },
           y: {
@@ -120,17 +120,17 @@ async function loadChart() {
               display: true,
               position: 'left',
               text: 'Value of Indicators',
-              color: '#FFF'
+              color: 'rgba(255, 255, 255, 0.4)'
             },
             ticks: {
-              color: '#FFF',
+              color: 'rgba(255, 255, 255, 0.4)',
               padding: 15
             },
             grid: {
               drawTicks: false,
               drawBorder: false,
-              borderColor: '#FFF',
-              color: '#FFF'
+              borderColor: 'rgba(255, 255, 255, 0.4)',
+              color: 'rgba(255, 255, 255, 0.4)'
             }
           }
       },
@@ -143,7 +143,7 @@ async function loadChart() {
               boxWidth: 12,
               boxHeight: 12,
               padding: 20,
-              color: '#FFF',
+              color: 'rgba(255, 255, 255, 0.4)',
               font: {
                 size: 14,
                 weight: 400
