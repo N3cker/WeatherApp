@@ -45,12 +45,8 @@ function setDisplayedTimeElements(data) {
     getTimezonedSunset()
   );
 
-  document.getElementById('sunrise').innerHTML =
-    '<svg class="rise__icon"><use href="./images/weather.svg#icon-Grouprise"></use></svg>' +
-    displaySunrise;
-  document.getElementById('sunset').innerHTML =
-    '<svg class="rise__icon"><use href="./images/weather.svg#icon-Groupset"></use></svg>' +
-    displaySunset;
+  document.getElementById('sunrise').innerHTML = displaySunrise;
+  document.getElementById('sunset').innerHTML = displaySunset;
 }
 
 function getTimezonedSunrise() {
