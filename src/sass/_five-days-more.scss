@@ -108,7 +108,7 @@
 
     .wheather__more-container {
         width: 620px;
-        height: 273px;
+        height: 300px;
         margin: auto;
         background: rgba(16, 33, 54, 0.8);
         box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
@@ -181,12 +181,14 @@
     }
 
     .arrow-next-btn {
-        margin: auto;
         width: 25px;
         height: 25px;
         cursor: pointer;
         border: 1.5px solid #FFFFFF;
         border-radius: 50%;
+        opacity: 0.54;
+        margin-left: 560px;
+        margin-top: 20px;
     }
 }
 
