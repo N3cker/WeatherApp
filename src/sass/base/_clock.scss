@@ -2,12 +2,14 @@
 .container .today-info {
   width: 280px;
   height: 190px;
-  top: 444px;
+  top: 30px;
   background: rgba(16, 33, 54, 0.8);
   border-radius: 34px;
-  position: absolute;
-}
 
+}
+.today-info{
+  position: relative;
+}
 .current-date {
     width: 280px;
     font-family: 'Lato';
@@ -144,7 +146,7 @@
       color: #FFFFFF;
       justify-content: center;
       margin-top:30px;
-      margin-left:105px;
+      // margin-left:105px;
 
       }
   #todays-date {
