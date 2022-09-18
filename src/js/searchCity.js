@@ -77,3 +77,9 @@ document.addEventListener('click', function (e) {
 nextBtn.addEventListener('click', carouselUp);
 prevBtn.addEventListener('click', carouselDown);
 inputCity.addEventListener('submit', addCityKey);
+
+// cityList.addEventListener('click', function (e) {
+//   const cityName = e.target.getAttribute('data-item');
+//   setTodayPage(cityName);
+//   setCity(cityName);
+// });

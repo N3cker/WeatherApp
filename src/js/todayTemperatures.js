@@ -1,7 +1,5 @@
 import { getCity } from './variables';
-
-const input = document.querySelector('input');
-const form = document.getElementById('search__form');
+import img from '../images/weather-icons.svg'
 
 const kelvinToCelsius = kelvin => Math.round(kelvin - 273.15);
 
@@ -18,45 +16,24 @@ export async function getTodayData() {
   return data;
 }
 
-async function getWeatherData(city) {
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=d9a15daa009f4bc5f218b58d97ea6f20`;
-  const response = await fetch(url);
+export async function printTemperatures() {
+  const todayCityName = document.querySelector('.today__cityName');
+  const temperatureActual = document.querySelector('.today__temp--actuall');
+  const temperatureMin = document.querySelector('.today__temp--minNum');
+  const temperatureMax = document.querySelector('.today__temp--maxNum');
+  const todayIcon = document.querySelector('.today__icon');
 
-  if (!response.ok)
-    return alert(
-      `Error: ${response.status}\nstatusText: ${response.statusText}`
-    );
-
-  const data = await response.json();
-
+  const data = await getTodayData(getCity());
+  
   const { temp, temp_max, temp_min } = data.main;
 
   const temperatureCelsius = kelvinToCelsius(temp);
   const temperatureMinCelsius = kelvinToCelsius(temp_min);
   const temperatureMaxCelsius = kelvinToCelsius(temp_max);
 
-  // console.log('temperature:', temperatureCelsius, 'temperature min:', temperatureMinCelsius, 'temperature max:', temperatureMaxCelsius);
-
-  const temperatures = {
-    temperature_now: temperatureCelsius,
-    temperature_min: temperatureMinCelsius,
-    temperature_max: temperatureMaxCelsius,
-  };
-
-  return temperatures;
+  todayIcon.innerHTML = `<use href="${img}#icon-${data.weather[0].icon}"></use>`
+  todayCityName.innerHTML = `${data.name}, ${data.sys.country}`;
+  temperatureActual.innerHTML = temperatureCelsius;
+  temperatureMin.innerHTML = `${temperatureMinCelsius} °`;
+  temperatureMax.innerHTML = `${temperatureMaxCelsius} °`;
 }
-
-export async function printTemperatures() {
-  const temperatureActual = document.querySelector('.today__temp--actuall');
-  const temperatureMin = document.querySelector('.today__temp--minNum');
-  const temperatureMax = document.querySelector('.today__temp--maxNum');
-
-  const temperatures = await getWeatherData(getCity());
-
-  console.log(temperatures);
-
-  temperatureActual.innerHTML = temperatures.temperature_now;
-  temperatureMin.innerHTML = temperatures.temperature_min;
-  temperatureMax.innerHTML = temperatures.temperature_max;
-}
-
