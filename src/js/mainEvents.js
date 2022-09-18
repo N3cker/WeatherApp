@@ -1,5 +1,5 @@
 import { setTimeElements } from './additions';
-import { responseApi } from './apiFiveDays';
+import { responseFiveDays } from './apiFiveDays';
 import { getData } from './chart';
 import { show5daysElements, showTodayElements } from './navigation';
 import { addCityKey } from './searchCity';
@@ -26,7 +26,7 @@ async function setTodayPage(city) {
 
 async function set5daysPage() {
   show5daysElements(); //pokazanie/schowanie odpowiednich elementów inferfejsu
-  await responseApi(); //wywołanie API 5 dni
+  await responseFiveDays(); //wywołanie API 5 dni
   await getData(); //przygotowanie danych do chartow
 }
 
