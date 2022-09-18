@@ -1,4 +1,3 @@
-import { getCity } from './variables';
 import { setTimeZoneOffset, currentCityTime } from '../js/dateTime';
 import Notiflix from 'notiflix';
 import { fetchBgImg } from './fetchBgImg';
@@ -9,12 +8,8 @@ const apiKey = '30726d0cea6dff3429ac7876b4e8bfdc';
 let sunrise;
 let sunset;
 
-function setTimeElements(city) {
-  fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
-  )
-    .then(res => res.json())
-    .then(data => {
+export async function setTimeElements(data) {
+
       if (!data.name) {
         Notiflix.Notify.failure(
           'Sorry, there is no city matching your search query. Please try again.'
@@ -33,18 +28,12 @@ function setTimeElements(city) {
       } else {
         isDay = false;
       }
-      fetchBgImg(isDay).then(response => {
+      await fetchBgImg(isDay).then(response => {
         document.body.style.backgroundImage = `url(${response.hits[0].largeImageURL})`;
       });
-    });
 }
 
-form.addEventListener('submit', e => {
-  e.preventDefault();
 
-  const trimmedValue = getCity().trim();
-  setTimeElements(trimmedValue);
-});
 
 function setDisplayedTimeElements(data) {
   sunrise = new Date((data.sys.sunrise + data.timezone) * 1000);
