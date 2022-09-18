@@ -1,45 +1,17 @@
-.search__form {
+input{
+  padding:1rem;
+  border-radius: 30px;
+  border: none;
+  background-color: #fff;
   width: 280px;
   height: 48px;
-  background: #ffffff;
-  border-radius: 30px;
-  margin-top: 30px;
-  margin-left: 20px;
-}
-
-input {
-  // position: absolute;
-  padding-top: 13px 350px 13px 54px;
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  display: block;
-  align-items: center;
+  margin-top:30px;
+  font-family: $mainFont;
+  font-weight: 400;
   letter-spacing: 0.04em;
-  color: #000000;
-  background-color: #ffffff;
-  border-radius: 30px;
-  margin: 0 auto;
-}
-
-.location {
-  box-sizing: border-box;
-
-  width: 18px;
-  height: 18px;
-  left: 42px;
-
-  border: 2px solid #aeb3b9;
-}
-
-.star {
-  box-sizing: border-box;
-  width: 22px;
-  height: 22px;
-  left: 258px;
-  border: 1px solid #7e8691;
+  margin-bottom:15px;
 }
 
 .search__history {
@@ -102,52 +74,21 @@ input {
 }
 
 @media screen and (min-width: 768px) {
-  .search-form {
+  input{
     width: 500px;
     height: 48px;
-    left: 134px;
-    top: 60px;
-  }
-
-  input {
-    width: 116px;
-    height: 22px;
-    left: 188px;
-    top: 73px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.04em;
-    color: #000000;
+    margin-top:60px;
+    margin-bottom:12px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .search-form {
-    left: 380px;
-    top: 79px;
-  }
-  input {
-    width: 116px;
-    height: 22px;
-    left: 434px;
-    top: 92px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.04em;
-    background-color: #ffffff;
-    border-radius: 30px;
-    border-color: none;
+  input{
     width: 520px;
     height: 48px;
-  }
+    margin-top:79px;
+    margin-bottom:12px;
+    }
 }

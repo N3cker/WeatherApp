@@ -90,7 +90,7 @@
     position: absolute;
     width: 94px;
     height: 22px;
-    left: 1076px;
+    right:0;
     top: 812px;
     font-family: 'Lato';
     font-style: normal;
@@ -102,5 +102,9 @@
     text-align: right;
     letter-spacing: 0.04em;
     color: #FFFFFF;
+  }
+  .rightS {
+    position:absolute;
+    right:250;
   }
  }
