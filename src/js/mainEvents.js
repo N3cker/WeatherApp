@@ -6,7 +6,7 @@ import { addCityKey } from './searchCity';
 import { getTodayData, printTemperatures } from './todayTemperatures';
 import { getCity, setCity } from './variables';
 
-const form = document.querySelector('.search__form');
+const form = document.querySelector('#search__form');
 const inputCity = document.querySelector('[name="searchQuery"]');
 const btnToday = document.querySelector("button[class='today']");
 const btn5days = document.querySelector("button[class='fivedays']");
