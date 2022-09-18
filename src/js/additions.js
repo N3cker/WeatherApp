@@ -9,31 +9,28 @@ let sunrise;
 let sunset;
 
 export async function setTimeElements(data) {
+  if (!data.name) {
+    Notiflix.Notify.failure(
+      'Sorry, there is no city matching your search query. Please try again.'
+    );
+    return;
+  }
+  setDisplayedTimeElements(data);
+  setTimeZoneOffset(data.timezone);
+  let isDay;
 
-      if (!data.name) {
-        Notiflix.Notify.failure(
-          'Sorry, there is no city matching your search query. Please try again.'
-        );
-        return;
-      }
-      setDisplayedTimeElements(data);
-      setTimeZoneOffset(data.timezone);
-      let isDay;
-
-      if (
-        getTimezonedSunrise().getTime() < currentCityTime().getTime() &&
-        currentCityTime().getTime() < getTimezonedSunset().getTime()
-      ) {
-        isDay = true;
-      } else {
-        isDay = false;
-      }
-      await fetchBgImg(isDay).then(response => {
-        document.body.style.backgroundImage = `url(${response.hits[0].largeImageURL})`;
-      });
+  if (
+    getTimezonedSunrise().getTime() < currentCityTime().getTime() &&
+    currentCityTime().getTime() < getTimezonedSunset().getTime()
+  ) {
+    isDay = true;
+  } else {
+    isDay = false;
+  }
+  await fetchBgImg(isDay).then(response => {
+    document.body.style.backgroundImage = `url(${response.hits[0].largeImageURL})`;
+  });
 }
-
-
 
 function setDisplayedTimeElements(data) {
   sunrise = new Date((data.sys.sunrise + data.timezone) * 1000);
@@ -48,8 +45,12 @@ function setDisplayedTimeElements(data) {
     getTimezonedSunset()
   );
 
-  document.getElementById('sunrise').innerHTML = displaySunrise;
-  document.getElementById('sunset').innerHTML = displaySunset;
+  document.getElementById('sunrise').innerHTML =
+    '<svg class="rise__icon"><use href="./images/weather.svg#icon-Grouprise"></use></svg>' +
+    displaySunrise;
+  document.getElementById('sunset').innerHTML =
+    '<svg class="rise__icon"><use href="./images/weather.svg#icon-Groupset"></use></svg>' +
+    displaySunset;
 }
 
 function getTimezonedSunrise() {
