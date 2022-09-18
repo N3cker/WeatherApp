@@ -45,10 +45,10 @@ function carouselUp() {
   index = Math.min(Math.max(index, 0), liElems.length - 1);
   if (index < liElems.length - 4 && index > 0) {
     prevBtn.classList.remove('hidden-btn');
-    liElems[index + 3].scrollIntoView({ behavior: 'smooth' });
+    liElems[index + 3].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   } else {
     nextBtn.classList.add('hidden-btn');
-    liElems[index + 3].scrollIntoView({ behavior: 'smooth' });
+    liElems[index + 3].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 }
 
@@ -58,10 +58,10 @@ function carouselDown() {
   index = Math.min(Math.max(index, 0), liElems.length - 1);
   if (index < liElems.length - 3 && index > 0) {
     nextBtn.classList.remove('hidden-btn');
-    liElems[index].scrollIntoView({ behavior: 'smooth' });
+    liElems[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   } else {
     prevBtn.classList.add('hidden-btn');
-    liElems[index].scrollIntoView({ behavior: 'smooth' });
+    liElems[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 }
 
