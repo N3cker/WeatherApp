@@ -22,7 +22,7 @@ async function showChart() {
   };
 };
 
-async function getData() {
+export async function getData() {
     const API_KEY = '4da793d645cc6cbfba468135199f7159';
     const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=57&lon=-2.15&appid=${API_KEY}&cnt=5&units=metric`);
     const data = await response.json();
