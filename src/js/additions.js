@@ -1,4 +1,3 @@
-import { getCity } from './variables';
 import { setTimeZoneOffset, currentCityTime } from '../js/dateTime';
 import Notiflix from 'notiflix';
 import { fetchBgImg } from './fetchBgImg';
@@ -9,42 +8,29 @@ const apiKey = '30726d0cea6dff3429ac7876b4e8bfdc';
 let sunrise;
 let sunset;
 
-function setTimeElements(city) {
-  fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
-  )
-    .then(res => res.json())
-    .then(data => {
-      if (!data.name) {
-        Notiflix.Notify.failure(
-          'Sorry, there is no city matching your search query. Please try again.'
-        );
-        return;
-      }
-      setDisplayedTimeElements(data);
-      setTimeZoneOffset(data.timezone);
-      let isDay;
+export async function setTimeElements(data) {
+  if (!data.name) {
+    Notiflix.Notify.failure(
+      'Sorry, there is no city matching your search query. Please try again.'
+    );
+    return;
+  }
+  setDisplayedTimeElements(data);
+  setTimeZoneOffset(data.timezone);
+  let isDay;
 
-      if (
-        getTimezonedSunrise().getTime() < currentCityTime().getTime() &&
-        currentCityTime().getTime() < getTimezonedSunset().getTime()
-      ) {
-        isDay = true;
-      } else {
-        isDay = false;
-      }
-      fetchBgImg(isDay).then(response => {
-        document.body.style.backgroundImage = `url(${response.hits[0].largeImageURL})`;
-      });
-    });
+  if (
+    getTimezonedSunrise().getTime() < currentCityTime().getTime() &&
+    currentCityTime().getTime() < getTimezonedSunset().getTime()
+  ) {
+    isDay = true;
+  } else {
+    isDay = false;
+  }
+  await fetchBgImg(isDay).then(response => {
+    document.body.style.backgroundImage = `url(${response.hits[0].largeImageURL})`;
+  });
 }
-
-form.addEventListener('submit', e => {
-  e.preventDefault();
-
-  const trimmedValue = getCity().trim();
-  setTimeElements(trimmedValue);
-});
 
 function setDisplayedTimeElements(data) {
   sunrise = new Date((data.sys.sunrise + data.timezone) * 1000);
@@ -59,8 +45,12 @@ function setDisplayedTimeElements(data) {
     getTimezonedSunset()
   );
 
-  document.getElementById('sunrise').innerHTML = displaySunrise;
-  document.getElementById('sunset').innerHTML = displaySunset;
+  document.getElementById('sunrise').innerHTML =
+    '<svg class="rise__icon"><use href="./images/weather.svg#icon-Grouprise"></use></svg>' +
+    displaySunrise;
+  document.getElementById('sunset').innerHTML =
+    '<svg class="rise__icon"><use href="./images/weather.svg#icon-Groupset"></use></svg>' +
+    displaySunset;
 }
 
 function getTimezonedSunrise() {

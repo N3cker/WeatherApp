@@ -1,13 +1,17 @@
 
-.container .today {
+.containerr .today {
   display:block;
   width: 280px;
   height: 190px;
-  top: 166px;
   background: #102136;
   box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
   border-radius: 34px;
   padding: 30px 55px 28px 55px;
+  top:45px;
+  position:relative;
+  margin:0 auto;
+  left:0;
+
 }
 
 .innerList {
@@ -99,7 +103,10 @@ span {
 
 
 @media screen and (min-width: 768px) {
-  .container .today {
+  .today-weather {
+    top:258px;
+  }
+  .containerr .today {
     display:block;
     background: #102136;
     box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
@@ -107,8 +114,7 @@ span {
     padding: 29px 190px 36px 190px;
     width: 500px;
     height: 300px;
-    top: 258px;
-
+    margin-top:75px;
   }
 
   .today__cityName {
@@ -174,20 +180,22 @@ span {
 @media screen and (min-width: 1280px) {
 
 
-  .container .today {
+  .containerr .today {
     display:block;
     box-shadow: 0px 8px 43px rgba(16, 33, 54, 0.6);
     border-radius: 34px 0px 0px 34px;
-    padding: 29px 186px 36px 144px;
     width: 450px;
     height: 300px;
-    top: 259px;
-
+    top: 92px;
   }
 
+.today {
+  padding: 29px 186px 36px 144px;
+}
   .right {
     position:absolute;
-    right:250;
+    right:0;
+
   }
 
   .today__cityName {
