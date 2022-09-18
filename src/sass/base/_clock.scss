@@ -1,11 +1,15 @@
-
-.container .today-info {
+.today-clock {
+  margin-top:10px;
+}
+.containerClock .today-info {
   width: 280px;
   height: 190px;
-  top: 444px;
+  top: 88px;
   background: rgba(16, 33, 54, 0.8);
   border-radius: 34px;
-  position: absolute;
+  position:relative;
+  margin:0 auto;
+  left:0;
 }
 
 .current-date {
@@ -124,10 +128,10 @@
   padding-left:10px;
 }
 @media screen and (min-width: 768px){
-  .container .today-info {
+  .containerClock .today-info {
     width: 500px;
     height: 278px;
-    top: 666px;
+    top: 108px;
   }
 
   .current-date {
@@ -228,20 +232,29 @@
  }
 
 @media screen and (min-width: 1280px) {
-  .container .today-info {
+  .containerClock .today-info {
     width: 630px;
     height: 278px;
     left:0px;
-    top: 672px;
+    top: 505px;
     background: rgba(16, 33, 54, 0.6);
     border-radius: 0px 34px 0px 0px;
+    margin:0;
+
+  }
+
+  .left {
+    position:absolute;
+    left:0;
 
   }
 .desktop_li{
-  display:flex;
-  align-items: center;
+    display:flex;
+    align-items: center;
     text-align: center;
     justify-content: baseline;
+    position:absolute;
+
 }
   .current-date {
       width: 290px;
