@@ -3,12 +3,14 @@
     background-image: url('../images/desktop/bg-day-desktop.jpg');
     background-repeat: repeat-y;
     background-size: 100%;
+    background-position: fixed;
   }
 
   .default-bg-night {
     background-image: url('../images/desktop/bg-night-desktop.jpg');
     background-repeat: repeat-y;
     background-size: 100%;
+    background-attachment: fixed;
   }
 }
 
@@ -17,11 +19,13 @@
     background-image: url('../images/tablet_mobile/bg-day-tablet.jpg');
     background-repeat: repeat-y;
     background-size: cover;
+    background-attachment: fixed;
   }
   .default-bg-night {
     background-image: url('../images/tablet_mobile/bg-night-tablet.jpg');
     background-repeat: repeat-y;
     background-size: cover;
+    background-attachment: fixed;
   }
 }
 
@@ -30,10 +34,12 @@
     background-image: url('../images/tablet_mobile/bg-day-tablet.jpg');
     background-repeat: repeat-y;
     background-size: inherit;
+    background-attachment: fixed;
   }
   .default-bg-night {
     background-image: url('../images/tablet_mobile/bg-night-tablet.jpg');
     background-repeat: repeat-y;
     background-size: inherit;
+    background-position: fixed;
   }
 }
