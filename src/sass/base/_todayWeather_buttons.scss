@@ -1,0 +1,124 @@
+.buttonsToday {
+  justify-content: space-between;
+  position:relative;
+  top: 40px;
+  align-items:center;
+  justify-content:center;
+}
+.buttonToday-list{
+  width: 270px;
+  height: 28px;
+  margin: 0 auto;
+  display: flex;
+  position:relative;
+}
+
+.buttonTdy-list-item{
+  display: flex;
+
+}
+
+.today,
+.fivedays {
+  height: 27px;
+  width: 126px;
+  top: 31px;
+  border-radius: 20px;
+  // padding: 0px 12px 0px 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.fivedays{
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.today {
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+
+@media screen and (min-width: 768px) {
+  .buttonsToday {
+    justify-content: space-between;
+    position:relative;
+    // top: 40px;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .buttonToday-list{
+    width: 270px;
+    height: 28px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    position:relative;
+    top: 30px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+
+  // .buttonsToday {
+  //   // justify-content: space-between;
+  //   // position:relative;
+  //   // top: 413px;
+  //   // align-items:center;
+  //   // justify-content:center;
+  // }
+  // .buttonToday-list{
+  //   width: 270px;
+  //       height: 28px;
+  //       // padding-top: 476px;
+  //       // // padding-bottom: 28px;
+  //       // padding-left: 500px;
+  //       margin: 0 auto;
+  //       display: flex;
+  //       justify-content: space-between;
+  // }
+
+  // .buttonTdy-list-item{
+  //   display: flex;
+  //   margin-left: 18px;
+
+  // }
+
+  // .today,
+  // .fivedays {
+  //   height: 27px;
+  //       width: 126px;
+  //       top: 187px;
+  //       border-radius: 20px;
+  //       padding: 0px 12px 0px 12px;
+  //       display: flex;
+  //       flex-direction: row;
+  //       justify-content: center;
+  //       align-items: center;
+  //       gap: 10px;
+  //       cursor: pointer;
+  //       font-family: 'Lato';
+  //       font-style: normal;
+  //       font-weight: 700;
+  //       font-size: 14px;
+  //       line-height: 17px;
+  //       text-align: center;
+  //       text-transform: uppercase;
+  //       color: #000000;
+  // }
+
+}

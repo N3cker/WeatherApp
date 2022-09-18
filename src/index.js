@@ -1,1 +1,13 @@
-import './sass/index.scss'
+import './sass/main.scss';
+import './sass/index.scss';
+import './js/background.js';
+import './js/dateTime.js';
+import './js/additions.js';
+import './js/searchCity.js';
+import './js/todayTemperatures.js';
+import './js/variables.js';
+import './js/apiFiveDays.js';
+import './js/chart.js';
+import './js/randomQuote.js';
+import './js/navigation.js';
+import './js/mainEvents.js';

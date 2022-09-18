@@ -1,0 +1,19 @@
+.today__temp {
+  display: flex;
+}
+
+.today__icon {
+  width: 30px;
+  height: 30px;
+}
+
+.container .today {
+  display: block;
+  width: 280px;
+  height: 190px;
+  left: 20px;
+  top: 166px;
+  background: #102136;
+  box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
+  border-radius: 34px;
+}/*# sourceMappingURL=main.css.map */
