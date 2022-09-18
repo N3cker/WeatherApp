@@ -33,7 +33,7 @@ async function set5daysPage() {
 form.addEventListener('submit', e => {
   //search
   e.preventDefault();
-  let city = inputCity.value.trim();
+  const city = inputCity.value.trim();
   setTodayPage(city);
 });
 
