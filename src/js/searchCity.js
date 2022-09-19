@@ -4,9 +4,8 @@ const inputCity = document.querySelector('[name="searchQuery"');
 const cityList = document.querySelector('.search__history-list');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
-let cities = [];
 
-// let cities = [
+let cities = [];
 //   'Madrid',
 //   'Lisbon',
 //   'Warsaw',
@@ -16,7 +15,6 @@ let cities = [];
 //   'Miami',
 //   'London',
 // ];
-let index = 0;
 
 export function addCityKey() {
   let city = getCity();
@@ -39,32 +37,7 @@ export function addCityKey() {
   inputCity.value = '';
 }
 
-function carouselUp() {
-  let liElems = cityList.querySelectorAll('li');
-  index += 1;
-  index = Math.min(Math.max(index, 0), liElems.length - 1);
-  if (index < liElems.length - 4 && index > 0) {
-    prevBtn.classList.remove('hidden-btn');
-    liElems[index + 3].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  } else {
-    nextBtn.classList.add('hidden-btn');
-    liElems[index + 3].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-}
-
-function carouselDown() {
-  let liElems = cityList.querySelectorAll('li');
-  index -= 1;
-  index = Math.min(Math.max(index, 0), liElems.length - 1);
-  if (index < liElems.length - 3 && index > 0) {
-    nextBtn.classList.remove('hidden-btn');
-    liElems[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  } else {
-    prevBtn.classList.add('hidden-btn');
-    liElems[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-}
-
+//closing function
 document.addEventListener('click', function (e) {
   if (e.target.tagName === 'P') {
     const value = e.target.getAttribute('data-item');
@@ -78,8 +51,45 @@ nextBtn.addEventListener('click', carouselUp);
 prevBtn.addEventListener('click', carouselDown);
 inputCity.addEventListener('submit', addCityKey);
 
-// cityList.addEventListener('click', function (e) {
-//   const cityName = e.target.getAttribute('data-item');
-//   setTodayPage(cityName);
-//   setCity(cityName);
-// });
+const nodeList = cityList; //parent element for cities list
+let childs = nodeList.children; //all cities elements list
+// let firstChild = nodeList.children[0]; //first city in list
+// let cityName = firstChild.firstElementChild.textContent; //content of first child
+
+//total width of cities elements in memory
+for (let i = 0; i < childs.length; i += 1) {
+  let elemWidth = nodeList.children[i].getBoundingClientRect().width + 10;
+  // console.log(elemWidth);
+}
+
+let carouselWidth = cityList.getBoundingClientRect().width;
+let widthToMove = nodeList.children[0].getBoundingClientRect().width + 10;
+let slidesNumber = carouselWidth / widthToMove; //number of elements in carousel
+
+let index = Math.floor(slidesNumber) - 1;
+
+function carouselUp() {
+  let liElems = cityList.querySelectorAll('li');
+  index += 1;
+  prevBtn.classList.remove('hidden-btn');
+  if (index < liElems.length - 1 && index > 0) {
+    liElems[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  } else {
+    nextBtn.classList.add('hidden-btn');
+    liElems[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    index = childs.length - index + 1; //seting index to move left
+  }
+}
+
+function carouselDown() {
+  let liElems = cityList.querySelectorAll('li');
+  index -= 1;
+  nextBtn.classList.remove('hidden-btn');
+  if (index < liElems.length - 1 && index > 0) {
+    liElems[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  } else {
+    prevBtn.classList.add('hidden-btn');
+    liElems[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    index = Math.floor(slidesNumber) - 1;
+  }
+}
