@@ -1,9 +1,12 @@
+import { getCity } from './variables';
+
 const btnFiveDays = document.querySelector('.five-days-btn');
 const infoWeather = document.querySelector('.wheather-list');
 const infoWeatherDay = document.querySelector('.wheather-list-item');
 const btnMoreInfo = document.querySelector('.more-info');
 const infoWeatherMore = document.querySelector('.wheather__more-list');
-const api_url = `http://api.openweathermap.org/data/2.5/forecast?q=warszawa&lang=pl&units=metric&appid=c58ab9d92883ad1e6f51fe201539b277`;
+
+const api_url = `http://api.openweathermap.org/data/2.5/forecast?q=${getCity}&lang=pl&units=metric&appid=c58ab9d92883ad1e6f51fe201539b277`;
 
 export const responseFiveDays = async function getWeather() {
   const response = await fetch(api_url);
