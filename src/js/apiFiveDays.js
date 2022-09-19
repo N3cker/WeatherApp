@@ -6,9 +6,10 @@ const infoWeatherDay = document.querySelector('.wheather-list-item');
 const btnMoreInfo = document.querySelector('.more-info');
 const infoWeatherMore = document.querySelector('.wheather__more-list');
 
-const api_url = `http://api.openweathermap.org/data/2.5/forecast?q=${getCity()}&lang=pl&units=metric&appid=c58ab9d92883ad1e6f51fe201539b277`;
+
 
 export const responseFiveDays = async function getWeather() {
+  const api_url = `http://api.openweathermap.org/data/2.5/forecast?q=${getCity()}&lang=pl&units=metric&appid=c58ab9d92883ad1e6f51fe201539b277`;
   const response = await fetch(api_url);
   const data = await response.json();
   const list = data.list;
@@ -32,9 +33,11 @@ export const responseFiveDays = async function getWeather() {
         <img class="wheather-icon" src="http://openweathermap.org/img/wn/${
           item.weather[0].icon
         }@2x.png" alt="${item.weather[0].description}"></img>
-        <p class="min-temp">Min: ${Math.ceil(item.main.temp_min)}</p>
-        <p class="max-temp">Max: ${Math.ceil(item.main.temp_max)}</p>
-        <button type='submit' class='more-info'>More Info</button>
+        <p class="min-temp">min</p>
+        <p class="max-temp">max</p>
+        <p class="min-temperature">${Math.ceil(item.main.temp_min)}</p>
+        <p class="max-temperature">${Math.ceil(item.main.temp_max)}</p>
+        <a href="#" class="more-info">more info</a>
         </li>`;
     })
 
@@ -44,6 +47,7 @@ export const responseFiveDays = async function getWeather() {
 btnFiveDays.addEventListener('click', responseFiveDays);
 
 export const responseFiveDaysMore = async function getWeatherMore() {
+  const api_url = `http://api.openweathermap.org/data/2.5/forecast?q=${getCity()}&lang=pl&units=metric&appid=c58ab9d92883ad1e6f51fe201539b277`;
   const response = await fetch(api_url);
   const data = await response.json();
   const list = data.list;
