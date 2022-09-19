@@ -10,6 +10,7 @@
   position:relative;
   margin:0 auto;
   left:0;
+
 }
 
 .current-date {
@@ -39,8 +40,9 @@
 
 .current-mth {
   display: flex;
-  align-items: center;
+  align-items:center;
   justify-content: center;
+
 }
 
 #month {
@@ -56,7 +58,7 @@
   padding-right:10px;
 }
 
-.line {
+.lineClock {
   opacity: 0.4;
 }
 
@@ -81,7 +83,6 @@
 .current-set {
   display: flex;
   align-items: center;
-  text-align:justify;
   justify-content: center;
 
 }
@@ -179,7 +180,7 @@
     color: #FFFFFF;
   }
 
-  .line {
+  .lineClock {
     opacity: 0.4;
     margin:0;
     border: 1px solid #FFFFFF;
@@ -235,18 +236,19 @@
   .containerClock .today-info {
     width: 630px;
     height: 278px;
-    left:0px;
+    // left:0px;
     top: 505px;
     background: rgba(16, 33, 54, 0.6);
     border-radius: 0px 34px 0px 0px;
-    margin:0;
-
+    margin:0 auto;
+    align-items: center;
+      text-align: center;
+      justify-content: baseline;
   }
 
   .left {
     position:absolute;
     left:0;
-
   }
 .desktop_li{
     display:flex;
@@ -254,29 +256,28 @@
     text-align: center;
     justify-content: baseline;
     position:absolute;
-
 }
   .current-date {
-      width: 290px;
+      // width: 290px;
       font-size: 90px;
       line-height: 108px;
-
-
       }
   #todays-date {
     display: flex;
     align-items: center;
     text-align: center;
-
   }
   #day {
     letter-spacing: 0.04em;
+  }
+  #suffix {
+    margin-right:30px;
   }
 
   .current-mth {
     display: flex;
     align-items: center;
-margin-left:110px;
+    margin-left:60px;
     justify-content: center;
   }
 
@@ -289,7 +290,7 @@ margin-left:110px;
     padding-right:20px;
   }
 
-  .line {
+  .lineClock {
     opacity: 0.4;
   }
 
