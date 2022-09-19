@@ -192,19 +192,30 @@
         width: 25px;
         height: 25px;
         cursor: pointer;
-        border: 1.5px solid #FFFFFF;
+        border: 1.5px solid #102136cc;
+        opacity:0.54;
         border-radius: 50%;
-        &:hover,
-        &:focus{
-            color: #FFFFFF;
+        background-color: #102136CC;;
+        background-image: url(../images/chart.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        &:focus,
+        &:hover{
+            background: #FFFFFF;;
+            opacity: 0.5;
+            color: #102136cc;
             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             transition: background-color, color, box-shadow 250ms;
         }
+    }
+    .arrow-next{
+        transform: rotate(-90deg);
     }
 
     .arrow-back {
         opacity: 0.5;
         margin: 10px 40px 0px 90px;
+        transform: rotate(90deg);
     }
 }
 
