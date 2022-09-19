@@ -45,6 +45,7 @@ export const responseFiveDays = async function getWeather() {
 btnFiveDays.addEventListener('click', responseFiveDays);
 
 export const responseFiveDaysMore = async function getWeatherMore() {
+  const api_url = `http://api.openweathermap.org/data/2.5/forecast?q=${getCity()}&lang=pl&units=metric&appid=c58ab9d92883ad1e6f51fe201539b277`;
   const response = await fetch(api_url);
   const data = await response.json();
   const list = data.list;
