@@ -31,9 +31,11 @@ export const responseFiveDays = async function getWeather() {
         <img class="wheather-icon" src="http://openweathermap.org/img/wn/${
           item.weather[0].icon
         }@2x.png" alt="${item.weather[0].description}"></img>
-        <p class="min-temp">Min: ${Math.ceil(item.main.temp_min)}</p>
-        <p class="max-temp">Max: ${Math.ceil(item.main.temp_max)}</p>
-        <button type='submit' class='more-info'>More Info</button>
+        <p class="min-temp">min</p>
+        <p class="max-temp">max</p>
+        <p class="min-temperature">${Math.ceil(item.main.temp_min)}</p>
+        <p class="max-temperature">${Math.ceil(item.main.temp_max)}</p>
+        <a href="#" class="more-info">more info</a>
         </li>`;
     })
 
