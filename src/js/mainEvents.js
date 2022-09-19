@@ -8,8 +8,8 @@ import { getCity, setCity } from './variables';
 
 const form = document.querySelector('#search__form');
 const inputCity = document.querySelector('[name="searchQuery"]');
-const btnToday = document.querySelector("button[class='today']");
-const btn5days = document.querySelector("button[class='fivedays']");
+const btnToday = document.querySelector("button[class='todaybtn']");
+const btn5days = document.querySelector("button[class='fivedaysbtn']");
 const btnTodayFrom5days = document.querySelector("button[class='today-btn']");
 const btn5daysFrom5days = document.querySelector(
   "button[class='five-days-btn']"
