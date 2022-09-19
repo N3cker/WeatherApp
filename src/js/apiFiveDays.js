@@ -2,8 +2,6 @@ import { getCity } from './variables';
 
 const btnFiveDays = document.querySelector('.five-days-btn');
 const infoWeather = document.querySelector('.wheather-list');
-const infoWeatherDay = document.querySelector('.wheather-list-item');
-const btnMoreInfo = document.querySelector('.more-info');
 const infoWeatherMore = document.querySelector('.wheather__more-list');
 
 export const responseFiveDays = async function getWeather() {
@@ -35,7 +33,7 @@ export const responseFiveDays = async function getWeather() {
         <p class="max-temp">max</p>
         <p class="min-temperature">${Math.ceil(item.main.temp_min)}</p>
         <p class="max-temperature">${Math.ceil(item.main.temp_max)}</p>
-        <a href="#" class="more-info">more info</a>
+        <a href="#" class="more-info" name="${item.dt}">more info</a>
         </li>`;
     })
 
@@ -44,15 +42,17 @@ export const responseFiveDays = async function getWeather() {
 };
 btnFiveDays.addEventListener('click', responseFiveDays);
 
-export const responseFiveDaysMore = async function getWeatherMore() {
+export async function responseFiveDaysMore(dt) {
+  incomingDt = new Date(dt * 1000);
   const api_url = `http://api.openweathermap.org/data/2.5/forecast?q=${getCity()}&lang=pl&units=metric&appid=c58ab9d92883ad1e6f51fe201539b277`;
   const response = await fetch(api_url);
   const data = await response.json();
+  console.log('DATA', data);
   const list = data.list;
   const markupMore = list
     .map((item, idx) => {
-      if (idx <= 6) {
-        let dt = new Date(item.dt * 1000);
+      let dt = new Date(item.dt * 1000);
+      if (dt.getDay() == incomingDt.getDay()) {
         let hours = dt.getHours();
         return `<li class="wheather__more-list-item">
         <p class="wheather__hour">${hours}:00</p>
@@ -69,5 +69,4 @@ export const responseFiveDaysMore = async function getWeatherMore() {
 
     .join('');
   infoWeatherMore.innerHTML = markupMore;
-};
-btnMoreInfo.addEventListener('click', responseFiveDaysMore);
+}
