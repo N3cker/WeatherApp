@@ -1,4 +1,5 @@
 import Chart from 'chart.js/auto';
+import { getCity } from './variables';
 import '../sass/index.scss';
 
 const wrapper = document.querySelector('#canvas-wrapper');
@@ -22,28 +23,44 @@ async function showChart() {
   };
 };
 
-export async function getData() {
-    const API_KEY = '4da793d645cc6cbfba468135199f7159';
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=57&lon=-2.15&appid=${API_KEY}&cnt=5&units=metric`);
-    const data = await response.json();
-    const { list } = data;
-    const temperature = list.map(temp => { return temp.main.temp });
-    const humidity = list.map(hum => { return hum.main.humidity });
-    const windSpeed = list.map(ws => { return ws.wind.speed });
-    const pressure = list.map(atm => { return atm.main.pressure });
-  const days = list.map(date => { return date.dt_txt });
-  console.log(data);
-    return { temperature, humidity, windSpeed, pressure, days };
+export async function getData(city) {
+  const API_KEY = '4da793d645cc6cbfba468135199f7159';
+  const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`);
+  const data = await response.json();
+  const { list } = data;
+  const temperature = list.map(temp => { return temp.main.temp });
+  const humidity = list.map(hum => { return hum.main.humidity }); 
+  const windSpeed = list.map(ws => { return ws.wind.speed }); 
+  const pressure = list.map(atm => { return atm.main.pressure });
+  const dayTime = list.map(date => { return date.dt });
+
+  let convertedDay = dayTime
+    .map(day =>
+      new Date(day * 1000)
+    )
+    .map(day =>
+      day.toLocaleDateString('en', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric'
+      })
+    );
+
+  const day = [];
+  for (let i = 0; i < convertedDay.length; i += 8) {
+    day.push(convertedDay[i]);
+  };
+    return { temperature, humidity, windSpeed, pressure, day};
 };
 
 let myChart = null;
 
 async function loadChart() {
   const ctx = document.querySelector('#myChart');
-  const dataTemps = await getData()
-    .catch(error => { console.error(error); console.log('error!'); });
+  const dataTemps = await getData(getCity())
+    .catch(error => { console.error(error); console.log('error occurred, please try again later!'); });
   const data = {
-    labels: dataTemps.days,
+    labels: dataTemps.day,
     datasets: [{
       label: ' — Temperature, C°',
       data: dataTemps.temperature,
@@ -88,14 +105,14 @@ async function loadChart() {
         scales: {
           x: {
             ticks: {
-              color: '#FFF',
-              padding: 30
+              color: 'rgba(255, 255, 255, 0.4)',
+              padding: 20
             },
             grid: {
               drawTicks: false,
               drawBorder: false,
-              borderColor: '#FFF',
-              color: '#FFF'
+              borderColor: 'rgba(255, 255, 255, 0.4)',
+              color: 'rgba(255, 255, 255, 0.4)'
             }
           },
           y: {
@@ -103,27 +120,30 @@ async function loadChart() {
               display: true,
               position: 'left',
               text: 'Value of Indicators',
-              color: '#FFF'
+              color: 'rgba(255, 255, 255, 0.4)'
             },
             ticks: {
-              color: '#FFF',
+              color: 'rgba(255, 255, 255, 0.4)',
               padding: 15
             },
             grid: {
               drawTicks: false,
               drawBorder: false,
-              borderColor: '#FFF',
-              color: '#FFF'
+              borderColor: 'rgba(255, 255, 255, 0.4)',
+              color: 'rgba(255, 255, 255, 0.4)'
             }
           }
+      },
+      layout: {
+          padding: 16
         },
         plugins: {
           legend: {
             labels: {
               boxWidth: 12,
               boxHeight: 12,
-              padding: 30,
-              color: '#FFF',
+              padding: 20,
+              color: 'rgba(255, 255, 255, 0.4)',
               font: {
                 size: 14,
                 weight: 400

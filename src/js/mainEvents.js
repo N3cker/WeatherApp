@@ -1,5 +1,5 @@
 import { setTimeElements } from './additions';
-import { responseApi } from './apiFiveDays';
+import { responseFiveDays } from './apiFiveDays';
 import { getData } from './chart';
 import { show5daysElements, showTodayElements } from './navigation';
 import { addCityKey } from './searchCity';
@@ -26,26 +26,41 @@ async function setTodayPage(city) {
 
 async function set5daysPage() {
   show5daysElements(); //pokazanie/schowanie odpowiednich elementów inferfejsu
-  await responseApi(); //wywołanie API 5 dni
+  await responseFiveDays(); //wywołanie API 5 dni
   await getData(); //przygotowanie danych do chartow
 }
 
-form.addEventListener('submit', e => { //search
+form.addEventListener('submit', e => {
+  //search
   e.preventDefault();
-  let city = inputCity.value.trim();
+  const city = inputCity.value.trim();
   setTodayPage(city);
 });
 
-btnToday.addEventListener('click', () => { //refresh today
+btnToday.addEventListener('click', () => {
+  //refresh today
   setTodayPage(getCity());
 });
-btnTodayFrom5days.addEventListener('click', () => { 
+btnTodayFrom5days.addEventListener('click', () => {
   setTodayPage(getCity());
 });
 
 btn5days.addEventListener('click', () => {
   set5daysPage();
 });
-btn5daysFrom5days.addEventListener('click', () => { //refresh 5 days
+btn5daysFrom5days.addEventListener('click', () => {
+  //refresh 5 days
   set5daysPage();
 });
+
+document
+  .querySelector('.search__history-list')
+  .addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+      e.preventDefault();
+      const cityName = e.target.textContent;
+      setTodayPage(cityName);
+      setCity(cityName);
+      // console.log(e.target.textContent);
+    }
+  });

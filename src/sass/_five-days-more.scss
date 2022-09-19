@@ -24,6 +24,11 @@
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 25px;
         padding: 15px 16px 18px 16px;
+        &:focus,
+        &:hover{
+            background: rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+        }
     }
 
     .wheather__more-list-item2,
@@ -108,7 +113,7 @@
 
     .wheather__more-container {
         width: 620px;
-        height: 273px;
+        height: 300px;
         margin: auto;
         background: rgba(16, 33, 54, 0.8);
         box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
@@ -122,6 +127,11 @@
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 25px;
         padding: 15px 16px 18px 16px;
+        &:focus,
+        &:hover{
+            background: rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+        }
     }
     .wheather__more-list-item3{
         display: none;
@@ -181,12 +191,19 @@
     }
 
     .arrow-next-btn {
-        margin: auto;
         width: 25px;
         height: 25px;
         cursor: pointer;
         border: 1.5px solid #FFFFFF;
         border-radius: 50%;
+        opacity: 0.54;
+        margin-left: 560px;
+        margin-top: 20px;
+        &:focus,
+        &:hover{
+            background: #FFFFFF;
+            opacity: 1;
+        }
     }
 }
 
@@ -223,6 +240,11 @@
         border-radius: 25px;
         padding: 15px 29px 40px 29px;
         width: 120px;
+        &:focus,
+        &:hover{
+            background: rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+        }
     }
 
     .wheather__hour {
