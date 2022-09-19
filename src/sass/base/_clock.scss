@@ -27,12 +27,12 @@
     color: #FFFFFF;
     padding-top:30px;
     justify-content: center;
+    padding-bottom:10px;
     }
 #todays-date {
   display: flex;
   align-items: center;
   text-align: center;
-
 }
 #day {
   letter-spacing: 0.04em;
@@ -42,7 +42,8 @@
   display: flex;
   align-items:center;
   justify-content: center;
-
+  margin-right:21px;
+  padding-bottom:10px;
 }
 
 #month {
@@ -64,6 +65,7 @@
 
 #date-time {
   padding-left:10px;
+  padding-right:10px;
   width: 60px;
   height: 17px;
   left: 170px;
@@ -85,6 +87,7 @@
   align-items: center;
   justify-content: center;
 
+
 }
 
 .rise__icon {
@@ -98,10 +101,10 @@
   width:40px;
   height: 40px;
   fill:$thirdColor;
+  padding-left:10px;
 }
 
 .rise__time {
-
   top: 575px;
   font-family: 'Lato';
   font-style: normal;
@@ -127,6 +130,9 @@
   letter-spacing: 0.04em;
   color: #FFFFFF;
   padding-left:10px;
+}
+#suffix {
+  padding-right:10px;
 }
 @media screen and (min-width: 768px){
   .containerClock .today-info {
@@ -166,6 +172,7 @@
     align-items: center;
     justify-content:center;
     padding-top:10px;
+    margin-right:0;
   }
 
   #month {
@@ -308,7 +315,7 @@
     display: flex;
     align-items: center;
     text-align:justify;
-    padding-top:10;
+    padding-top:0;
     padding-left:20px;
   }
 
