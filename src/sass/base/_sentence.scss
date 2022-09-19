@@ -1,8 +1,10 @@
 
 .sentence-text {
-  position:relative;
-  text-align: right;
-  top:110px;
+  width: 280px;
+  margin: 0 auto;
+  position: relative;
+  top: 80px;
+
 }
 .sentence-text p {
   width: 280px;
@@ -15,11 +17,11 @@
   letter-spacing: 0.04em;
   color: #FFFFFF;
   margin:0 auto;
+  position:relative;
 }
 
 .sentence-text span {
   width: 280px;
-  height: 16px;
   font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
@@ -28,17 +30,20 @@
   letter-spacing: 0.04em;
   color: #FFFFFF;
   text-transform: capitalize;
-  margin:0 auto;
+  letter-spacing: 0.04em;
 }
 
 
 @media screen and (min-width: 768px){
   .sentence-text{
     top:120px;
+    width:379px;
+    margin: 0 auto;
+    position: relative;
+
   }
   .sentence-text p {
     width: 379px;
-    height: 80px;
     font-family: 'Lato';
     font-style: italic;
     font-weight: 400;
@@ -51,7 +56,6 @@
 
   .sentence-text span {
     width: 379px;
-    height: 22px;
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
@@ -61,6 +65,7 @@
     text-align: right;
     letter-spacing: 0.04em;
     color: #FFFFFF;
+    position:relative;
   }
 
 }
@@ -68,8 +73,7 @@
   .sentence-text p {
     position:relative;
     width: 340px;
-    height: 80px;
-    top:702px;
+    top:670px;
     font-family: 'Lato';
     font-style: italic;
     font-weight: 400;
@@ -81,9 +85,7 @@
   }
 
   .sentence-text span {
-    width: 94px;
-    height: 22px;
-    top:730px;
+    top:690px;
     position:relative;
     font-family: 'Lato';
     font-style: normal;
@@ -94,9 +96,11 @@
     text-align: right;
     letter-spacing: 0.04em;
     color: #FFFFFF;
+    margin-left:30px;
+    width: 340px;
   }
   .rightS {
     position:absolute;
-    right:110;
+    right:100;
   }
  }

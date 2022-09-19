@@ -7,7 +7,7 @@
   box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
   border-radius: 34px;
   padding: 30px 55px 28px 55px;
-  top:45px;
+  top:35px;
   position:relative;
   margin:0 auto;
   left:0;
@@ -20,6 +20,12 @@
 .today__icon {
   width: 30px;
   height: 30px;
+
+}
+.todayico{
+  align-items:center;
+  justify-items: center;
+  justify-content: center;
 }
 
 .today__cityName {
@@ -58,7 +64,7 @@
   width: 75px;
 }
 
-span {
+.spanM {
 
   font-style: normal;
   font-weight: 400;
@@ -140,7 +146,7 @@ span {
 
   }
 
-  span {
+  .spanM {
     font-size: 18px;
     line-height: 22px;
     display: flex;
@@ -168,10 +174,8 @@ span {
     padding-left:10px;
   }
 
-  .line{
+  .linetest{
     margin-top:23px;
-    border: 1px solid #FFFFFF;
-
   }
 
 }
@@ -190,6 +194,7 @@ span {
   }
 
 .today {
+  justify-content: center;
   padding: 29px 186px 36px 144px;
 }
   .right {
@@ -221,7 +226,7 @@ span {
 
   }
 
-  span {
+  .spanM {
     font-size: 18px;
     line-height: 22px;
     display: flex;
@@ -233,24 +238,29 @@ span {
     font-size: 18px;
     line-height: 22px;
     display: block;
-    padding-top:17px;
+    padding-top:0;
+    // padding-top:17px;
 
   }
 
   .today__temp--min {
-    padding-left:20px;
-    padding-right:10px;
+    // padding-left:20px;
+    // padding-right:10px;
   }
   .innerList {
     display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:0;
   }
 
   .today__temp--max {
     padding-left:10px;
   }
 
-  .line{
-    margin-top:20px;
+  .linetest{
+    height:34px;
+    margin-top:0;
   }
 
 }
