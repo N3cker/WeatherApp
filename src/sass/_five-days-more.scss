@@ -194,11 +194,16 @@
         width: 25px;
         height: 25px;
         cursor: pointer;
-        border: 1.5px solid #FFFFFF;
+        border: 0.5px solid #fff3;
         border-radius: 50%;
         opacity: 0.54;
         margin-left: 560px;
         margin-top: 20px;
+        background-color: #fff3;
+        background-image: url(../images/chart.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: rotate(-90deg);
         &:focus,
         &:hover{
             background: #FFFFFF;
