@@ -38,7 +38,7 @@ export function addCityKey() {
 }
 
 //closing function
-document.addEventListener('click', function (e) {
+cityList.addEventListener('click', function (e) {
   if (e.target.tagName === 'P') {
     const value = e.target.getAttribute('data-item');
     const index = cities.indexOf(value);
