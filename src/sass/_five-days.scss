@@ -79,18 +79,20 @@
   }
 
   .wheather-list {
+    overflow: hidden;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: auto;
+    width: 470px;
+    height: 154px;
   }
 
   .wheather-list-item {
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 80px;
+    height: 154px;
   }
 
-  .wheather-list-item2 {
-    display: none;
-  }
   .day-of-the-week {
     margin: auto;
     padding-bottom: 10px;
@@ -127,7 +129,8 @@
   }
 
   .wheather-icon {
-    height: 25px;
+    height: 35px;
+    width: 35px;
     justify-content: center;
     text-align: center;
     margin: auto;
@@ -165,7 +168,7 @@
   .max-temp {
     display: inline-flex;
     width: 30px;
-    padding-left: 30px;
+    padding-left: 20px;
   }
 
   .min-temperature,
@@ -198,7 +201,6 @@
     background-image: url(../images/chart.svg);
     background-position: center;
     background-repeat: no-repeat;
-    &:focus,
     &:hover {
       background: #ffffff;
       opacity: 0.5;
@@ -302,8 +304,7 @@
     padding-top: 40px;
   }
 
-  .wheather-list-item,
-  .wheather-list-item2 {
+  .wheather-list-item{
     justify-content: space-around;
   }
 
@@ -343,7 +344,8 @@
   }
 
   .wheather-icon {
-    height: 25px;
+    height: 35px;
+    width: 35px;
     justify-content: center;
     text-align: center;
     margin: auto;
@@ -541,7 +543,8 @@
   }
 
   .wheather-icon {
-    height: 25px;
+    height: 35px;
+    width: 35px;
     justify-content: center;
     text-align: center;
     margin: auto;
