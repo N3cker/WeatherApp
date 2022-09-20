@@ -6,10 +6,10 @@
     .wheather__more-list{
         display: flex;
         overflow: hidden;
-        justify-content: space-between;
+        justify-content: flex-start;
         margin: auto;
         height: 218px;
-        width: 395px;
+        width: 250px;
     }
     .wheather__more-container{
         width: 280px;
@@ -25,8 +25,9 @@
         justify-content: space-between;
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 25px;
-        padding: 15px 16px 18px 16px;
-        width: 120px;
+        padding: 15px 12px 18px 12px;
+        min-width: 120px;
+        margin-right: 10px;
         &:hover{
             background: rgba(255, 255, 255, 0.1);
             cursor: pointer;
@@ -36,22 +37,24 @@
     .wheather__hour{
         padding-top: 10px;
         padding-bottom: 10px;
+        justify-content: center;
     }
 
     .wheather__barometer,
     .wheather__humidity{
         padding-bottom: 5px;
+        margin-left: 25px;
     }
 
     .wheather__wind{
         padding-bottom: 10px;
+        margin-left: 25px;
     }
 
     .wheather__hour,
     .wheather__barometer,
     .wheather__humidity,
     .wheather__wind{
-        margin: auto;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 400;
@@ -59,10 +62,39 @@
         line-height: 17px;
         display: flex;
         align-items: center;
-        justify-content: center;
         text-align: center;
         color: #FFFFFF;
         opacity: 0.54;
+    }
+
+    .wheather__barometer::before{
+       content: "";
+        background-image: url('../images/MM/sprites.svg#icon-barometer');
+        width: 20px;
+        height: 20px;
+        margin-left: -30px;
+        position: absolute;
+        justify-content: flex-start;
+    } 
+
+    .wheather__humidity::before{
+        content: "";
+        background-image: url('../images/MM/sprites.svg#icon-humidity');
+        width: 20px;
+        height: 20px;
+        margin-left: -30px;
+        position: absolute;
+        justify-content: flex-start;
+    }
+
+    .wheather__wind::before{
+        content: "";
+        background-image: url('../images/MM/sprites.svg#icon-wind');
+        width: 20px;
+        height: 20px;
+        margin-left: -30px;
+        position: absolute;
+        justify-content: flex-start;
     }
     .wheather__icon{
         width: 35px;
@@ -93,7 +125,7 @@
         border: 0.5px solid #fff3;
         border-radius: 50%;
         opacity: 0.54;
-        margin-top: 20px;
+        margin-top: 15px;
         background-color: #fff3;
         background-image: url(../images/chart.svg);
         background-position: center;
@@ -122,10 +154,10 @@
     .wheather__more-list {
         overflow: hidden;
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-start;
         margin: auto;
         height: 218px;
-        width: 900px;
+        width: 650px;
     }
 
     .wheather__more-container {
@@ -139,11 +171,11 @@
     }
 
     .wheather__more-list-item {
-        width: 120px;
+        min-width: 120px;
         justify-content: space-around;
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 25px;
-        padding: 15px 16px 18px 16px;
+        padding: 15px 12px 18px 12px;
         margin-right: 10px;
         &:hover{
             background: rgba(255, 255, 255, 0.1);
@@ -154,22 +186,24 @@
     .wheather__hour {
         padding-top: 10px;
         padding-bottom: 10px;
+        justify-content: center;
     }
 
     .wheather__barometer,
     .wheather__humidity {
         padding-bottom: 5px;
+        margin-left: 25px;
     }
 
     .wheather__wind {
         padding-bottom: 10px;
+        margin-left: 25px;
     }
 
     .wheather__hour,
     .wheather__barometer,
     .wheather__humidity,
     .wheather__wind {
-        margin: auto;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 400;
@@ -177,10 +211,39 @@
         line-height: 17px;
         display: flex;
         align-items: center;
-        justify-content: center;
         text-align: center;
         color: #FFFFFF;
         opacity: 0.54;
+    }
+
+    .wheather__barometer::before{
+       content: "";
+        background-image: url('../images/MM/sprites.svg#icon-barometer');
+        width: 20px;
+        height: 20px;
+        margin-left: -30px;
+        position: absolute;
+        justify-content: flex-start;
+    } 
+
+    .wheather__humidity::before{
+        content: "";
+        background-image: url('../images/MM/sprites.svg#icon-humidity');
+        width: 20px;
+        height: 20px;
+        margin-left: -30px;
+        position: absolute;
+        justify-content: flex-start;
+    }
+
+    .wheather__wind::before{
+        content: "";
+        background-image: url('../images/MM/sprites.svg#icon-wind');
+        width: 20px;
+        height: 20px;
+        margin-left: -30px;
+        position: absolute;
+        justify-content: flex-start;
     }
 
     .wheather__icon {
@@ -253,14 +316,14 @@
         background: rgba(16, 33, 54, 0.8);
         box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
         border-radius: 0px 0px 34px 34px;
-        padding: 20px 14px 49px 14px;
+        padding: 20px 10px 49px 10px;
     }
 
     .wheather__more-list-item {
         justify-content: space-around;
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 25px;
-        padding: 15px 29px 40px 29px;
+        padding: 15px 25px 40px 25px;
         margin-left: 10px;
         width: 120px;
         &:hover{
@@ -271,7 +334,8 @@
 
     .wheather__hour {
         padding-top: 10px;
-        padding-bottom: 10px;
+        padding-bottom: 5px;
+        justify-content: center;
     }
 
     .wheather__barometer,
@@ -287,7 +351,7 @@
     .wheather__barometer,
     .wheather__humidity,
     .wheather__wind {
-        margin: auto;
+        margin-left: 10px;
         font-family: 'Lato';
         font-style: normal;
         font-weight: 400;
@@ -295,16 +359,45 @@
         line-height: 17px;
         display: flex;
         align-items: center;
-        justify-content: center;
         text-align: center;
         color: #FFFFFF;
         opacity: 0.54;
     }
 
+    .wheather__barometer::before{
+       content: "";
+        background-image: url('../images/MM/sprites.svg#icon-barometer');
+        width: 20px;
+        height: 20px;
+        margin-left: -30px;
+        position: absolute;
+        justify-content: flex-start;
+    } 
+
+    .wheather__humidity::before{
+        content: "";
+        background-image: url('../images/MM/sprites.svg#icon-humidity');
+        width: 20px;
+        height: 20px;
+        margin-left: -30px;
+        position: absolute;
+        justify-content: flex-start;
+    }
+
+    .wheather__wind::before{
+        content: "";
+        background-image: url('../images/MM/sprites.svg#icon-wind');
+        width: 20px;
+        height: 20px;
+        margin-left: -30px;
+        position: absolute;
+        justify-content: flex-start;
+    }
+
     .wheather__icon {
-        height: 35px;
-        width: 35px;
-        padding-bottom: 10px;
+        height: 50px;
+        width: 50px;
+        padding-bottom: 5px;
     }
 
     .wheather__temp {
