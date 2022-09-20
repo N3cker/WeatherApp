@@ -96,10 +96,11 @@
         position: absolute;
         justify-content: flex-start;
     }
-    .wheather__icon{
-        width: 35px;
-        height: 35px;
-        padding-bottom: 10px;
+
+    .svg_moreInfo{
+        width: 25px;
+        height: 25px;
+        margin-left: 35px; 
     }
 
     .wheather__temp{
@@ -246,10 +247,10 @@
         justify-content: flex-start;
     }
 
-    .wheather__icon {
+    .svg_moreInfo{
         width: 35px;
         height: 35px;
-        padding-bottom: 10px;
+        margin-left: 30px; 
     }
 
     .wheather__temp {
@@ -394,10 +395,10 @@
         justify-content: flex-start;
     }
 
-    .wheather__icon {
-        height: 50px;
-        width: 50px;
-        padding-bottom: 5px;
+    .svg_moreInfo{
+        width: 40px;
+        height: 40px;
+        margin-left: 20px; 
     }
 
     .wheather__temp {
