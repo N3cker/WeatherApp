@@ -12,3 +12,4 @@ import './js/randomQuote.js';
 import './js/navigation.js';
 import './js/mainEvents.js';
 import './js/location.js';
+import './js/fiveDaysCarousel.js';

@@ -1,3 +1,7 @@
+.sentence {
+  margin-bottom: 120px;
+}
+
 .sentence-text p {
   width: 280px;
   font-family: 'Lato';
@@ -7,40 +11,38 @@
   line-height: 17px;
   text-align: right;
   letter-spacing: 0.04em;
-  color: #FFFFFF;
-  margin:0 auto;
-  position:relative;
+  color: #ffffff;
+  margin: 0 auto;
+  position: relative;
   width: 280px;
   margin: 0 auto;
   top: 80px;
-  display:flex;
+  display: flex;
   justify-content: flex-end;
-  padding-top:20px;
+  padding-top: 20px;
 }
 
 .sentence-text span {
-    top:100px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    letter-spacing: 0.04em;
-    color: #FFFFFF;
-    position: relative;
-    width: 280px;
-    justify-content: flex-end;
-    display:flex;
-    margin: 0 auto;
+  top: 100px;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  position: relative;
+  width: 280px;
+  justify-content: flex-end;
+  display: flex;
+  margin: 0 auto;
 }
 
-
-@media screen and (min-width: 768px){
-  .sentence-text{
-    width:379px;
+@media screen and (min-width: 768px) {
+  .sentence-text {
+    width: 379px;
     margin: 0 auto;
     position: relative;
-
   }
   .sentence-text p {
     width: 379px;
@@ -51,9 +53,9 @@
     line-height: 26px;
     text-align: right;
     letter-spacing: 0.04em;
-    color: #FFFFFF;
-    padding-top:30px;
-}
+    color: #ffffff;
+    padding-top: 30px;
+  }
 
   .sentence-text span {
     width: 379px;
@@ -65,29 +67,28 @@
     display: flex;
     text-align: right;
     letter-spacing: 0.04em;
-    color: #FFFFFF;
-    position:relative;
+    color: #ffffff;
+    position: relative;
   }
-
 }
 @media screen and (min-width: 1280px) {
   .sentence-text p {
-    position:relative;
+    position: relative;
     width: 400px;
-    top:530px;
+    top: 530px;
     font-family: 'Lato';
     font-style: italic;
     font-weight: 400;
     font-size: 22px;
     line-height: 26px;
     letter-spacing: 0.04em;
-    color: #FFFFFF;
-    padding-top:0px;
-    padding-bottom:0px;
+    color: #ffffff;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   .sentence-text span {
-    top:550px;
+    top: 550px;
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
@@ -95,12 +96,11 @@
     line-height: 22px;
     justify-content: flex-end;
     letter-spacing: 0.04em;
-    color: #FFFFFF;
+    color: #ffffff;
     right: -20px;
-
   }
   .rightS {
-    position:absolute;
+    position: absolute;
     right: 120px;
   }
- }
+}
