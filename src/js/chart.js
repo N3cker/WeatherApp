@@ -5,27 +5,27 @@ import '../sass/index.scss';
 const wrapper = document.querySelector('#canvas-wrapper');
 const chartDisplay = document.querySelector('#myChart');
 const button = document.querySelector('.show-hide');
-
+chartDisplay.style.display = 'none';
 button.addEventListener('click', showChart);
 
-async function showChart() {
+function showChart() {
   if (chartDisplay.style.display !== 'none') {
     chartDisplay.style.display = 'none';
     wrapper.style.background = 'none';
     wrapper.style.boxShadow = 'none';
     button.textContent = 'Show Chart';
-    await loadChart();
   } else {
     chartDisplay.style.display = 'block';
+    button.textContent = 'Hide Chart';
     wrapper.style.background = 'rgba(16, 33, 54, 0.8)';
     wrapper.style.boxShadow = '0px 8px 43px rgba(16, 33, 54, 0.8)';
-    button.textContent = 'Hide Chart';
+    loadChart();
   };
 };
 
-export async function getData(city) {
+export async function getData() {
   const API_KEY = '4da793d645cc6cbfba468135199f7159';
-  const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`);
+  const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${getCity()}&appid=${API_KEY}&units=metric`);
   const data = await response.json();
   const { list } = data;
   const temperature = list.map(temp => { return temp.main.temp });
@@ -57,7 +57,7 @@ let myChart = null;
 
 async function loadChart() {
   const ctx = document.querySelector('#myChart');
-  const dataTemps = await getData(getCity())
+  const dataTemps = await getData()
     .catch(error => { console.error(error); console.log('error occurred, please try again later!'); });
   const data = {
     labels: dataTemps.day,
@@ -157,4 +157,5 @@ async function loadChart() {
     myChart.destroy();
   }
   myChart = new Chart(ctx, config);
+  myChart.update();
 };
