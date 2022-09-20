@@ -5,13 +5,15 @@
     }
     .wheather__more-list{
         display: flex;
-        justify-content: space-around;
+        overflow: hidden;
+        justify-content: space-between;
         margin: auto;
         height: 218px;
+        width: 395px;
     }
     .wheather__more-container{
         width: 280px;
-        height: 273px;
+        height: 290px;
         margin: auto;
         background: rgba(16, 33, 54, 0.8);
         box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
@@ -20,24 +22,15 @@
     }
 
     .wheather__more-list-item{
-        justify-content: space-around;
+        justify-content: space-between;
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 25px;
         padding: 15px 16px 18px 16px;
-        &:focus,
+        width: 120px;
         &:hover{
             background: rgba(255, 255, 255, 0.1);
             cursor: pointer;
         }
-    }
-
-    .wheather__more-list-item2,
-    .wheather__more-list-item3{
-        display: none;
-        justify-content: space-around;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 25px;
-        padding: 15px 16px 18px 16px;
     }
 
     .wheather__hour{
@@ -73,7 +66,7 @@
     }
     .wheather__icon{
         width: 35px;
-        height: 25px;
+        height: 35px;
         padding-bottom: 10px;
     }
 
@@ -91,8 +84,31 @@
         color: #FF6B09;
         padding-bottom: 10px;
     }
+
+    .arrow-next-btn,
+    .arrow-back-btn {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        border: 0.5px solid #fff3;
+        border-radius: 50%;
+        opacity: 0.54;
+        margin-top: 20px;
+        background-color: #fff3;
+        background-image: url(../images/chart.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        &:hover{
+            background: #FFFFFF;
+            opacity: 1;
+        }
+    }
     .arrow-next-btn{
-        display: none;
+        transform: rotate(-90deg);
+    }
+    .arrow-back-btn{
+        transform: rotate(90deg);
+        margin-left: 190px;
     }
 
 }
@@ -104,11 +120,12 @@
     }
 
     .wheather__more-list {
+        overflow: hidden;
         display: flex;
         justify-content: space-around;
         margin: auto;
         height: 218px;
-        width: 640px;
+        width: 900px;
     }
 
     .wheather__more-container {
@@ -121,20 +138,17 @@
         padding: 20px 14px 49px 14px;
     }
 
-    .wheather__more-list-item, 
-    .wheather__more-list-item2{
+    .wheather__more-list-item {
+        width: 120px;
         justify-content: space-around;
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 25px;
         padding: 15px 16px 18px 16px;
-        &:focus,
+        margin-right: 10px;
         &:hover{
             background: rgba(255, 255, 255, 0.1);
             cursor: pointer;
         }
-    }
-    .wheather__more-list-item3{
-        display: none;
     }
 
     .wheather__hour {
@@ -171,7 +185,7 @@
 
     .wheather__icon {
         width: 35px;
-        height: 25px;
+        height: 35px;
         padding-bottom: 10px;
     }
 
@@ -203,7 +217,6 @@
         background-image: url(../images/chart.svg);
         background-position: center;
         background-repeat: no-repeat;
-        &:focus,
         &:hover{
             background: #FFFFFF;
             opacity: 1;
@@ -214,6 +227,7 @@
     }
     .arrow-back-btn{
         transform: rotate(90deg);
+        margin-left: 530px;
     }
 }
 
@@ -234,7 +248,7 @@
 
     .wheather__more-container {
         width: 1060px;
-        height: 273px;
+        height: 295px;
         margin: auto;
         background: rgba(16, 33, 54, 0.8);
         box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
@@ -242,15 +256,13 @@
         padding: 20px 14px 49px 14px;
     }
 
-    .wheather__more-list-item,
-    .wheather__more-list-item2,
-    .wheather__more-list-item3 {
+    .wheather__more-list-item {
         justify-content: space-around;
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 25px;
         padding: 15px 29px 40px 29px;
+        margin-left: 10px;
         width: 120px;
-        &:focus,
         &:hover{
             background: rgba(255, 255, 255, 0.1);
             cursor: pointer;
@@ -290,7 +302,8 @@
     }
 
     .wheather__icon {
-        height: 25px;
+        height: 35px;
+        width: 35px;
         padding-bottom: 10px;
     }
 
@@ -309,7 +322,32 @@
         padding-bottom: 10px;
     }
     
-    .arrow-next-btn{
-        display: none;
+        .arrow-next-btn,
+        .arrow-back-btn {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            border: 0.5px solid #fff3;
+            border-radius: 50%;
+            opacity: 0.54;
+            margin-top: 20px;
+            background-color: #fff3;
+            background-image: url(../images/chart.svg);
+            background-position: center;
+            background-repeat: no-repeat;    
+            &:hover {
+                background: #FFFFFF;
+                opacity: 1;
+            }
+        }
+    
+        .arrow-next-btn {
+            transform: rotate(-90deg);
+            display: none;
+        }
+    
+        .arrow-back-btn {
+            transform: rotate(90deg);
+            display: none;
+        }
     }
-}
