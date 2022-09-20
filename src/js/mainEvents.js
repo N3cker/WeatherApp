@@ -1,6 +1,7 @@
 import { setTimeElements } from './additions';
 import { responseFiveDays, responseFiveDaysMore } from './apiFiveDays';
 import { getData } from './chart';
+import { getTodayDataByLocation } from './location';
 import {
   show5daysElements,
   show5daysMore,
@@ -18,6 +19,7 @@ const btnTodayFrom5days = document.querySelector("button[class='today-btn']");
 const btn5daysFrom5days = document.querySelector(
   "button[class='five-days-btn']"
 );
+const locationBtn = document.querySelector('#btn-location');
 
 async function setTodayPage(city) {
   setCity(city); //ustawienie city do zmiennej globalnej
@@ -28,11 +30,22 @@ async function setTodayPage(city) {
   addCityKey(); //dodanie miasta do karuzeli
 }
 
+export function setTodayPageByLocation() {
+  let promiseData = getTodayDataByLocation();
+  promiseData
+    .then(data => {
+      showTodayElements(); //pokazanie/schowanie odpowiednich elementów interfejsu
+      printTemperatures(data); //ustawienie dziennej pogody
+      setTimeElements(data); //ustawienie elementów czasu
+      addCityKey(); //dodanie miasta do karuzeli
+    })
+    .catch(error => Notiflix.Notify.failure(error));
+}
+
 async function set5daysPage() {
   show5daysElements(); //pokazanie/schowanie odpowiednich elementów inferfejsu
   await responseFiveDays(); //wywołanie API 5 dni
   const moreInfos = document.getElementsByClassName('more-info');
-  console.log(moreInfos);
   [...moreInfos].forEach(element => {
     element.addEventListener('click', () => {
       set5daysMore(element.getAttribute('name'));
@@ -78,3 +91,5 @@ document
       setTodayPage(cityName);
     }
   });
+
+locationBtn.addEventListener('click', setTodayPageByLocation);

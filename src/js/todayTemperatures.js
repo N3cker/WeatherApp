@@ -16,15 +16,13 @@ export async function getTodayData() {
   return data;
 }
 
-export async function printTemperatures() {
+export async function printTemperatures(data) {
   const todayCityName = document.querySelector('.today__cityName');
   const todayCityName5days = document.querySelector('.city-name');
   const temperatureActual = document.querySelector('.today__temp--actuall');
   const temperatureMin = document.querySelector('.today__temp--minNum');
   const temperatureMax = document.querySelector('.today__temp--maxNum');
   const todayIcon = document.querySelector('.today__icon');
-
-  const data = await getTodayData(getCity());
 
   const { temp, temp_max, temp_min } = data.main;
 

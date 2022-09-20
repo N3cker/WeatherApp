@@ -47,7 +47,6 @@ export async function responseFiveDaysMore(dt) {
   const api_url = `http://api.openweathermap.org/data/2.5/forecast?q=${getCity()}&lang=pl&units=metric&appid=c58ab9d92883ad1e6f51fe201539b277`;
   const response = await fetch(api_url);
   const data = await response.json();
-  console.log('DATA', data);
   const list = data.list;
   const markupMore = list
     .map((item, idx) => {
