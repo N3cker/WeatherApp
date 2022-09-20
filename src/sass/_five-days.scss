@@ -79,18 +79,21 @@
   }
 
   .wheather-list {
+    overflow: hidden;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     margin: auto;
+    width: 250px;
+    height: 154px;
   }
 
   .wheather-list-item {
-    justify-content: space-around;
+    justify-content: space-between;
+    min-width: 80px;
+    height: 154px;
+    margin-right: 5px;
   }
 
-  .wheather-list-item2 {
-    display: none;
-  }
   .day-of-the-week {
     margin: auto;
     padding-bottom: 10px;
@@ -127,7 +130,8 @@
   }
 
   .wheather-icon {
-    height: 25px;
+    height: 35px;
+    width: 35px;
     justify-content: center;
     text-align: center;
     margin: auto;
@@ -165,7 +169,7 @@
   .max-temp {
     display: inline-flex;
     width: 30px;
-    padding-left: 30px;
+    padding-left: 20px;
   }
 
   .min-temperature,
@@ -198,7 +202,6 @@
     background-image: url(../images/chart.svg);
     background-position: center;
     background-repeat: no-repeat;
-    &:focus,
     &:hover {
       background: #ffffff;
       opacity: 0.5;
@@ -302,8 +305,7 @@
     padding-top: 40px;
   }
 
-  .wheather-list-item,
-  .wheather-list-item2 {
+  .wheather-list-item{
     justify-content: space-around;
   }
 
@@ -343,7 +345,8 @@
   }
 
   .wheather-icon {
-    height: 25px;
+    height: 35px;
+    width: 35px;
     justify-content: center;
     text-align: center;
     margin: auto;
@@ -531,7 +534,7 @@
     justify-content: center;
     text-align: center;
     margin: auto;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
@@ -541,11 +544,12 @@
   }
 
   .wheather-icon {
-    height: 25px;
+    height: 50px;
+    width: 50px;
     justify-content: center;
     text-align: center;
     margin: auto;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
   }
 
   .min-temp,
@@ -578,17 +582,17 @@
   .min-temp,
   .max-temp {
     display: inline-flex;
-    width: 90px;
-    padding-left: 19px;
+    width: 70px;
+    padding-left: 60px;
   }
 
   .min-temperature,
   .max-temperature {
     display: inline-flex;
-    width: 90px;
+    width: 70px;
     margin: auto;
     padding-bottom: 20px;
-    padding-left: 15px;
+    padding-left: 55px;
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;

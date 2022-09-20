@@ -8,6 +8,7 @@ const weatherBtn = document.querySelector('.buttonsToday');
 const fiveDaysWeather = document.querySelector('.five-days-wheather');
 const chart = document.querySelector('#canvas-wrapper');
 const sunriseSunset = document.querySelector('.current-set');
+const infoWeatherMore = document.querySelector('.wheather__more-container');
 
 export const showTodayElements = () => {
   sectionTodayWeather.style.display = '';
@@ -29,9 +30,14 @@ export function show5daysElements() {
   btnToday.style.display = 'none';
   btn5days.style.display = 'none';
   weatherBtn.style.display = 'none';
+  infoWeatherMore.style.display = 'none';
 
   fiveDaysWeather.style.display = '';
   chart.style.display = '';
+}
+
+export function show5daysMore() {
+    infoWeatherMore.style.display = '';
 }
 
 function hideStartElements() {

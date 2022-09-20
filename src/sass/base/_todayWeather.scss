@@ -39,14 +39,21 @@
   align-items: center;
   text-align: center;
   color: #767D85;
-  margin-left:-30px;
-  padding-left:90px;
+  padding-top:10px;
   text-transform:capitalize;
+  justify-items: center;
+  justify-content: center;
 
 }
 
 .today__temp {
   display:flex;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin:0 auto;
+  padding-top:10px;
 }
 
 
@@ -61,11 +68,13 @@
   display: flex;
   align-items: center;
   text-align: center;
-  width: 75px;
+  justify-items: center;
+  justify-content: center;
+  margin:0;
+  padding-right:20px;
 }
 
 .spanM {
-
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -75,12 +84,11 @@
   text-align: center;
   color: #767D85;
   text-transform: lowercase;
-  margin:0;
+
 }
 
 .today__temp--max,
 .today__temp--min {
-
   font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
@@ -90,12 +98,13 @@
   align-items: center;
   text-align: center;
   color: #FFFFFF;
-  padding-top:17px;
+  padding-top:15px;
+  justify-items: center;
+  justify-content: center;
 
 }
 
 .today__temp--min {
-  padding-left:20px;
   padding-right:10px;
 }
 
@@ -103,8 +112,8 @@
   padding-left:10px;
 }
 
-.line{
-  margin-top:20px;
+.linetest{
+  margin-top:18px;
 }
 
 
@@ -126,31 +135,26 @@
   .today__cityName {
     font-size: 18px;
     line-height: 22px;
-    margin-left:30px;
-    padding-left:0px;
     text-transform:capitalize;
-    padding-bottom:10px;
-
   }
 
   .today__temp {
     display:block;
+    justify-items: center;
+    justify-content: center;
   }
-
 
   .today__temp--actuall {
     font-size: 90px;
     line-height: 108px;
-    width: 90px;
-    padding-left:10px;
-
+    padding:0;
   }
 
   .spanM {
     font-size: 18px;
     line-height: 22px;
     display: flex;
-    margin:0;
+    margin:0 auto;
   }
 
   .today__temp--max,
@@ -158,39 +162,31 @@
     font-size: 18px;
     line-height: 22px;
     display: block;
-    padding-top:17px;
+    padding-top:10px;
 
   }
 
   .today__temp--min {
-    padding-left:20px;
     padding-right:10px;
   }
   .innerList {
     display:flex;
+    justify-items: center;
+    justify-content: center;
   }
 
   .today__temp--max {
     padding-left:10px;
   }
-
-  .linetest{
-    margin-top:23px;
-  }
-
 }
 
-
 @media screen and (min-width: 1280px) {
-
-
   .containerr .today {
     display:block;
     box-shadow: 0px 8px 43px rgba(16, 33, 54, 0.6);
     border-radius: 34px 0px 0px 34px;
-    width: 450px;
     height: 300px;
-    top: 92px;
+    top: 52px;
   }
 
 .today {
@@ -206,23 +202,28 @@
   .today__cityName {
     font-size: 18px;
     line-height: 22px;
-    margin-left:30px;
-    padding-left:0px;
+    margin:0 auto;
     text-transform:capitalize;
-    padding-bottom:10px;
+    text-align: center;
+    justify-content: center;
 
   }
 
   .today__temp {
     display:block;
+    text-align: center;
+    justify-content: center;
+    margin:0 auto;
   }
 
 
   .today__temp--actuall {
     font-size: 90px;
     line-height: 108px;
-    width: 90px;
-    padding-left:10px;
+    margin:0 auto;
+    padding:0;
+    text-align: center;
+    justify-content: center;
 
   }
 
@@ -230,7 +231,7 @@
     font-size: 18px;
     line-height: 22px;
     display: flex;
-    margin:0;
+    margin:0 auto;
   }
 
   .today__temp--max,
@@ -238,14 +239,11 @@
     font-size: 18px;
     line-height: 22px;
     display: block;
-    padding-top:0;
-    // padding-top:17px;
-
+    padding:0;
   }
 
   .today__temp--min {
-    // padding-left:20px;
-    // padding-right:10px;
+    padding-right:10px;
   }
   .innerList {
     display:flex;
@@ -261,6 +259,9 @@
   .linetest{
     height:34px;
     margin-top:0;
+  }
+  .todayico{
+    justify-content: center;
   }
 
 }

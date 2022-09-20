@@ -1,7 +1,12 @@
 import { setTimeElements } from './additions';
-import { responseFiveDays } from './apiFiveDays';
+import { responseFiveDays, responseFiveDaysMore } from './apiFiveDays';
 import { getData } from './chart';
-import { show5daysElements, showTodayElements } from './navigation';
+import { getTodayDataByLocation } from './location';
+import {
+  show5daysElements,
+  show5daysMore,
+  showTodayElements,
+} from './navigation';
 import { addCityKey } from './searchCity';
 import { getTodayData, printTemperatures } from './todayTemperatures';
 import { getCity, setCity } from './variables';
@@ -14,6 +19,7 @@ const btnTodayFrom5days = document.querySelector("button[class='today-btn']");
 const btn5daysFrom5days = document.querySelector(
   "button[class='five-days-btn']"
 );
+const locationBtn = document.querySelector('#btn-location');
 
 async function setTodayPage(city) {
   setCity(city); //ustawienie city do zmiennej globalnej
@@ -24,10 +30,33 @@ async function setTodayPage(city) {
   addCityKey(); //dodanie miasta do karuzeli
 }
 
+export function setTodayPageByLocation() {
+  let promiseData = getTodayDataByLocation();
+  promiseData
+    .then(data => {
+      showTodayElements(); //pokazanie/schowanie odpowiednich elementów interfejsu
+      printTemperatures(data); //ustawienie dziennej pogody
+      setTimeElements(data); //ustawienie elementów czasu
+      addCityKey(); //dodanie miasta do karuzeli
+    })
+    .catch(error => Notiflix.Notify.failure(error));
+}
+
 async function set5daysPage() {
   show5daysElements(); //pokazanie/schowanie odpowiednich elementów inferfejsu
   await responseFiveDays(); //wywołanie API 5 dni
-  await getData(); //przygotowanie danych do chartow
+  const moreInfos = document.getElementsByClassName('more-info');
+  [...moreInfos].forEach(element => {
+    element.addEventListener('click', () => {
+      set5daysMore(element.getAttribute('name'));
+    });
+  });
+  // await getData(); //przygotowanie danych do chartow
+}
+
+async function set5daysMore(dt) {
+  await responseFiveDaysMore(dt);
+  show5daysMore();
 }
 
 form.addEventListener('submit', e => {
@@ -60,7 +89,7 @@ document
       e.preventDefault();
       const cityName = e.target.textContent;
       setTodayPage(cityName);
-      setCity(cityName);
-      // console.log(e.target.textContent);
     }
   });
+
+locationBtn.addEventListener('click', setTodayPageByLocation);

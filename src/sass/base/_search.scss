@@ -13,8 +13,9 @@ input {
 }
 
 .search__history {
+  margin: auto;
+  max-width: 250px;
   display: flex;
-  margin-bottom: 1px;
 }
 
 .search__history-list {
@@ -81,7 +82,6 @@ input {
   opacity:0.54;
   border-radius: 50%;
   border: 1.5px solid #FFFFFF;
-  background:#FFFFFF;
   background-image: url(../images/chart.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -147,8 +147,9 @@ input {
   }
 
 .search__history {
+  margin: auto;
+  max-width: 420px;
   display: flex;
-  margin-bottom: 1px;
 }
 
 .search__history-list {
@@ -249,8 +250,9 @@ input {
   }
 
 .search__history {
+  margin: auto;
+  max-width: 420px;
   display: flex;
-  margin-bottom: 1px;
 }
 
 .search__history-list {
@@ -285,8 +287,7 @@ input {
   line-height: 14px;
   color: #FFFFFF;
   cursor: pointer;
-  &:hover,
-  &:focus {
+  &:hover{
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition: background-color, color, box-shadow 250ms;
     opacity: 1;
@@ -319,7 +320,6 @@ input {
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
-  &:focus,
   &:hover {
     background: #FFFFFF;
     opacity: 1;
