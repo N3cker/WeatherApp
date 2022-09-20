@@ -238,8 +238,7 @@
   .containerClock .today-info {
     width: 630px;
     height: 278px;
-    // left:0px;
-    top: 485px;
+    top: auto;
     background: rgba(16, 33, 54, 0.6);
     border-radius: 0px 34px 0px 0px;
     margin: 0 auto;
@@ -250,7 +249,12 @@
 
   .left {
     position: absolute;
+    pointer-events: none;
+    top: 0;
     left: 0;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
   }
   .desktop_li {
     display: flex;
