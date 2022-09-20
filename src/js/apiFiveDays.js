@@ -1,8 +1,10 @@
 import { getCity } from './variables';
+import img from '../images/weather-icons.svg';
 
 const btnFiveDays = document.querySelector('.five-days-btn');
 const infoWeather = document.querySelector('.wheather-list');
 const infoWeatherMore = document.querySelector('.wheather__more-list');
+
 
 export const responseFiveDays = async function getWeather() {
   const api_url = `http://api.openweathermap.org/data/2.5/forecast?q=${getCity()}&lang=pl&units=metric&appid=c58ab9d92883ad1e6f51fe201539b277`;
@@ -26,9 +28,7 @@ export const responseFiveDays = async function getWeather() {
       return `<li class="wheather-list-item">
         <p class="day-of-the-week">${nameDay}</p>
         <p class="day-of-the-month">${nameDayMonth}</p>
-        <img class="wheather-icon" src="http://openweathermap.org/img/wn/${
-          item.weather[0].icon
-        }@2x.png" alt="${item.weather[0].description}"></img>
+        <p class="wheather-icon"><use href="${img}#icon-${item.weather[0].icon}"></use></p>
         <p class="min-temp">min</p>
         <p class="max-temp">max</p>
         <p class="min-temperature">${Math.ceil(item.main.temp_min)}</p>
