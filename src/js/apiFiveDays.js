@@ -6,6 +6,24 @@ const infoWeather = document.querySelector('.wheather-list');
 const infoWeatherMore = document.querySelector('.wheather__more-list');
 
 
+//funkcja przerabia otrzymane dane na mapę, w której kluczem jest dzień w formacie ISO, a wartością minimalna i maksymalna temperatura z danego dnia
+const createDataFiveDays = list => {
+  const result = list.reduce((acc, day) => {
+    const date = day.dt_txt.split(' ')[0];
+    console.log('date', date);
+    if (acc[date]) {
+      acc[date].temp_max = Math.max(acc[date].temp_max, day.main.temp_max);
+      acc[date].temp_min = Math.min(acc[date].temp_min, day.main.temp_min);
+    } else {
+      acc[date] = { temp_max: day.main.temp_max, temp_min: day.main.temp_min };
+    }
+    return acc;
+  }, {});
+  return result;
+};
+
+const convertDateToISODay = date => date.toISOString().split('T')[0];
+
 export const responseFiveDays = async function getWeather() {
   const api_url = `http://api.openweathermap.org/data/2.5/forecast?q=${getCity()}&lang=pl&units=metric&appid=c58ab9d92883ad1e6f51fe201539b277`;
   const response = await fetch(api_url);
@@ -15,8 +33,9 @@ export const responseFiveDays = async function getWeather() {
   for (let i = 0; i < list.length; i += 8) {
     day.push(list[i]);
   }
+  const minMaxData = createDataFiveDays(list);
   const markup = day
-    .map(item => {
+    .map((item, idx) => {
       let dt = new Date(item.dt * 1000);
       let nameDay = dt.toLocaleDateString('en', {
         weekday: 'long',
@@ -28,11 +47,17 @@ export const responseFiveDays = async function getWeather() {
       return `<li class="wheather-list-item">
         <p class="day-of-the-week">${nameDay}</p>
         <p class="day-of-the-month">${nameDayMonth}</p>
-        <p class="wheather-icon"><svg class="svg_5days"><use href="${img}#icon-${item.weather[0].icon}"></use></svg></p>
+        <p class="wheather-icon"><svg class="svg_5days"><use href="${img}#icon-${
+        item.weather[0].icon
+      }"></use></svg></p>
         <p class="min-temp">min</p>
         <p class="max-temp">max</p>
-        <p class="min-temperature">${Math.ceil(item.main.temp_min)}</p>
-        <p class="max-temperature">${Math.ceil(item.main.temp_max)}</p>
+        <p class="min-temperature">${Math.round(
+          minMaxData[convertDateToISODay(dt)].temp_min
+        )}</p>
+        <p class="max-temperature">${Math.round(
+          minMaxData[convertDateToISODay(dt)].temp_max
+        )}</p>
         <a href="#" class="more-info" name="${item.dt}">more info</a>
         </li>`;
     })
@@ -55,7 +80,9 @@ export async function responseFiveDaysMore(dt) {
         let hours = dt.getHours();
         return `<li class="wheather__more-list-item">
         <p class="wheather__hour">${hours}:00</p>
-        <p class="wheather__icon"><svg class="svg_moreInfo"><use href="${img}#icon-${item.weather[0].icon}"></use></svg></p>
+        <p class="wheather__icon"><svg class="svg_moreInfo"><use href="${img}#icon-${
+          item.weather[0].icon
+        }"></use></svg></p>
         <p class="wheather__temp">${Math.ceil(item.main.temp)}</p>
         <p class="wheather__barometer">${item.main.pressure}mm</p>
         <p class="wheather__humidity">${item.main.humidity}%</p>

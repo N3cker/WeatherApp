@@ -1,3 +1,5 @@
+import { showChart } from './chart';
+
 const btnToday = document.querySelector("button[class='todaybtn']");
 const btn5days = document.querySelector("button[class='fivedaysbtn']");
 
@@ -6,9 +8,11 @@ const sectionTodayClock = document.querySelector('.today-clock');
 const sectionSentence = document.querySelector('.sentence');
 const weatherBtn = document.querySelector('.buttonsToday');
 const fiveDaysWeather = document.querySelector('.five-days-wheather');
+const fiveDaysWeatherContainer = document.querySelector('.wheather-container');
 const chart = document.querySelector('#canvas-wrapper');
 const sunriseSunset = document.querySelector('.current-set');
 const infoWeatherMore = document.querySelector('.wheather__more-container');
+const chartDisplay = document.querySelector('#myChart');
 
 export const showTodayElements = () => {
   sectionTodayWeather.style.display = '';
@@ -21,6 +25,10 @@ export const showTodayElements = () => {
 
   fiveDaysWeather.style.display = 'none';
   chart.style.display = 'none';
+  if (chartDisplay.style.display !== 'none') {
+    showChart();
+  }
+  fiveDaysWeatherContainer.style.borderRadius = '34px';
 };
 
 export function show5daysElements() {
@@ -34,10 +42,12 @@ export function show5daysElements() {
 
   fiveDaysWeather.style.display = '';
   chart.style.display = '';
+  fiveDaysWeatherContainer.style.borderRadius = '34px';
 }
 
 export function show5daysMore() {
-    infoWeatherMore.style.display = '';
+  infoWeatherMore.style.display = '';
+  fiveDaysWeatherContainer.style.borderRadius = '34px 34px 0 0';
 }
 
 function hideStartElements() {
