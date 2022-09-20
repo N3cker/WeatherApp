@@ -28,7 +28,7 @@ export const responseFiveDays = async function getWeather() {
       return `<li class="wheather-list-item">
         <p class="day-of-the-week">${nameDay}</p>
         <p class="day-of-the-month">${nameDayMonth}</p>
-        <p class="wheather-icon"><use href="${img}#icon-${item.weather[0].icon}"></use></p>
+        <p class="wheather-icon"><svg><use href="${img}#icon-${item.weather[0].icon}"></use></svg></p>
         <p class="min-temp">min</p>
         <p class="max-temp">max</p>
         <p class="min-temperature">${Math.ceil(item.main.temp_min)}</p>
