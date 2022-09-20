@@ -1,5 +1,5 @@
 .today-clock {
-  margin-top:10px;
+  margin-top: 10px;
 }
 .containerClock .today-info {
   width: 280px;
@@ -7,32 +7,31 @@
   top: 100px;
   background: rgba(16, 33, 54, 0.8);
   border-radius: 34px;
-  position:relative;
-  margin:0 auto;
-  left:0;
-
+  position: relative;
+  margin: 0 auto;
+  left: 0;
 }
 
 .current-date {
-    width: 280px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 45px;
-    line-height: 54px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.04em;
-    color: #FFFFFF;
-    padding-top:30px;
-    justify-content: center;
-    }
+  width: 280px;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 45px;
+  line-height: 54px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  padding-top: 30px;
+  justify-content: center;
+  padding-bottom: 10px;
+}
 #todays-date {
   display: flex;
   align-items: center;
   text-align: center;
-
 }
 #day {
   letter-spacing: 0.04em;
@@ -40,9 +39,10 @@
 
 .current-mth {
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: center;
-
+  margin-right: 21px;
+  padding-bottom: 10px;
 }
 
 #month {
@@ -54,8 +54,8 @@
   line-height: 17px;
   display: flex;
   letter-spacing: 0.04em;
-  color: #FFFFFF;
-  padding-right:10px;
+  color: #ffffff;
+  padding-right: 10px;
 }
 
 .lineClock {
@@ -63,7 +63,8 @@
 }
 
 #date-time {
-  padding-left:10px;
+  padding-left: 10px;
+  padding-right: 10px;
   width: 60px;
   height: 17px;
   left: 170px;
@@ -76,32 +77,30 @@
   display: flex;
   align-items: center;
   letter-spacing: 0.04em;
-  color: #FFFFFF;
+  color: #ffffff;
 }
-
 
 .current-set {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .rise__icon {
-  width:40px;
+  width: 40px;
   height: 40px;
-  fill:$thirdColor;
-  padding-left:0px;
+  fill: $thirdColor;
+  padding-left: 0px;
 }
 
 .set__icon {
-  width:40px;
+  width: 40px;
   height: 40px;
-  fill:$thirdColor;
+  fill: $thirdColor;
+  padding-left: 10px;
 }
 
 .rise__time {
-
   top: 575px;
   font-family: 'Lato';
   font-style: normal;
@@ -111,8 +110,8 @@
   display: flex;
   align-items: center;
   letter-spacing: 0.04em;
-  color: #FFFFFF;
-  padding-right:10px;
+  color: #ffffff;
+  padding-right: 10px;
 }
 
 .set__time {
@@ -125,10 +124,13 @@
   display: flex;
   align-items: center;
   letter-spacing: 0.04em;
-  color: #FFFFFF;
-  padding-left:10px;
+  color: #ffffff;
+  padding-left: 10px;
 }
-@media screen and (min-width: 768px){
+#suffix {
+  padding-right: 10px;
+}
+@media screen and (min-width: 768px) {
   .containerClock .today-info {
     width: 500px;
     height: 278px;
@@ -136,22 +138,21 @@
   }
 
   .current-date {
-      width: 290px;
-      font-family: 'Lato';
-      font-style: normal;
-      font-weight: 300;
-      font-size: 90px;
-      line-height: 108px;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      letter-spacing: 0.04em;
-      color: #FFFFFF;
-      justify-content: center;
-      margin-top:30px;
-      margin-left:105px;
-
-      }
+    width: 290px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 90px;
+    line-height: 108px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: 105px;
+  }
   #todays-date {
     display: flex;
     align-items: center;
@@ -164,8 +165,9 @@
   .current-mth {
     display: flex;
     align-items: center;
-    justify-content:center;
-    padding-top:10px;
+    justify-content: center;
+    padding-top: 10px;
+    margin-right: 0;
   }
 
   #month {
@@ -177,17 +179,17 @@
     line-height: 22px;
     display: flex;
     letter-spacing: 0.04em;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .lineClock {
     opacity: 0.4;
-    margin:0;
-    border: 1px solid #FFFFFF;
+    margin: 0;
+    border: 1px solid #ffffff;
   }
 
   #date-time {
-    padding-left:10px;
+    padding-left: 10px;
     width: 77px;
     left: 404px;
     top: 832px;
@@ -198,22 +200,22 @@
   .current-set {
     display: flex;
     align-items: center;
-    justify-content:center;
-    padding-top:30px;
+    justify-content: center;
+    padding-top: 30px;
   }
 
   .rise__icon {
-    width:40px;
+    width: 40px;
     height: 40px;
-    fill:$thirdColor;
-    margin-right:0;
-    margin-left:25px;
+    fill: $thirdColor;
+    margin-right: 0;
+    margin-left: 25px;
   }
   .set__icon {
-    width:40px;
+    width: 40px;
     height: 40px;
-    fill:$thirdColor;
-    margin-left:20px;
+    fill: $thirdColor;
+    margin-left: 20px;
   }
 
   .rise__time {
@@ -221,7 +223,7 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-    margin-right:20px;
+    margin-right: 20px;
   }
 
   .set__time {
@@ -230,38 +232,38 @@
     font-size: 18px;
     line-height: 22px;
   }
- }
+}
 
 @media screen and (min-width: 1280px) {
   .containerClock .today-info {
     width: 630px;
     height: 278px;
     // left:0px;
-    top: 505px;
+    top: 485px;
     background: rgba(16, 33, 54, 0.6);
     border-radius: 0px 34px 0px 0px;
-    margin:0 auto;
-    align-items: center;
-      text-align: center;
-      justify-content: baseline;
-  }
-
-  .left {
-    position:absolute;
-    left:0;
-  }
-.desktop_li{
-    display:flex;
+    margin: 0 auto;
     align-items: center;
     text-align: center;
     justify-content: baseline;
-    position:absolute;
-}
+  }
+
+  .left {
+    position: absolute;
+    left: 0;
+  }
+  .desktop_li {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: baseline;
+    position: absolute;
+  }
   .current-date {
-      // width: 290px;
-      font-size: 90px;
-      line-height: 108px;
-      }
+    // width: 290px;
+    font-size: 90px;
+    line-height: 108px;
+  }
   #todays-date {
     display: flex;
     align-items: center;
@@ -271,13 +273,13 @@
     letter-spacing: 0.04em;
   }
   #suffix {
-    margin-right:30px;
+    margin-right: 30px;
   }
 
   .current-mth {
     display: flex;
     align-items: center;
-    margin-left:60px;
+    margin-left: 60px;
     justify-content: center;
   }
 
@@ -287,7 +289,7 @@
     font-size: 18px;
     line-height: 22px;
     display: flex;
-    padding-right:20px;
+    padding-right: 20px;
   }
 
   .lineClock {
@@ -295,7 +297,7 @@
   }
 
   #date-time {
-    padding-left:20px;
+    padding-left: 20px;
     width: 77px;
     top: 838px;
     font-weight: 400;
@@ -303,26 +305,25 @@
     line-height: 22px;
   }
 
-
   .current-set {
     display: flex;
     align-items: center;
-    text-align:justify;
-    padding-top:10;
-    padding-left:20px;
+    text-align: justify;
+    padding-top: 0;
+    padding-left: 20px;
   }
 
   .rise__icon {
-    width:40px;
+    width: 40px;
     height: 40px;
-    fill:$thirdColor;
+    fill: $thirdColor;
     justify-items: baseline;
   }
 
   .set__icon {
-    width:40px;
+    width: 40px;
     height: 40px;
-    fill:$thirdColor;
+    fill: $thirdColor;
   }
 
   .rise__time {
