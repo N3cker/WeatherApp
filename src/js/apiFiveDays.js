@@ -28,7 +28,7 @@ export const responseFiveDays = async function getWeather() {
       return `<li class="wheather-list-item">
         <p class="day-of-the-week">${nameDay}</p>
         <p class="day-of-the-month">${nameDayMonth}</p>
-        <p class="wheather-icon"><svg><use href="${img}#icon-${item.weather[0].icon}"></use></svg></p>
+        <p class="wheather-icon"><svg class="svg_5days"><use href="${img}#icon-${item.weather[0].icon}"></use></svg></p>
         <p class="min-temp">min</p>
         <p class="max-temp">max</p>
         <p class="min-temperature">${Math.ceil(item.main.temp_min)}</p>
@@ -55,9 +55,7 @@ export async function responseFiveDaysMore(dt) {
         let hours = dt.getHours();
         return `<li class="wheather__more-list-item">
         <p class="wheather__hour">${hours}:00</p>
-        <img class="wheather-icon" src="http://openweathermap.org/img/wn/${
-          item.weather[0].icon
-        }@2x.png" alt="${item.weather[0].description}"></img>
+        <p class="wheather__icon"><svg class="svg_moreInfo"><use href="${img}#icon-${item.weather[0].icon}"></use></svg></p>
         <p class="wheather__temp">${Math.ceil(item.main.temp)}</p>
         <p class="wheather__barometer">${item.main.pressure}mm</p>
         <p class="wheather__humidity">${item.main.humidity}%</p>
