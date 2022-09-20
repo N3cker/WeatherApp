@@ -28,7 +28,7 @@ export async function setTimeElements(data) {
     isDay = false;
   }
   await fetchBgImg(isDay).then(response => {
-    document.body.style.backgroundImage = `url(${response.hits[0].largeImageURL})`;
+    document.body.style.backgroundImage = `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 140%), url(${response.hits[0].largeImageURL})`;
   });
 }
 
