@@ -1,7 +1,11 @@
 import { setTimeElements } from './additions';
-import { responseFiveDays } from './apiFiveDays';
+import { responseFiveDays, responseFiveDaysMore } from './apiFiveDays';
 import { getData } from './chart';
-import { show5daysElements, showTodayElements } from './navigation';
+import {
+  show5daysElements,
+  show5daysMore,
+  showTodayElements,
+} from './navigation';
 import { addCityKey } from './searchCity';
 import { getTodayData, printTemperatures } from './todayTemperatures';
 import { getCity, setCity } from './variables';
@@ -27,7 +31,19 @@ async function setTodayPage(city) {
 async function set5daysPage() {
   show5daysElements(); //pokazanie/schowanie odpowiednich elementów inferfejsu
   await responseFiveDays(); //wywołanie API 5 dni
-  await getData(); //przygotowanie danych do chartow
+  const moreInfos = document.getElementsByClassName('more-info');
+  console.log(moreInfos);
+  [...moreInfos].forEach(element => {
+    element.addEventListener('click', () => {
+      set5daysMore(element.getAttribute('name'));
+    });
+  });
+  // await getData(); //przygotowanie danych do chartow
+}
+
+async function set5daysMore(dt) {
+  await responseFiveDaysMore(dt);
+  show5daysMore();
 }
 
 form.addEventListener('submit', e => {
@@ -60,7 +76,5 @@ document
       e.preventDefault();
       const cityName = e.target.textContent;
       setTodayPage(cityName);
-      setCity(cityName);
-      // console.log(e.target.textContent);
     }
   });
