@@ -1,6 +1,5 @@
 import { setTimeElements } from './additions';
 import { responseFiveDays, responseFiveDaysMore } from './apiFiveDays';
-import { getData } from './chart';
 import { getTodayDataByLocation } from './location';
 import {
   show5daysElements,
@@ -51,7 +50,6 @@ async function set5daysPage() {
       set5daysMore(element.getAttribute('name'));
     });
   });
-  // await getData(); //przygotowanie danych do chartow
 }
 
 async function set5daysMore(dt) {

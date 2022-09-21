@@ -37,7 +37,7 @@ export async function setTimeElements(data) {
 function setDisplayedTimeElements(data) {
   sunrise = new Date((data.sys.sunrise + data.timezone) * 1000);
   sunset = new Date((data.sys.sunset + data.timezone) * 1000);
-  const options = options = { hour: 'numeric', minute: 'numeric' };
+  const options = { hour: 'numeric', minute: 'numeric' };
 
   let displaySunrise = new Intl.DateTimeFormat('utc', options).format(
     getTimezonedSunrise()
