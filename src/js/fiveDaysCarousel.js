@@ -1,9 +1,13 @@
 const weatherList = document.querySelector('.wheather__more-list');
 const nextThreeHours = document.querySelector('.arrow-next-btn');
 const prevThreeHours = document.querySelector('.arrow-back-btn');
+const nextTwoHours = document.querySelector('.arrow-next');
+const prevTwoHours = document.querySelector('.arrow-back');
 
 let indexWeatherUp = 4;
 let indexWeatherDown = 1;
+let indexTwoUp = 1;
+let indexTwoDown = 0;
 
 function carouselBottomUp() {
   let liElems = weatherList.querySelectorAll('li');
@@ -44,5 +48,49 @@ function carouselBottomDown() {
     indexWeatherUp = 4;
   }
 }
+
+function carouselMiddleUp() {
+  let liElems = weatherList.querySelectorAll('li');
+  indexTwoUp += 1;
+  // prevThreeHours.classList.remove('hidden-btn');
+  if (indexTwoUp < liElems.length - 1 && indexTwoUp > 0) {
+    liElems[indexTwoUp].scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+    });
+    indexTwoDown = indexTwoUp - 1;
+    console.log(indexTwoDown);
+  } else {
+    // nextThreeHours.classList.add('hidden-btn');
+    liElems[indexTwoUp].scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+    });
+    indexTwoDown = indexTwoUp - 1; //seting index to move left
+  }
+}
+
+function carouselMiddleDown() {
+  let liElems = weatherList.querySelectorAll('li');
+  indexTwoDown -= 1;
+  // prevThreeHours.classList.remove('hidden-btn');
+  if (indexTwoDown < liElems.length - 1 && indexTwoDown > 0) {
+    liElems[indexTwoDown].scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+    });
+    indexTwoUp = indexTwoDown + 1;
+  } else {
+    // nextThreeHours.classList.add('hidden-btn');
+    liElems[indexTwoDown].scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+    });
+    indexTwoUp = indexTwoDown + 1; //seting index to move left
+  }
+}
+
 nextThreeHours.addEventListener('click', carouselBottomUp);
 prevThreeHours.addEventListener('click', carouselBottomDown);
+nextTwoHours.addEventListener('click', carouselMiddleUp);
+prevTwoHours.addEventListener('click', carouselMiddleDown);
