@@ -19,6 +19,7 @@ export async function getTodayData() {
 export async function printTemperatures(data) {
   const todayCityName = document.querySelector('.today__cityName');
   const todayCityName5days = document.querySelector('.city-name');
+  const todayCityName5daysMobile = document.querySelector('.city-name-mobile');
   const temperatureActual = document.querySelector('.today__temp--actuall');
   const temperatureMin = document.querySelector('.today__temp--minNum');
   const temperatureMax = document.querySelector('.today__temp--maxNum');
@@ -33,6 +34,7 @@ export async function printTemperatures(data) {
   todayIcon.innerHTML = `<use href="${img}#icon-${data.weather[0].icon}"></use>`;
   todayCityName.innerHTML = `${data.name}, ${data.sys.country}`;
   todayCityName5days.innerHTML = `${data.name}, ${data.sys.country}`;
+  todayCityName5daysMobile.innerHTML = `${data.name}, ${data.sys.country}`;
   temperatureActual.innerHTML = temperatureCelsius;
   temperatureMin.innerHTML = `${temperatureMinCelsius} °`;
   temperatureMax.innerHTML = `${temperatureMaxCelsius} °`;

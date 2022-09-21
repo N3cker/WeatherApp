@@ -8,7 +8,7 @@ const button = document.querySelector('.show-hide');
 chartDisplay.style.display = 'none';
 button.addEventListener('click', showChart);
 
-function showChart() {
+export function showChart() {
   if (chartDisplay.style.display !== 'none') {
     chartDisplay.style.display = 'none';
     wrapper.style.background = 'none';

@@ -24,7 +24,8 @@ html {
         to bottom,
         rgba(0, 0, 0, 0) 0%,
         rgb(0, 0, 0) 140%
-      ), url('../images/desktop/bg-night-desktop.jpg');
+      ),
+      url('../images/desktop/bg-night-desktop.jpg');
   }
 }
 
@@ -34,14 +35,16 @@ html {
         to bottom,
         rgba(0, 0, 0, 0) 0%,
         rgb(0, 0, 0) 140%
-      ), url('../images/tablet_mobile/bg-day-tablet.jpg');
+      ),
+      url('../images/tablet_mobile/bg-day-tablet.jpg');
   }
   .default-bg-night {
     background-image: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0) 0%,
         rgb(0, 0, 0) 140%
-      ), url('../images/tablet_mobile/bg-night-tablet.jpg');
+      ),
+      url('../images/tablet_mobile/bg-night-tablet.jpg');
   }
 }
 
@@ -51,13 +54,15 @@ html {
         to bottom,
         rgba(0, 0, 0, 0) 0%,
         rgb(0, 0, 0) 140%
-      ), url('../images/tablet_mobile/bg-day-tablet.jpg');
+      ),
+      url('../images/tablet_mobile/bg-day-tablet.jpg');
   }
   .default-bg-night {
     background-image: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0) 0%,
         rgb(0, 0, 0) 140%
-      ), url('../images/tablet_mobile/bg-night-tablet.jpg');
+      ),
+      url('../images/tablet_mobile/bg-night-tablet.jpg');
   }
 }

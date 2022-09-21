@@ -1,5 +1,8 @@
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .five-days-wheather {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 30px 25px 0px 25px;
   }
 
@@ -75,7 +78,7 @@
     margin: auto;
     background: rgba(16, 33, 54, 0.8);
     box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
-    border-radius: 34px 34px 0px 0px;
+    border-radius: 34px;
   }
 
   .wheather-list {
@@ -129,13 +132,10 @@
     color: #ffffff;
   }
 
-  .wheather-icon {
+  .svg_5days {
     height: 35px;
     width: 35px;
-    justify-content: center;
-    text-align: center;
-    margin: auto;
-    padding-bottom: 5px;
+    margin-left: 25px;
   }
 
   .min-temp,
@@ -296,7 +296,7 @@
     height: 270px;
     background: rgba(16, 33, 54, 0.8);
     box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
-    border-radius: 34px 34px 0px 0px;
+    border-radius: 34px;
   }
   .wheather-list {
     display: flex;
@@ -305,7 +305,7 @@
     padding-top: 40px;
   }
 
-  .wheather-list-item{
+  .wheather-list-item {
     justify-content: space-around;
   }
 
@@ -344,13 +344,10 @@
     color: #ffffff;
   }
 
-  .wheather-icon {
-    height: 35px;
-    width: 35px;
-    justify-content: center;
-    text-align: center;
-    margin: auto;
-    padding-bottom: 10px;
+  .svg_5days {
+    height: 45px;
+    width: 45px;
+    margin-left: 40px;
   }
 
   .min-temp,
@@ -413,15 +410,16 @@
 
 @media screen and (min-width: 1280px) {
   .five-days-wheather {
-    padding: 79px 110px 72px 110px;
+    display: flex;
+    flex-direction: column;
   }
 
   .button-list {
     width: 270px;
     height: 28px;
     padding-bottom: 28px;
-    padding-left: 500px;
-    margin: 0 auto;
+    padding-left: 480px;
+    margin: 68px auto 0;
     display: flex;
     justify-content: space-between;
   }
@@ -466,7 +464,6 @@
   .city-name {
     display: inline-flex;
     margin: auto;
-    padding-left: 475px;
   }
   .city-name-mobile {
     display: none;
@@ -493,7 +490,7 @@
     height: 308px;
     background: rgba(16, 33, 54, 0.8);
     box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
-    border-radius: 34px 34px 0px 0px;
+    border-radius: 34px;
   }
 
   .wheather-list {
@@ -543,13 +540,10 @@
     color: #ffffff;
   }
 
-  .wheather-icon {
-    height: 50px;
-    width: 50px;
-    justify-content: center;
-    text-align: center;
-    margin: auto;
-    padding-bottom: 10px;
+  .svg_5days {
+    height: 45px;
+    width: 45px;
+    margin-left: 80px;
   }
 
   .min-temp,
