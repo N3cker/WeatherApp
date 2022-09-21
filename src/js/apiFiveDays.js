@@ -5,7 +5,6 @@ const btnFiveDays = document.querySelector('.five-days-btn');
 const infoWeather = document.querySelector('.wheather-list');
 const infoWeatherMore = document.querySelector('.wheather__more-list');
 
-
 //funkcja przerabia otrzymane dane na mapę, w której kluczem jest dzień w formacie ISO, a wartością minimalna i maksymalna temperatura z danego dnia
 const createDataFiveDays = list => {
   const result = list.reduce((acc, day) => {
@@ -67,7 +66,7 @@ export const responseFiveDays = async function getWeather() {
 btnFiveDays.addEventListener('click', responseFiveDays);
 
 export async function responseFiveDaysMore(dt) {
-  incomingDt = new Date(dt * 1000);
+  const incomingDt = new Date(dt * 1000);
   const api_url = `http://api.openweathermap.org/data/2.5/forecast?q=${getCity()}&lang=pl&units=metric&appid=c58ab9d92883ad1e6f51fe201539b277`;
   const response = await fetch(api_url);
   const data = await response.json();
