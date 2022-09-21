@@ -82,7 +82,7 @@ export async function responseFiveDaysMore(dt) {
           item.weather[0].icon
         }"></use></svg></p>
         <p class="wheather__temp">${Math.ceil(item.main.temp)}</p>
-        <p class="wheather__barometer">${item.main.pressure}mm</p>
+        <p class="wheather__barometer">${item.main.pressure}hPa</p>
         <p class="wheather__humidity">${item.main.humidity}%</p>
         <p class="wheather__wind">${item.wind.speed} m/s</p>
       </li>`;
