@@ -1,0 +1,268 @@
+
+.containerr .today {
+  display:block;
+  width: 280px;
+  height: 190px;
+  background: #102136;
+  box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
+  border-radius: 34px;
+  padding: 30px 55px 28px 55px;
+  top:35px;
+  position:relative;
+  margin:0 auto;
+  left:0;
+
+}
+
+.innerList {
+  display:flex;
+}
+.today__icon {
+  width: 30px;
+  height: 30px;
+
+}
+.todayico{
+  align-items:center;
+  justify-items: center;
+  justify-content: center;
+}
+
+.today__cityName {
+  position:center;
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #767D85;
+  padding-top:10px;
+  text-transform:capitalize;
+  justify-items: center;
+  justify-content: center;
+
+}
+
+.today__temp {
+  display:flex;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin:0 auto;
+  padding-top:10px;
+}
+
+
+.today__temp--actuall {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 45px;
+  line-height: 54px;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-items: center;
+  justify-content: center;
+  margin:0;
+  padding-right:20px;
+}
+
+.spanM {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #767D85;
+  text-transform: lowercase;
+
+}
+
+.today__temp--max,
+.today__temp--min {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  display: block;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  padding-top:15px;
+  justify-items: center;
+  justify-content: center;
+
+}
+
+.today__temp--min {
+  padding-right:10px;
+}
+
+.today__temp--max {
+  padding-left:10px;
+}
+
+.linetest{
+  margin-top:18px;
+}
+
+
+@media screen and (min-width: 768px) {
+  .today-weather {
+    top:258px;
+  }
+  .containerr .today {
+    display:block;
+    background: #102136;
+    box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
+    border-radius: 34px;
+    padding: 29px 190px 36px 190px;
+    width: 500px;
+    height: 300px;
+    margin-top:75px;
+  }
+
+  .today__cityName {
+    font-size: 18px;
+    line-height: 22px;
+    text-transform:capitalize;
+  }
+
+  .today__temp {
+    display:block;
+    justify-items: center;
+    justify-content: center;
+  }
+
+  .today__temp--actuall {
+    font-size: 90px;
+    line-height: 108px;
+    padding:0;
+  }
+
+  .spanM {
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    margin:0 auto;
+  }
+
+  .today__temp--max,
+  .today__temp--min {
+    font-size: 18px;
+    line-height: 22px;
+    display: block;
+    padding-top:10px;
+
+  }
+
+  .today__temp--min {
+    padding-right:10px;
+  }
+  .innerList {
+    display:flex;
+    justify-items: center;
+    justify-content: center;
+  }
+
+  .today__temp--max {
+    padding-left:10px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .containerr .today {
+    display:block;
+    box-shadow: 0px 8px 43px rgba(16, 33, 54, 0.6);
+    border-radius: 34px 0px 0px 34px;
+    height: 300px;
+    top: 52px;
+  }
+
+.today {
+  justify-content: center;
+  padding: 29px 186px 36px 144px;
+}
+  .right {
+    position:absolute;
+    right:0;
+
+  }
+
+  .today__cityName {
+    font-size: 18px;
+    line-height: 22px;
+    margin:0 auto;
+    text-transform:capitalize;
+    text-align: center;
+    justify-content: center;
+
+  }
+
+  .today__temp {
+    display:block;
+    text-align: center;
+    justify-content: center;
+    margin:0 auto;
+  }
+
+
+  .today__temp--actuall {
+    font-size: 90px;
+    line-height: 108px;
+    margin:0 auto;
+    padding:0;
+    text-align: center;
+    justify-content: center;
+
+  }
+
+  .spanM {
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    margin:0 auto;
+  }
+
+  .today__temp--max,
+  .today__temp--min {
+    font-size: 18px;
+    line-height: 22px;
+    display: block;
+    padding:0;
+  }
+
+  .today__temp--min {
+    padding-right:10px;
+  }
+  .innerList {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:0;
+  }
+
+  .today__temp--max {
+    padding-left:10px;
+  }
+
+  .linetest{
+    height:34px;
+    margin-top:0;
+  }
+  .todayico{
+    justify-content: center;
+  }
+
+}
+

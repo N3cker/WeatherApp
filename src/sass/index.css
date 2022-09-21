@@ -1,0 +1,748 @@
+.default-bg-day,
+.default-bg-night {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (min-width: 1280px) {
+  .default-bg-day {
+    background-image: url("../images/desktop/bg-day-desktop.jpg");
+  }
+  .default-bg-night {
+    background-image: url("../images/desktop/bg-night-desktop.jpg");
+  }
+}
+@media screen and (max-width: 1280px) {
+  .default-bg-day {
+    background-image: url("../images/tablet_mobile/bg-day-tablet.jpg");
+    background-size: cover;
+  }
+  .default-bg-night {
+    background-image: url("../images/tablet_mobile/bg-night-tablet.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+.today__temp {
+  display: flex;
+}
+
+.today__icon {
+  width: 30px;
+  height: 30px;
+}
+
+.container .today {
+  display: block;
+  width: 280px;
+  height: 190px;
+  left: 20px;
+  top: 166px;
+  background: #102136;
+  box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
+  border-radius: 34px;
+}
+
+body {
+  font-family: "Lato";
+  color: #000000;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.today {
+  border-style: none;
+  cursor: pointer;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 12px;
+  gap: 10px;
+  position: absolute;
+  width: 126px;
+  height: 27px;
+  left: 25px;
+  top: 387px;
+  background: #FFFFFF;
+  border-radius: 20px;
+}
+
+.fivedays {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 12px;
+  gap: 10px;
+  position: absolute;
+  width: 126px;
+  height: 28px;
+  left: 169px;
+  top: 386px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+
+  .search__form {
+    position: absolute;
+    width: 280px;
+    height: 48px;
+    left: 20px;
+    top: 30px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    color: #000000;
+  }
+  .search__city-btn {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    transform: rotate(90deg);
+    cursor: pointer;
+  }
+  .today-btn,
+.five-days-btn {
+    height: 27px;
+    width: 126px;
+    top: 187px;
+    border-radius: 20px;
+    padding: 0px 12px 0px 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    cursor: pointer;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  .today-btn {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  .five-days-btn {
+    background: #FFFFFF;
+  }
+  .city-name {
+    height: 26px;
+    width: 101px;
+    left: 110px;
+    top: 274px;
+    border-radius: nullpx;
+    position: absolute;
+    width: 101px;
+    height: 26px;
+    left: 110px;
+    top: 274px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+  }
+  .wheather-container {
+    position: absolute;
+    width: 280px;
+    height: 273px;
+    left: 20px;
+    top: 244px;
+    background: rgba(16, 33, 54, 0.8);
+    box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
+    border-radius: 34px;
+    box-shadow: 0px 5px 33px 0px rgba(16, 33, 54, 0.6);
+  }
+  .day-of-the-week {
+    position: absolute;
+    width: 41px;
+    height: 14px;
+    left: 61px;
+    top: 320px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    opacity: 0.55;
+  }
+  .day-of-the-month {
+    position: absolute;
+    width: 52px;
+    height: 19px;
+    left: 55px;
+    top: 347px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+  }
+  .min-temp,
+.max-temp,
+.more-info {
+    position: absolute;
+    width: 26px;
+    height: 20px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #767D85;
+  }
+  .more-info {
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  .min-temperature,
+.max-temperature {
+    position: absolute;
+    width: 26px;
+    height: 20px;
+    top: 429px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FF6B09;
+  }
+  .show-chart {
+    position: absolute;
+    width: 72px;
+    height: 18px;
+    left: 105px;
+    top: 543px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    cursor: pointer;
+    color: #FF6B09;
+  }
+  .chart-btn {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: 215px;
+    top: 537px;
+    cursor: pointer;
+    transform: rotate(90deg);
+  }
+  .arrow-back,
+.arrow-next {
+    position: absolute;
+    width: 4px;
+    height: 8px;
+    top: 497px;
+    cursor: pointer;
+    border: 1.5px solid #FFFFFF;
+  }
+  .arrow-back {
+    opacity: 0.5;
+  }
+  .arrow-next {
+    transform: rotate(180deg);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+
+  .search__form {
+    position: absolute;
+    width: 500px;
+    height: 48px;
+    left: 134px;
+    top: 60px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    color: #000000;
+  }
+  .search__city-btn {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    transform: rotate(90deg);
+    cursor: pointer;
+  }
+  .today-btn,
+.five-days-btn {
+    height: 27px;
+    width: 126px;
+    top: 187px;
+    border-radius: 20px;
+    padding: 0px 12px 0px 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    cursor: pointer;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  .today-btn {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  .five-days-btn {
+    background: #FFFFFF;
+  }
+  .city-name {
+    position: absolute;
+    width: 290px;
+    height: 40px;
+    left: 239px;
+    top: 578px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+  }
+  .wheather-container {
+    position: absolute;
+    width: 620px;
+    height: 270px;
+    left: 74px;
+    top: 643px;
+    background: rgba(16, 33, 54, 0.8);
+    box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
+    border-radius: 34px;
+  }
+  .day-of-the-week {
+    position: absolute;
+    width: 54px;
+    height: 17px;
+    top: 683px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    opacity: 0.55;
+  }
+  .day-of-the-month {
+    position: absolute;
+    width: 59px;
+    height: 22px;
+    top: 710px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+  }
+  .min-temp,
+.max-temp,
+.more-info {
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    top: 787px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #767D85;
+  }
+  .more-info {
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  .min-temperature,
+.max-temperature {
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    top: 803px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FF6B09;
+  }
+  .show-chart {
+    position: absolute;
+    width: 72px;
+    height: 18px;
+    top: 543px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    cursor: pointer;
+    color: #FF6B09;
+  }
+  .chart-btn {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    top: 537px;
+    cursor: pointer;
+    transform: rotate(90deg);
+  }
+  .arrow-back,
+.arrow-next {
+    display: none;
+  }
+}
+@media screen and (min-width: 1280px) {
+
+  .search__form {
+    position: absolute;
+    width: 520px;
+    height: 48px;
+    left: 380px;
+    top: 79px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.04em;
+    color: #000000;
+  }
+  .search__city-btn {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    transform: rotate(90deg);
+    cursor: pointer;
+  }
+  .today-btn,
+.five-days-btn {
+    height: 27px;
+    width: 126px;
+    border-radius: 20px;
+    padding: 0px 12px 0px 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    cursor: pointer;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  .today-btn {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  .five-days-btn {
+    background: #FFFFFF;
+  }
+  .city-name {
+    position: absolute;
+    width: 290px;
+    height: 40px;
+    left: 495px;
+    top: 470px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+  }
+  .wheather-container {
+    position: absolute;
+    width: 1060px;
+    height: 308px;
+    left: 110px;
+    top: 532px;
+    background: rgba(16, 33, 54, 0.8);
+    box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
+    border-radius: 34px;
+  }
+  .day-of-the-week {
+    position: absolute;
+    width: 62px;
+    height: 22px;
+    top: 572px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    opacity: 0.55;
+  }
+  .day-of-the-month {
+    position: absolute;
+    width: 81px;
+    height: 30px;
+    top: 604px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+  }
+  .min-temp,
+.max-temp,
+.more-info {
+    position: absolute;
+    top: 75.68%;
+    bottom: 22.21%;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #767D85;
+  }
+  .more-info {
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  .min-temperature,
+.max-temperature {
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    top: 803px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FF6B09;
+  }
+  .show-chart {
+    position: absolute;
+    width: 72px;
+    height: 18px;
+    top: 866px;
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    cursor: pointer;
+    color: #FF6B09;
+  }
+  .chart-btn {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    top: 866px;
+    cursor: pointer;
+    transform: rotate(90deg);
+  }
+  .arrow-back,
+.arrow-next {
+    display: none;
+  }
+}
+body {
+  font-family: var(--font-main);
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1280px;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+}
+
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 480px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 34px;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding: 0 112px;
+    margin: 0 auto;
+  }
+}/*# sourceMappingURL=index.css.map */

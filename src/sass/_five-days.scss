@@ -1,0 +1,605 @@
+@media screen and (max-width: 767px) {
+  .five-days-wheather {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 25px 0px 25px;
+  }
+
+  .button-list {
+    width: 270px;
+    height: 28px;
+    padding-top: 65px;
+    padding-bottom: 60px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .button-list-item {
+    display: flex;
+  }
+
+  .today-btn,
+  .five-days-btn {
+    height: 27px;
+    width: 126px;
+    top: 187px;
+    border-radius: 20px;
+    padding: 0px 12px 0px 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  .today-btn {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .five-days-btn {
+    background: #ffffff;
+    border-color: #ffffff;
+  }
+  .city-name {
+    display: none;
+  }
+
+  .city-name,
+  .city-name-mobile {
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    z-index: 1;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .wheather-container {
+    width: 280px;
+    height: 273px;
+    margin: auto;
+    background: rgba(16, 33, 54, 0.8);
+    box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
+    border-radius: 34px;
+  }
+
+  .wheather-list {
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    margin: auto;
+    width: 250px;
+    height: 154px;
+  }
+
+  .wheather-list-item {
+    justify-content: space-between;
+    min-width: 80px;
+    height: 154px;
+    margin-right: 5px;
+  }
+
+  .day-of-the-week {
+    margin: auto;
+    padding-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    opacity: 0.55;
+    display: flex;
+    &:hover,
+    &:focus {
+      color: #ff6b09;
+      transition: background-color, color, box-shadow 250ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  .day-of-the-month {
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    padding-bottom: 5px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+  }
+
+  .svg_5days {
+    height: 35px;
+    width: 35px;
+    margin-left: 25px;
+  }
+
+  .min-temp,
+  .max-temp,
+  .more-info {
+    justify-content: center;
+    margin: auto;
+    padding-bottom: 5px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+    color: #767d85;
+  }
+
+  .more-info {
+    text-decoration-line: underline;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    &:hover,
+    &:focus {
+      color: #ffffff;
+      transition: background-color, color, box-shadow 250ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  .min-temp,
+  .max-temp {
+    display: inline-flex;
+    width: 30px;
+    padding-left: 20px;
+  }
+
+  .min-temperature,
+  .max-temperature {
+    display: inline-flex;
+    width: 30px;
+    margin: auto;
+    padding-bottom: 5px;
+    padding-left: 22px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #ff6b09;
+  }
+
+  .arrow-back,
+  .arrow-next {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border: 1.5px solid #102136cc;
+    opacity: 0.54;
+    border-radius: 50%;
+    background-color: #102136cc;
+    background-image: url(../images/chart.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    &:hover {
+      background: #ffffff;
+      opacity: 0.5;
+      color: #102136cc;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition: background-color, color, box-shadow 250ms;
+    }
+  }
+  .arrow-next {
+    transform: rotate(-90deg);
+  }
+
+  .arrow-back {
+    opacity: 0.5;
+    margin: 10px 40px 0px 90px;
+    transform: rotate(90deg);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .five-days-wheather {
+    padding: 60px 74px 53px 74px;
+  }
+
+  .button-list {
+    width: 270px;
+    height: 28px;
+    padding-bottom: 25px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .button-list-item {
+    display: flex;
+  }
+  .today-btn,
+  .five-days-btn {
+    height: 27px;
+    width: 126px;
+    top: 187px;
+    border-radius: 20px;
+    padding: 0px 12px 0px 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  .today-btn {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .five-days-btn {
+    background: #ffffff;
+    border-color: #ffffff;
+  }
+  .city-name-mobile {
+    display: none;
+  }
+
+  .city-name,
+  .city-name-mobile {
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    z-index: 1;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .wheather-container {
+    margin: auto;
+    width: 620px;
+    height: 270px;
+    background: rgba(16, 33, 54, 0.8);
+    box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
+    border-radius: 34px;
+  }
+  .wheather-list {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    padding-top: 40px;
+  }
+
+  .wheather-list-item {
+    justify-content: space-around;
+  }
+
+  .day-of-the-week {
+    margin: auto;
+    padding-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    opacity: 0.55;
+    display: flex;
+    &:hover,
+    &:focus {
+      color: #ff6b09;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition: background-color, color, box-shadow 250ms;
+    }
+  }
+
+  .day-of-the-month {
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    padding-bottom: 10px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+  }
+
+  .svg_5days {
+    height: 45px;
+    width: 45px;
+    margin-left: 40px;
+  }
+
+  .min-temp,
+  .max-temp,
+  .more-info {
+    justify-content: center;
+    margin: auto;
+    padding-bottom: 16px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    color: #767d85;
+  }
+
+  .more-info {
+    text-decoration-line: underline;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    &:hover,
+    &:focus {
+      color: #ffffff;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition: background-color, color, box-shadow 250ms;
+    }
+  }
+
+  .min-temp,
+  .max-temp {
+    display: inline-flex;
+    width: 50px;
+    padding-left: 19px;
+  }
+
+  .min-temperature,
+  .max-temperature {
+    display: inline-flex;
+    width: 50px;
+    margin: auto;
+    padding-bottom: 20px;
+    padding-left: 19px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #ff6b09;
+  }
+
+  .arrow-back,
+  .arrow-next {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .five-days-wheather {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .button-list {
+    width: 270px;
+    height: 28px;
+    padding-bottom: 28px;
+    padding-left: 480px;
+    margin: 68px auto 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .button-list-item {
+    display: flex;
+    margin-left: 18px;
+  }
+
+  .today-btn,
+  .five-days-btn {
+    height: 27px;
+    width: 126px;
+    top: 187px;
+    border-radius: 20px;
+    padding: 0px 12px 0px 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  .today-btn {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .five-days-btn {
+    background: #ffffff;
+    border-color: #ffffff;
+  }
+  .city-name {
+    display: inline-flex;
+    margin: auto;
+  }
+  .city-name-mobile {
+    display: none;
+  }
+
+  .city-name,
+  .city-name-mobile {
+    margin: auto;
+    padding-bottom: 20px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    z-index: 1;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .wheather-container {
+    margin: auto;
+    width: 1060px;
+    height: 308px;
+    background: rgba(16, 33, 54, 0.8);
+    box-shadow: 0px 5px 33px rgba(16, 33, 54, 0.6);
+    border-radius: 34px;
+  }
+
+  .wheather-list {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    padding-top: 40px;
+  }
+
+  .wheather-list-item,
+  .wheather-list-item2 {
+    justify-content: space-around;
+  }
+
+  .day-of-the-week {
+    margin: auto;
+    padding-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    opacity: 0.55;
+    display: flex;
+    &:hover,
+    &:focus {
+      color: #ff6b09;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition: background-color, color, box-shadow 250ms;
+    }
+  }
+
+  .day-of-the-month {
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    padding-bottom: 10px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+  }
+
+  .svg_5days {
+    height: 45px;
+    width: 45px;
+    margin-left: 80px;
+  }
+
+  .min-temp,
+  .max-temp,
+  .more-info {
+    justify-content: center;
+    margin: auto;
+    padding-bottom: 16px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    color: #767d85;
+  }
+
+  .more-info {
+    text-decoration-line: underline;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    &:hover,
+    &:focus {
+      color: #ffffff;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition: background-color, color, box-shadow 250ms;
+    }
+  }
+
+  .min-temp,
+  .max-temp {
+    display: inline-flex;
+    width: 70px;
+    padding-left: 60px;
+  }
+
+  .min-temperature,
+  .max-temperature {
+    display: inline-flex;
+    width: 70px;
+    margin: auto;
+    padding-bottom: 20px;
+    padding-left: 55px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #ff6b09;
+  }
+
+  .arrow-back,
+  .arrow-next {
+    display: none;
+  }
+}
