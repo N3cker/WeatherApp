@@ -10,7 +10,6 @@ const infoWeatherMore = document.querySelector('.wheather__more-list');
 const createDataFiveDays = list => {
   const result = list.reduce((acc, day) => {
     const date = day.dt_txt.split(' ')[0];
-    console.log('date', date);
     if (acc[date]) {
       acc[date].temp_max = Math.max(acc[date].temp_max, day.main.temp_max);
       acc[date].temp_min = Math.min(acc[date].temp_min, day.main.temp_min);
