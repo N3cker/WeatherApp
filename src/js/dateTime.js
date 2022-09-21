@@ -46,9 +46,9 @@ const setDisplayCalendar = () => {
 
 export const currentCityTime = () => {
   const d = new Date();
-  localTime = d.getTime();
-  localOffset = d.getTimezoneOffset() * 60000;
-  utc = localTime + localOffset;
+  const localTime = d.getTime();
+  const localOffset = d.getTimezoneOffset() * 60000;
+  const utc = localTime + localOffset;
   const cityTime = utc + 1000 * timezoneOffset;
   return new Date(cityTime);
 };
