@@ -4,8 +4,9 @@ const prevThreeHours = document.querySelector('.arrow-back-btn');
 const nextTwoHours = document.querySelector('.arrow-next');
 const prevTwoHours = document.querySelector('.arrow-back');
 
-let indexWeatherUp = 4;
-let indexWeatherDown = 1;
+let indexWeatherUp = 3;
+let indexWeatherDown = 0;
+
 let indexTwoUp = 1;
 let indexTwoDown = 0;
 
@@ -25,7 +26,7 @@ function carouselBottomUp() {
       behavior: 'smooth',
       block: 'nearest',
     });
-    indexWeatherDown = 3; //seting index to move left
+    indexWeatherDown = indexWeatherUp - 3; //seting index to move left
   }
 }
 
@@ -45,7 +46,7 @@ function carouselBottomDown() {
       behavior: 'smooth',
       block: 'nearest',
     });
-    indexWeatherUp = 4;
+    indexWeatherUp = indexWeatherDown + 3;
   }
 }
 
@@ -59,7 +60,6 @@ function carouselMiddleUp() {
       block: 'nearest',
     });
     indexTwoDown = indexTwoUp - 1;
-    console.log(indexTwoDown);
   } else {
     // nextThreeHours.classList.add('hidden-btn');
     liElems[indexTwoUp].scrollIntoView({
