@@ -1,6 +1,7 @@
 import { forEach } from 'lodash';
 import debounce from 'lodash.debounce';
 import { getCity } from './variables';
+
 const inputCity = document.querySelector('[name="searchQuery"');
 const cityList = document.querySelector('.search__history-list');
 const prevBtn = document.querySelector('.prev');
@@ -74,8 +75,8 @@ window.addEventListener(
   'resize',
   debounce(
     () => {
+      location.reload();
       indexUp = Math.round(slidesNumber) - 1;
-      indexDown = indexUp - Math.round(slidesNumber) + 1;
       console.log('InDn begin: ' + indexDown);
       console.log('InUp begin: ' + indexUp);
     },
@@ -86,6 +87,9 @@ window.addEventListener(
     }
   )
 );
+
+// console.log('InDn begin: ' + indexDown);
+// console.log('InUp begin: ' + indexUp);
 
 //function for higher resolution
 // function carouselUp() {
