@@ -13,3 +13,4 @@ import './js/navigation.js';
 import './js/mainEvents.js';
 import './js/location.js';
 import './js/fiveDaysCarousel.js';
+import './js/modal.js';

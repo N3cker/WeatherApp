@@ -42,28 +42,31 @@ export const responseFiveDays = async function getWeather() {
         day: 'numeric',
         weekday: 'short',
       });
-      return `<li class="wheather-list-item">
+      return `<li class="wheather-list-item not-active-day" name="${item.dt}">
         <p class="day-of-the-week">${nameDay}</p>
         <p class="day-of-the-month">${nameDayMonth}</p>
         <p class="wheather-icon"><svg class="svg_5days"><use href="${img}#icon-${
         item.weather[0].icon
       }"></use></svg></p>
+      <div class="temp-container">
         <p class="min-temp">min</p>
         <p class="max-temp">max</p>
+        </div>
+        <div class="temp-container">
         <p class="min-temperature">${Math.round(
           minMaxData[convertDateToISODay(dt)].temp_min
         )}</p>
         <p class="max-temperature">${Math.round(
           minMaxData[convertDateToISODay(dt)].temp_max
         )}</p>
-        <a href="#" class="more-info" name="${item.dt}">more info</a>
+        </div>
+        <a href="#" class="more-info">more info</a>
         </li>`;
     })
 
     .join('');
   infoWeather.innerHTML = markup;
 };
-btnFiveDays.addEventListener('click', responseFiveDays);
 
 export async function responseFiveDaysMore(dt) {
   const incomingDt = new Date(dt * 1000);
@@ -82,7 +85,7 @@ export async function responseFiveDaysMore(dt) {
           item.weather[0].icon
         }"></use></svg></p>
         <p class="wheather__temp">${Math.ceil(item.main.temp)}</p>
-        <p class="wheather__barometer">${item.main.pressure}mm</p>
+        <p class="wheather__barometer">${item.main.pressure}hPa</p>
         <p class="wheather__humidity">${item.main.humidity}%</p>
         <p class="wheather__wind">${item.wind.speed} m/s</p>
       </li>`;

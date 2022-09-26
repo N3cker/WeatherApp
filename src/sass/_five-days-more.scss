@@ -30,7 +30,6 @@
     margin-right: 10px;
     &:hover {
       background: rgba(255, 255, 255, 0.1);
-      cursor: pointer;
     }
   }
 
@@ -190,7 +189,6 @@
     margin-right: 10px;
     &:hover {
       background: rgba(255, 255, 255, 0.1);
-      cursor: pointer;
     }
   }
 
@@ -290,6 +288,7 @@
 
   .arrow-next-btn,
   .arrow-back-btn {
+    position: absolute;
     width: 25px;
     height: 25px;
     cursor: pointer;
@@ -308,12 +307,13 @@
   }
   .arrow-next-btn {
     transform: rotate(-90deg);
+    margin-left: 570px;
   }
   .arrow-back-btn {
     transform: rotate(90deg);
     margin-left: 530px;
   }
-  }
+}
 
 @media screen and (min-width: 1280px) {
   .wheather__more {
@@ -347,7 +347,6 @@
     min-width: 120px;
     &:hover {
       background: rgba(255, 255, 255, 0.1);
-      cursor: pointer;
     }
   }
 
