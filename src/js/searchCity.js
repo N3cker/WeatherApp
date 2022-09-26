@@ -75,10 +75,9 @@ window.addEventListener(
   'resize',
   debounce(
     () => {
-      location.reload();
       indexUp = Math.round(slidesNumber) - 1;
-      console.log('InDn begin: ' + indexDown);
-      console.log('InUp begin: ' + indexUp);
+      // console.log('InDn begin: ' + indexDown);
+      // console.log('InUp begin: ' + indexUp);
     },
     300,
     {
@@ -136,14 +135,14 @@ function carouselUp() {
   prevBtn.classList.remove('hidden-btn');
   if (indexUp < liElems.length - 1 && indexUp > 0) {
     liElems[indexUp].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    console.log('InUp: ' + indexUp);
-    console.log('InDn: ' + indexDown);
+    // console.log('InUp: ' + indexUp);
+    // console.log('InDn: ' + indexDown);
   } else {
     nextBtn.classList.add('hidden-btn');
     liElems[indexUp].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     indexDown = indexUp - Math.round(slidesNumber) + 1; //seting index to move left
-    console.log('InUp: ' + indexUp);
-    console.log('InDn: ' + indexDown);
+    // console.log('InUp: ' + indexUp);
+    // console.log('InDn: ' + indexDown);
   }
 }
 
@@ -154,13 +153,13 @@ function carouselDown() {
   nextBtn.classList.remove('hidden-btn');
   if (indexDown < liElems.length - 1 && indexDown > 0) {
     liElems[indexDown].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    console.log('InUp: ' + indexUp);
-    console.log('InDn: ' + indexDown);
+    // console.log('InUp: ' + indexUp);
+    // console.log('InDn: ' + indexDown);
   } else {
     prevBtn.classList.add('hidden-btn');
     liElems[indexDown].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     indexUp = indexDown + Math.round(slidesNumber) - 1;
-    console.log('InUp: ' + indexUp);
-    console.log('InDn: ' + indexDown);
+    // console.log('InUp: ' + indexUp);
+    // console.log('InDn: ' + indexDown);
   }
 }
