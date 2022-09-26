@@ -12,6 +12,15 @@ input {
   letter-spacing: 0.04em;
 }
 
+.icon {
+  transition: color 0.5s, transform .7s;
+}
+
+.icon:hover {
+  color: $thirdColor;
+  transform: scale(1.4);
+}
+
 .search__history {
   margin: auto;
   display: flex;
