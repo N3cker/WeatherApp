@@ -1,5 +1,6 @@
 import { forEach } from 'lodash';
 import debounce from 'lodash.debounce';
+import { getFavoriteCities } from './mainEvents';
 import { getCity } from './variables';
 
 const inputCity = document.querySelector('[name="searchQuery"');
@@ -7,16 +8,8 @@ const cityList = document.querySelector('.search__history-list');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 
-let cities = [];
-//   'Madrid',
-//   'Lisbon',
-//   'Warsaw',
-//   'Berlin',
-//   'Paris',
-//   'Rome',
-//   'Miami',
-//   'London',
-// ];
+let cities = getFavoriteCities();
+setCarouselHtml();
 
 export function addCityKey() {
   let city = getCity();
@@ -27,15 +20,7 @@ export function addCityKey() {
   }
   cities.push(city);
 
-  const newCity = cities
-    .map(
-      newCity => `<li class="search__history-list-item">
-                    <a href="#" class="search__city-name">${newCity}</a>
-                    <p class="modal__close-city" data-item="${newCity}">X</p>
-                </li>`
-    )
-    .join('');
-  cityList.innerHTML = newCity;
+  setCarouselHtml();
   inputCity.value = '';
 }
 
@@ -46,12 +31,19 @@ cityList.addEventListener('click', function (e) {
     const index = cities.indexOf(value);
     cities = [...cities.slice(0, index), ...cities.slice(index + 1)];
     e.target.parentElement.remove();
+    let favs = getFavoriteCities();
+    const favsIndex = favs.indexOf(value);
+    console.log('favsIndex');
+    if (favsIndex != -1) {
+      console.log(favsIndex);
+      favs = [...favs.slice(0, favsIndex), ...favs.slice(favsIndex + 1)];
+      localStorage.setItem('WeatherApp_favorites', favs.join('&'));
+    }
   }
 });
 
 nextBtn.addEventListener('click', carouselUp);
 prevBtn.addEventListener('click', carouselDown);
-inputCity.addEventListener('submit', addCityKey);
 
 const nodeList = cityList; //parent element for cities list
 let childs = nodeList.children; //all cities elements list
@@ -86,6 +78,18 @@ window.addEventListener(
     }
   )
 );
+
+function setCarouselHtml() {
+  const newCity = cities
+    .map(
+      newCity => `<li class="search__history-list-item">
+                    <a href="#" class="search__city-name">${newCity}</a>
+                    <p class="modal__close-city" data-item="${newCity}">X</p>
+                </li>`
+    )
+    .join('');
+  cityList.innerHTML = newCity;
+}
 
 // console.log('InDn begin: ' + indexDown);
 // console.log('InUp begin: ' + indexUp);
