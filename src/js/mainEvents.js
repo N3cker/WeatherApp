@@ -21,6 +21,7 @@ const btn5daysFrom5days = document.querySelector(
 );
 const locationBtn = document.querySelector('#btn-location');
 const favoriteBtn = document.querySelector('#btn-favorite');
+let activeDay;
 
 async function setTodayPage(city) {
   setCity(city); //ustawienie city do zmiennej globalnej
@@ -46,9 +47,16 @@ export function setTodayPageByLocation() {
 async function set5daysPage() {
   show5daysElements(); //pokazanie/schowanie odpowiednich elementów inferfejsu
   await responseFiveDays(); //wywołanie API 5 dni
-  const moreInfos = document.getElementsByClassName('more-info');
+  const moreInfos = document.getElementsByClassName('wheather-list-item');
   [...moreInfos].forEach(element => {
     element.addEventListener('click', () => {
+      if (activeDay) {
+        activeDay.classList.remove('active-day');
+        activeDay.classList.add('not-active-day');
+      }
+      activeDay = element;
+      element.classList.add('active-day');
+      activeDay.classList.remove('not-active-day');
       set5daysMore(element.getAttribute('name'));
     });
   });

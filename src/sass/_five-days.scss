@@ -1,3 +1,20 @@
+.active-day {
+  border: 1px solid #fff3;
+}
+
+.active-day .day-of-the-week {
+  color: #ff6b09;
+  opacity: 1;
+}
+
+.not-active-day {
+  border: 1px solid transparent;
+}
+
+.temp-container {
+  display: flex;
+}
+
 @media screen and (max-width: 767px) {
   .five-days-wheather {
     display: flex;
@@ -89,10 +106,17 @@
   }
 
   .wheather-list-item {
-    justify-content: space-between;
-    min-width: 80px;
-    height: 154px;
-    margin-right: 5px;
+    justify-content: space-around;
+    border-radius: 25px;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+    }
   }
 
   .day-of-the-week {
@@ -133,7 +157,6 @@
   .svg_5days {
     height: 35px;
     width: 35px;
-    margin-left: 25px;
   }
 
   .min-temp,
@@ -167,7 +190,6 @@
   .max-temp {
     display: inline-flex;
     width: 30px;
-    padding-left: 20px;
   }
 
   .min-temperature,
@@ -176,7 +198,6 @@
     width: 30px;
     margin: auto;
     padding-bottom: 5px;
-    padding-left: 22px;
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
@@ -298,11 +319,21 @@
     display: flex;
     justify-content: space-around;
     margin: auto;
-    padding-top: 40px;
+    padding-top: 30px;
   }
 
   .wheather-list-item {
     justify-content: space-around;
+    border-radius: 25px;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    padding: 10px 10px 0;
+    flex-direction: column;
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+    }
   }
 
   .day-of-the-week {
@@ -343,7 +374,6 @@
   .svg_5days {
     height: 45px;
     width: 45px;
-    margin-left: 40px;
   }
 
   .min-temp,
@@ -377,7 +407,6 @@
   .max-temp {
     display: inline-flex;
     width: 50px;
-    padding-left: 19px;
   }
 
   .min-temperature,
@@ -386,7 +415,6 @@
     width: 50px;
     margin: auto;
     padding-bottom: 20px;
-    padding-left: 19px;
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
@@ -491,12 +519,22 @@
     display: flex;
     justify-content: space-around;
     margin: auto;
-    padding-top: 40px;
+    padding-top: 30px;
   }
 
   .wheather-list-item,
   .wheather-list-item2 {
     justify-content: space-around;
+    border-radius: 25px;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+    }
   }
 
   .day-of-the-week {
@@ -537,7 +575,6 @@
   .svg_5days {
     height: 45px;
     width: 45px;
-    margin-left: 80px;
   }
 
   .min-temp,
@@ -571,7 +608,6 @@
   .max-temp {
     display: inline-flex;
     width: 70px;
-    padding-left: 60px;
   }
 
   .min-temperature,
@@ -580,7 +616,6 @@
     width: 70px;
     margin: auto;
     padding-bottom: 20px;
-    padding-left: 55px;
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
