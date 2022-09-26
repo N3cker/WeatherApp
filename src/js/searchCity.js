@@ -1,4 +1,3 @@
-import { forEach } from 'lodash';
 import debounce from 'lodash.debounce';
 import { getFavoriteCities } from './mainEvents';
 import { getCity } from './variables';
@@ -9,6 +8,14 @@ const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 
 let cities = getFavoriteCities();
+
+let carouselWidth = cityList.offsetWidth;
+let widthToMove = cityList.children[0].offsetWidth + 10;
+let slidesNumber = carouselWidth / widthToMove; //number of elements in carousel
+
+let indexUp = Math.round(slidesNumber) - 1;
+let indexDown = indexUp - Math.round(slidesNumber) + 1;
+
 setCarouselHtml();
 
 export function addCityKey() {
@@ -33,43 +40,51 @@ cityList.addEventListener('click', function (e) {
     e.target.parentElement.remove();
     let favs = getFavoriteCities();
     const favsIndex = favs.indexOf(value);
-    console.log('favsIndex');
     if (favsIndex != -1) {
-      console.log(favsIndex);
       favs = [...favs.slice(0, favsIndex), ...favs.slice(favsIndex + 1)];
       localStorage.setItem('WeatherApp_favorites', favs.join('&'));
     }
+    calculateCarousel();
   }
 });
 
 nextBtn.addEventListener('click', carouselUp);
 prevBtn.addEventListener('click', carouselDown);
 
-const nodeList = cityList; //parent element for cities list
-let childs = nodeList.children; //all cities elements list
-// let firstChild = nodeList.children[0]; //first city in list
-// let cityName = firstChild.firstElementChild.textContent; //content of first child
+calculateCarousel();
 
-//total width of cities elements in memory
-for (let i = 0; i < childs.length; i += 1) {
-  let elemWidth = nodeList.children[i].getBoundingClientRect().width + 10;
-  // console.log(elemWidth);
+
+function calculateCarousel() {
+  let children = cityList.children; //all cities elements list
+  let sumElemWidths = -10; //minus last margin
+  //total width of cities elements in memory
+  for (let i = 0; i < children.length; i += 1) {
+    let elemWidth = cityList.children[i].offsetWidth + 10;
+    sumElemWidths += elemWidth;
+  }
+  let containerWidth = cityList.offsetWidth;
+  if (containerWidth >= sumElemWidths) {
+    nextBtn.style.display = 'none';
+    prevBtn.style.display = 'none';
+  } else {
+    nextBtn.style.display = '';
+    prevBtn.style.display = '';
+  }
+
+  carouselWidth = cityList.getBoundingClientRect().width;
+  widthToMove = cityList.children[0].getBoundingClientRect().width + 10;
+  slidesNumber = carouselWidth / widthToMove; //number of elements in carousel
+
+  indexUp = Math.round(slidesNumber) - 1;
+  indexDown = indexUp - Math.round(slidesNumber) + 1;
 }
-
-let carouselWidth = cityList.getBoundingClientRect().width;
-let widthToMove = nodeList.children[0].getBoundingClientRect().width + 10;
-let slidesNumber = carouselWidth / widthToMove; //number of elements in carousel
-
-let indexUp = Math.round(slidesNumber) - 1;
-let indexDown = indexUp - Math.round(slidesNumber) + 1;
 
 window.addEventListener(
   'resize',
   debounce(
     () => {
+      calculateCarousel();
       indexUp = Math.round(slidesNumber) - 1;
-      // console.log('InDn begin: ' + indexDown);
-      // console.log('InUp begin: ' + indexUp);
     },
     300,
     {
@@ -89,47 +104,8 @@ function setCarouselHtml() {
     )
     .join('');
   cityList.innerHTML = newCity;
+  calculateCarousel();
 }
-
-// console.log('InDn begin: ' + indexDown);
-// console.log('InUp begin: ' + indexUp);
-
-//function for higher resolution
-// function carouselUp() {
-//   let liElems = cityList.querySelectorAll('li');
-//   indexUp += 1;
-//   indexDown += 1;
-//   prevBtn.classList.remove('hidden-btn');
-//     if (indexUp < liElems.length - 1 && indexUp > 0) {
-//       liElems[indexUp].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-//       console.log('InUp: ' + indexUp);
-//       console.log('InDn: ' + indexDown);
-//     } else {
-//       nextBtn.classList.add('hidden-btn');
-//       liElems[indexUp].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-//       indexDown = indexUp - Math.floor(slidesNumber) + 1; //seting index to move left
-//       console.log('InUp: ' + indexUp);
-//       console.log('InDn: ' + indexDown);
-//     }
-// }
-
-// function carouselDown() {
-//   let liElems = cityList.querySelectorAll('li');
-//   indexDown -= 1;
-//   indexUp -= 1;
-//   nextBtn.classList.remove('hidden-btn');
-//   if (indexDown < liElems.length - 1 && indexDown > 0) {
-//     liElems[indexDown].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-//     console.log('InUp: ' + indexUp);
-//     console.log('InDn: ' + indexDown);
-//   } else {
-//     prevBtn.classList.add('hidden-btn');
-//     liElems[indexDown].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-//     indexUp = indexDown + Math.round(slidesNumber) - 1;
-//     console.log('InUp: ' + indexUp);
-//     console.log('InDn: ' + indexDown);
-//   }
-// }
 
 //function for lower resolution
 function carouselUp() {
@@ -139,14 +115,10 @@ function carouselUp() {
   prevBtn.classList.remove('hidden-btn');
   if (indexUp < liElems.length - 1 && indexUp > 0) {
     liElems[indexUp].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    // console.log('InUp: ' + indexUp);
-    // console.log('InDn: ' + indexDown);
   } else {
     nextBtn.classList.add('hidden-btn');
     liElems[indexUp].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     indexDown = indexUp - Math.round(slidesNumber) + 1; //seting index to move left
-    // console.log('InUp: ' + indexUp);
-    // console.log('InDn: ' + indexDown);
   }
 }
 
@@ -157,13 +129,9 @@ function carouselDown() {
   nextBtn.classList.remove('hidden-btn');
   if (indexDown < liElems.length - 1 && indexDown > 0) {
     liElems[indexDown].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    // console.log('InUp: ' + indexUp);
-    // console.log('InDn: ' + indexDown);
   } else {
     prevBtn.classList.add('hidden-btn');
     liElems[indexDown].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     indexUp = indexDown + Math.round(slidesNumber) - 1;
-    // console.log('InUp: ' + indexUp);
-    // console.log('InDn: ' + indexDown);
   }
 }
