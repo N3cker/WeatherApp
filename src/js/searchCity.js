@@ -136,10 +136,6 @@ window.addEventListener(
           block: 'nearest',
         });
 
-        console.log(indexUp);
-        console.log('indexWeatherUp: ' + indexWeatherUp);
-        console.log('indexWeatherDown: ' + indexWeatherDown);
-
         calculateCarousel();
       }
     },
@@ -225,7 +221,6 @@ function carouselBottomUp() {
       behavior: 'smooth',
       block: 'nearest',
     });
-    // indexWeatherDown = indexWeatherUp - 3; //seting index to move left
   }
 }
 
