@@ -1,11 +1,12 @@
-import { forEach } from 'lodash';
 import debounce from 'lodash.debounce';
+import { getFavoriteCities } from './mainEvents';
 import { getCity } from './variables';
 
 const inputCity = document.querySelector('[name="searchQuery"');
 const cityList = document.querySelector('.search__history-list');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
+
 
 const weatherList = document.querySelector('.wheather__more-list');
 const nextThreeHours = document.querySelector('.arrow-next-btn');
@@ -22,6 +23,17 @@ let cities = [];
 //   'London',
 // ];
 
+let cities = getFavoriteCities();
+
+let carouselWidth = cityList.offsetWidth;
+let widthToMove = cityList.children[0].offsetWidth + 10;
+let slidesNumber = carouselWidth / widthToMove; //number of elements in carousel
+
+let indexUp = Math.round(slidesNumber) - 1;
+let indexDown = indexUp - Math.round(slidesNumber) + 1;
+
+setCarouselHtml();
+
 export function addCityKey() {
   let city = getCity();
 
@@ -31,15 +43,7 @@ export function addCityKey() {
   }
   cities.push(city);
 
-  const newCity = cities
-    .map(
-      newCity => `<li class="search__history-list-item">
-                    <a href="#" class="search__city-name">${newCity}</a>
-                    <p class="modal__close-city" data-item="${newCity}">X</p>
-                </li>`
-    )
-    .join('');
-  cityList.innerHTML = newCity;
+  setCarouselHtml();
   inputCity.value = '';
 }
 
@@ -50,20 +54,47 @@ cityList.addEventListener('click', function (e) {
     const index = cities.indexOf(value);
     cities = [...cities.slice(0, index), ...cities.slice(index + 1)];
     e.target.parentElement.remove();
+    let favs = getFavoriteCities();
+    const favsIndex = favs.indexOf(value);
+    if (favsIndex != -1) {
+      favs = [...favs.slice(0, favsIndex), ...favs.slice(favsIndex + 1)];
+      localStorage.setItem('WeatherApp_favorites', favs.join('&'));
+    }
+    calculateCarousel();
   }
 });
 
 nextBtn.addEventListener('click', carouselUp);
 prevBtn.addEventListener('click', carouselDown);
+
 inputCity.addEventListener('submit', addCityKey);
 nextThreeHours.addEventListener('click', carouselBottomUp);
 prevThreeHours.addEventListener('click', carouselBottomDown);
 
 const nodeList = cityList; //parent element for cities list
 
-let carouselWidth = cityList.getBoundingClientRect().width;
-let widthToMove = nodeList.children[0].getBoundingClientRect().width + 10;
-let slidesNumber = carouselWidth / widthToMove; //number of elements in carousel
+
+calculateCarousel();
+
+
+
+function calculateCarousel() {
+  let children = cityList.children; //all cities elements list
+  let sumElemWidths = -10; //minus last margin
+  //total width of cities elements in memory
+  for (let i = 0; i < children.length; i += 1) {
+    let elemWidth = cityList.children[i].offsetWidth + 10;
+    sumElemWidths += elemWidth;
+  }
+  let containerWidth = cityList.offsetWidth;
+  if (containerWidth >= sumElemWidths) {
+    nextBtn.style.display = 'none';
+    prevBtn.style.display = 'none';
+  } else {
+    nextBtn.style.display = '';
+    prevBtn.style.display = '';
+  }
+
 
 const nodeWeatherlist = weatherList;
 let weatherWidth = weatherList.getBoundingClientRect().width;
@@ -85,10 +116,20 @@ let indexWeatherUp = Math.round(
 let indexWeatherDown = 0;
 console.log('slides before resize: ' + indexWeatherUp);
 
+  carouselWidth = cityList.getBoundingClientRect().width;
+  widthToMove = cityList.children[0].getBoundingClientRect().width + 10;
+  slidesNumber = carouselWidth / widthToMove; //number of elements in carousel
+
+  indexUp = Math.round(slidesNumber) - 1;
+  indexDown = indexUp - Math.round(slidesNumber) + 1;
+}
+
+
 window.addEventListener(
   'resize',
   debounce(
     () => {
+
       let liElems = weatherList.querySelectorAll('li');
       indexUp =
         Math.round(
@@ -116,6 +157,10 @@ window.addEventListener(
       console.log(indexUp);
       console.log('indexWeatherUp: ' + indexWeatherUp);
       console.log('indexWeatherDown: ' + indexWeatherDown);
+
+      calculateCarousel();
+      indexUp = Math.round(slidesNumber) - 1;
+
     },
     300,
     {
@@ -125,7 +170,23 @@ window.addEventListener(
   )
 );
 
+
 //function for carousel
+
+function setCarouselHtml() {
+  const newCity = cities
+    .map(
+      newCity => `<li class="search__history-list-item">
+                    <a href="#" class="search__city-name">${newCity}</a>
+                    <p class="modal__close-city" data-item="${newCity}">X</p>
+                </li>`
+    )
+    .join('');
+  cityList.innerHTML = newCity;
+  calculateCarousel();
+}
+
+//function for lower resolution
 function carouselUp() {
   let liElems = cityList.querySelectorAll('li');
   indexUp += 1;
@@ -136,6 +197,7 @@ function carouselUp() {
   } else {
     nextBtn.classList.add('hidden-btn');
     liElems[indexUp].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
     indexDown =
       indexUp -
       Math.round(
@@ -143,6 +205,9 @@ function carouselUp() {
           (nodeList.children[0].getBoundingClientRect().width + 10)
       ) +
       1; //seting index to move left
+
+    indexDown = indexUp - Math.round(slidesNumber) + 1; //seting index to move left
+
   }
 }
 
@@ -156,6 +221,7 @@ function carouselDown() {
   } else {
     prevBtn.classList.add('hidden-btn');
     liElems[indexDown].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
     indexUp =
       indexDown +
       Math.round(
@@ -163,6 +229,9 @@ function carouselDown() {
           (nodeList.children[0].getBoundingClientRect().width + 10)
       ) -
       1;
+
+    indexUp = indexDown + Math.round(slidesNumber) - 1;
+
   }
 }
 

@@ -9,6 +9,7 @@ import {
 import { addCityKey } from './searchCity';
 import { getTodayData, printTemperatures } from './todayTemperatures';
 import { getCity, setCity } from './variables';
+import Notiflix from 'notiflix';
 
 const form = document.querySelector('#search__form');
 const inputCity = document.querySelector('[name="searchQuery"]');
@@ -19,6 +20,8 @@ const btn5daysFrom5days = document.querySelector(
   "button[class='five-days-btn']"
 );
 const locationBtn = document.querySelector('#btn-location');
+const favoriteBtn = document.querySelector('#btn-favorite');
+let activeDay;
 
 async function setTodayPage(city) {
   setCity(city); //ustawienie city do zmiennej globalnej
@@ -44,9 +47,16 @@ export function setTodayPageByLocation() {
 async function set5daysPage() {
   show5daysElements(); //pokazanie/schowanie odpowiednich elementów inferfejsu
   await responseFiveDays(); //wywołanie API 5 dni
-  const moreInfos = document.getElementsByClassName('more-info');
+  const moreInfos = document.getElementsByClassName('wheather-list-item');
   [...moreInfos].forEach(element => {
     element.addEventListener('click', () => {
+      if (activeDay) {
+        activeDay.classList.remove('active-day');
+        activeDay.classList.add('not-active-day');
+      }
+      activeDay = element;
+      element.classList.add('active-day');
+      activeDay.classList.remove('not-active-day');
       set5daysMore(element.getAttribute('name'));
     });
   });
@@ -61,7 +71,12 @@ form.addEventListener('submit', e => {
   //search
   e.preventDefault();
   const city = inputCity.value.trim();
-  setTodayPage(city);
+  if (!city) {
+    Notiflix.Notify.failure('Please enter the city to search');
+  } else {
+    setTodayPage(city);
+    addCityKey();
+  }
 });
 
 btnToday.addEventListener('click', () => {
@@ -91,3 +106,28 @@ document
   });
 
 locationBtn.addEventListener('click', setTodayPageByLocation);
+
+favoriteBtn.addEventListener('click', e => {
+  e.preventDefault();
+  const city = inputCity.value.trim();
+  if (!city) {
+    Notiflix.Notify.failure('Please enter the city to search');
+  } else {
+    setTodayPage(city);
+    let favs = getFavoriteCities();
+    if (favs.indexOf(city) == -1) {
+      favs.push(city);
+      localStorage.setItem('WeatherApp_favorites', favs.join('&'));
+    }
+  }
+});
+
+export function getFavoriteCities() {
+  let favs = localStorage.getItem('WeatherApp_favorites');
+  if (favs) {
+    favs = favs.split('&');
+  } else {
+    favs = [];
+  }
+  return favs;
+}
