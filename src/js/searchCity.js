@@ -7,22 +7,22 @@ const cityList = document.querySelector('.search__history-list');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 
-
 const weatherList = document.querySelector('.wheather__more-list');
 const nextThreeHours = document.querySelector('.arrow-next-btn');
 const prevThreeHours = document.querySelector('.arrow-back-btn');
-
 
 const nodeWeatherlist = weatherList;
 let weatherWidth = weatherList.getBoundingClientRect().width;
 let widthToMoveWeather =
   nodeWeatherlist.children[0].getBoundingClientRect().width + 10;
 
-
-let indexWeatherUp = Math.round(
-  weatherList.getBoundingClientRect().width /
-    (nodeWeatherlist.children[0].getBoundingClientRect().width + 10) -
-    1
+let indexWeatherUp = Math.max(
+  1,
+  Math.round(
+    weatherList.getBoundingClientRect().width /
+      (nodeWeatherlist.children[0].getBoundingClientRect().width + 10) -
+      1
+  )
 );
 let indexWeatherDown = 0;
 
@@ -33,7 +33,7 @@ let widthToMove = cityList.children[0].offsetWidth + 10;
 let slidesNumber = carouselWidth / widthToMove; //number of elements in carousel
 
 let indexUp = Math.round(slidesNumber) - 1;
-let indexDown = indexUp - Math.round(slidesNumber) + 1;
+let indexDown = 0;
 
 setCarouselHtml();
 
@@ -76,10 +76,7 @@ prevThreeHours.addEventListener('click', carouselBottomDown);
 
 const nodeList = cityList; //parent element for cities list
 
-
 calculateCarousel();
-
-
 
 function calculateCarousel() {
   let children = cityList.children; //all cities elements list
@@ -97,56 +94,54 @@ function calculateCarousel() {
     nextBtn.style.display = '';
     prevBtn.style.display = '';
   }
-
-
-
-console.log('slides before resize: ' + indexWeatherUp);
-
-  carouselWidth = cityList.getBoundingClientRect().width;
-  widthToMove = cityList.children[0].getBoundingClientRect().width + 10;
-  slidesNumber = carouselWidth / widthToMove; //number of elements in carousel
-
-  indexUp = Math.round(slidesNumber) - 1;
-  indexDown = indexUp - Math.round(slidesNumber) + 1;
 }
 
+indexUp = Math.round(slidesNumber) - 1;
+indexDown = indexUp - Math.round(slidesNumber) + 1;
 
 window.addEventListener(
   'resize',
   debounce(
     () => {
+      let liElems = cityList.querySelectorAll('li');
+      let liElemsWeather = weatherList.querySelectorAll('li');
+      console.log(liElems);
+      if (liElems.length > 0) {
+        indexUp =
+          Math.round(
+            cityList.offsetWidth / (cityList.children[0].offsetWidth + 10)
+          ) - 1;
+        indexWeatherUp = Math.max(
+          1,
+          Math.round(
+            weatherList.offsetWidth /
+              (weatherList.children[0].offsetWidth + 10) -
+              1
+          )
+        );
+        indexWeatherDown = Math.max(
+          0,
+          Math.round(
+            weatherList.offsetWidth /
+              (weatherList.children[0].offsetWidth + 10) -
+              4
+          )
+        );
+        liElems[indexDown].scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+        });
+        liElemsWeather[indexWeatherDown].scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+        });
 
-      let liElems = weatherList.querySelectorAll('li');
-      indexUp =
-        Math.round(
-          cityList.getBoundingClientRect().width /
-            (nodeList.children[0].getBoundingClientRect().width + 10)
-        ) - 1;
-      indexWeatherUp = Math.round(
-        weatherList.getBoundingClientRect().width /
-          (nodeWeatherlist.children[0].getBoundingClientRect().width + 10) -
-          1
-      );
-      indexWeatherDown = Math.max(
-        0,
-        Math.round(
-          weatherList.getBoundingClientRect().width /
-            (nodeWeatherlist.children[0].getBoundingClientRect().width + 10) -
-            4
-        )
-      );
-      liElems[indexWeatherDown].scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-      });
+        console.log(indexUp);
+        console.log('indexWeatherUp: ' + indexWeatherUp);
+        console.log('indexWeatherDown: ' + indexWeatherDown);
 
-      console.log(indexUp);
-      console.log('indexWeatherUp: ' + indexWeatherUp);
-      console.log('indexWeatherDown: ' + indexWeatherDown);
-
-      calculateCarousel();
-      indexUp = Math.round(slidesNumber) - 1;
-
+        calculateCarousel();
+      }
     },
     300,
     {
@@ -155,7 +150,6 @@ window.addEventListener(
     }
   )
 );
-
 
 //function for carousel
 
@@ -191,9 +185,6 @@ function carouselUp() {
           (nodeList.children[0].getBoundingClientRect().width + 10)
       ) +
       1; //seting index to move left
-
-    indexDown = indexUp - Math.round(slidesNumber) + 1; //seting index to move left
-
   }
 }
 
@@ -215,9 +206,6 @@ function carouselDown() {
           (nodeList.children[0].getBoundingClientRect().width + 10)
       ) -
       1;
-
-    indexUp = indexDown + Math.round(slidesNumber) - 1;
-
   }
 }
 
@@ -231,16 +219,12 @@ function carouselBottomUp() {
       behavior: 'smooth',
       block: 'nearest',
     });
-    console.log('InUpIf: ' + indexWeatherUp);
-    console.log('InDnIf: ' + indexWeatherDown);
   } else {
     nextThreeHours.classList.add('hidden-btn');
     liElems[indexWeatherUp].scrollIntoView({
       behavior: 'smooth',
       block: 'nearest',
     });
-    console.log('InUpElse: ' + indexWeatherUp);
-    console.log('InDnElse: ' + indexWeatherDown);
     // indexWeatherDown = indexWeatherUp - 3; //seting index to move left
   }
 }
@@ -255,28 +239,11 @@ function carouselBottomDown() {
       behavior: 'smooth',
       block: 'nearest',
     });
-    console.log('InUpIf: ' + indexWeatherUp);
-    console.log('InDnIf: ' + indexWeatherDown);
   } else {
     prevThreeHours.classList.add('hidden-btn');
     liElems[indexWeatherDown].scrollIntoView({
       behavior: 'smooth',
       block: 'nearest',
     });
-    console.log('InUpElse: ' + indexWeatherUp);
-    console.log('InDnElse: ' + indexWeatherDown);
   }
 }
-
-// let childs = nodeList.children; //all cities elements list
-// let firstChild = nodeList.children[0]; //first city in list
-// let cityName = firstChild.firstElementChild.textContent; //content of first child
-
-//total width of cities elements in memory
-// for (let i = 0; i < childs.length; i += 1) {
-// let elemWidth = nodeList.children[i].getBoundingClientRect().width + 10;
-// console.log(elemWidth);
-// }
-
-// console.log('InUp: ' + indexUp);
-// console.log('InDn: ' + indexDown);
