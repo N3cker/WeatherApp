@@ -105,7 +105,6 @@ window.addEventListener(
     () => {
       let liElems = cityList.querySelectorAll('li');
       let liElemsWeather = weatherList.querySelectorAll('li');
-      console.log(liElems);
       if (liElems.length > 0) {
         indexUp =
           Math.round(

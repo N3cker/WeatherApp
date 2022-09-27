@@ -1,21 +1,27 @@
 import Notiflix from 'notiflix';
 import { getCity } from './variables';
 import img from '../images/weather-icons.svg';
+import { showTodayElements } from './navigation';
 
 const kelvinToCelsius = kelvin => Math.round(kelvin - 273.15);
 
 export async function getTodayData() {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${getCity()}&appid=d9a15daa009f4bc5f218b58d97ea6f20`;
   const response = await fetch(url);
-
-  if (!response.ok)
-    return Notiflix.Notify.failure(` ${response.status}\n${response.statusText}`)
-
+  
   const data = await response.json();
+  console.log(data);
   return data;
 }
 
 export async function printTemperatures(data) {
+  if(data.cod != 200) {
+    return;
+  }else {
+    showTodayElements();
+  }
+
+
   const todayCityName = document.querySelector('.today__cityName');
   const todayCityName5days = document.querySelector('.city-name');
   const todayCityName5daysMobile = document.querySelector('.city-name-mobile');
@@ -37,4 +43,9 @@ export async function printTemperatures(data) {
   temperatureActual.innerHTML = temperatureCelsius;
   temperatureMin.innerHTML = `${temperatureMinCelsius} °`;
   temperatureMax.innerHTML = `${temperatureMaxCelsius} °`;
+  
+}
+
+export async function checkError() {
+  return;
 }

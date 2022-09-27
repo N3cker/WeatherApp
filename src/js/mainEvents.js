@@ -7,7 +7,7 @@ import {
   showTodayElements,
 } from './navigation';
 import { addCityKey } from './searchCity';
-import { getTodayData, printTemperatures } from './todayTemperatures';
+import { getTodayData, printTemperatures, checkError } from './todayTemperatures';
 import { getCity, setCity } from './variables';
 import Notiflix from 'notiflix';
 
@@ -26,7 +26,7 @@ let activeDay;
 async function setTodayPage(city) {
   setCity(city); //ustawienie city do zmiennej globalnej
   const data = await getTodayData(getCity()); //pobranie danych z API
-  showTodayElements(); //pokazanie/schowanie odpowiednich elementów interfejsu
+  // showTodayElements(); //pokazanie/schowanie odpowiednich elementów interfejsu
   await printTemperatures(data); //ustawienie dziennej pogody
   await setTimeElements(data); //ustawienie elementów czasu
   addCityKey(); //dodanie miasta do karuzeli
