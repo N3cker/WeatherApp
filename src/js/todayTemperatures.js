@@ -1,3 +1,4 @@
+import Notiflix from 'notiflix';
 import { getCity } from './variables';
 import img from '../images/weather-icons.svg';
 
@@ -8,9 +9,7 @@ export async function getTodayData() {
   const response = await fetch(url);
 
   if (!response.ok)
-    return alert(
-      `Error: ${response.status}\nstatusText: ${response.statusText}`
-    );
+    return Notiflix.Notify.failure(` ${response.status}\n${response.statusText}`)
 
   const data = await response.json();
   return data;
