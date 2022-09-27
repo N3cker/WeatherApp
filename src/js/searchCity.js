@@ -12,16 +12,19 @@ const weatherList = document.querySelector('.wheather__more-list');
 const nextThreeHours = document.querySelector('.arrow-next-btn');
 const prevThreeHours = document.querySelector('.arrow-back-btn');
 
-let cities = [];
-//   'Madrid',
-//   'Lisbon',
-//   'Warsaw',
-//   'Berlin',
-//   'Paris',
-//   'Rome',
-//   'Miami',
-//   'London',
-// ];
+
+const nodeWeatherlist = weatherList;
+let weatherWidth = weatherList.getBoundingClientRect().width;
+let widthToMoveWeather =
+  nodeWeatherlist.children[0].getBoundingClientRect().width + 10;
+
+
+let indexWeatherUp = Math.round(
+  weatherList.getBoundingClientRect().width /
+    (nodeWeatherlist.children[0].getBoundingClientRect().width + 10) -
+    1
+);
+let indexWeatherDown = 0;
 
 let cities = getFavoriteCities();
 
@@ -96,24 +99,7 @@ function calculateCarousel() {
   }
 
 
-const nodeWeatherlist = weatherList;
-let weatherWidth = weatherList.getBoundingClientRect().width;
-let widthToMoveWeather =
-  nodeWeatherlist.children[0].getBoundingClientRect().width + 10;
 
-let indexUp = Math.round(slidesNumber) - 1;
-let indexDown = 0;
-// let indexWeatherUp = Math.round(
-//   weatherList.getBoundingClientRect().width /
-//     (nodeWeatherlist.children[0].getBoundingClientRect().width + 10) -
-//     2
-// );
-let indexWeatherUp = Math.round(
-  weatherList.getBoundingClientRect().width /
-    (nodeWeatherlist.children[0].getBoundingClientRect().width + 10) -
-    1
-);
-let indexWeatherDown = 0;
 console.log('slides before resize: ' + indexWeatherUp);
 
   carouselWidth = cityList.getBoundingClientRect().width;
